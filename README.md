@@ -21,11 +21,20 @@ python -m fr3imp --experiment B --controller hinf
 
 MuJoCo 固定为 3.16.0。控制周期 0.25 ms（4 kHz），F/T 采样 1 ms（1 kHz）；默认无力滤波。工厂函数将原位置执行器转换成有真实力矩限制的直接电机，不修改模型资源原文件。
 
+本次记录的实验环境是 Python 3.14.6，直接依赖版本见 [requirements-lock.txt](requirements-lock.txt)。在匹配的 Python 环境中可先执行 `python -m pip install -r requirements-lock.txt`，再安装项目。
+
 完整矩阵及分析：
 
 ```bash
 python -m fr3imp.suite --experiments ABCDEF --d-trials 30 --workers 4 --output outputs/suite
 python -m fr3imp.analyze outputs/suite --output docs/results
+```
+
+接触组的物理步长检查与结果核对：
+
+```bash
+python -m fr3imp.suite --experiments BCEF --physics-substeps 2 --workers 4 --output outputs/sensitivity-substeps2
+python -m fr3imp.compare_steps outputs/suite outputs/sensitivity-substeps2 --output docs/results
 ```
 
 用 `--resume` 续跑已完成且代码哈希、参数一致的运行。用 `--physics-substeps 2` 将物理积分步长减半，控制与传感器频率保持不变。`--ideal` 关闭本项目加入的模型误差、工具质量、摩擦、阻尼和传感器噪声，用于单独检查理想条件。

@@ -1,0 +1,6 @@
+# Direct dependency versions used for the recorded experiments.
+# Python 3.14.6; install from the repository with pip install -e .
+mujoco==3.16.0
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2

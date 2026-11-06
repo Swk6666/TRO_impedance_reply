@@ -51,7 +51,8 @@ def read_runs(root):
         np.testing.assert_allclose(np.diff(t),.001,atol=1e-10,rtol=0)
         if summary['status']=='completed':
             np.testing.assert_allclose(summary['simulated_duration_s'],summary['requested_duration_s'],atol=1e-8)
-            if n != round(summary['requested_duration_s']/.001):
+            expected_samples=(round(summary['requested_duration_s']/summary['control_period_s'])+3)//4
+            if n != expected_samples:
                 raise ValueError(f'Incomplete sampling {folder}')
         # Deliberately independent of metrics_from_log (different expression).
         squared=(arrays['pose'][:,:3].astype(float)-arrays['desired'][:,:3])**2
@@ -59,6 +60,18 @@ def read_runs(root):
         np.testing.assert_allclose(recomputed,summary['metrics']['position_rmse_m'],rtol=2e-6,atol=1e-10)
         peak=np.linalg.norm(arrays['force_true'][:,:3].astype(float),axis=1).max()
         np.testing.assert_allclose(peak,summary['metrics']['force_peak_N'],rtol=2e-6,atol=1e-8)
+        if summary['experiment']=='C':
+            residual=arrays['force_true'][:,2].astype(float)-arrays['force_desired'][:,2]
+            force_rmse=np.linalg.norm(residual)/np.sqrt(n)
+            np.testing.assert_allclose(force_rmse,summary['metrics']['force_tracking_rmse_N'],rtol=2e-6)
+        if summary['experiment']=='D':
+            # Independent explicit power-dual map: E.T m has pitch component
+            # -sin(yaw) Mx+cos(yaw) My, and yaw component Mz.
+            p=arrays['pose'].astype(float);f=arrays['force_true'].astype(float)
+            expected_pitch=-p[:,4]+(-np.sin(p[:,5])*f[:,3]+np.cos(p[:,5])*f[:,4])/200
+            expected_yaw=-p[:,5]+f[:,5]/10
+            for label,error in [('pitch',expected_pitch),('yaw',expected_yaw)]:
+                np.testing.assert_allclose(np.abs(error).mean(),summary['metrics'][f'{label}_equilibrium_error_mae_rad'],rtol=2e-4,atol=2e-7)
         checks.append(dict(run=folder.name,samples=n,position_rmse_recomputed_m=float(recomputed),
                            force_peak_recomputed_N=float(peak)))
         runs.append((summary,arrays if key[2]==0 else None))
@@ -73,7 +86,8 @@ def line(ax,t,y,controller,**kwargs):
 
 
 def make_figure(experiment,runs,output):
-    selected=[(s,a) for s,a in runs if s['experiment']==experiment and a is not None]
+    selected=sorted(((s,a) for s,a in runs if s['experiment']==experiment and a is not None),
+                    key=lambda pair:COMPARISONS[experiment].index(pair[0]['controller']))
     fig,axes=plt.subplots(2,2,figsize=(11.5,7.2),layout='constrained')
     ax=axes.ravel()
     for summary,a in selected:
@@ -120,8 +134,8 @@ def make_figure(experiment,runs,output):
     for i,axis in enumerate(ax):
         axis.grid(alpha=.18)
         if experiment not in 'ABCF' or i:axis.set(xlabel='Time [s]',xlim=(0,35 if experiment=='D' else 30))
-    ax[0].legend(fontsize=9,loc='best')
-    if experiment=='C':ax[2].legend(fontsize=9)
+    handles,labels=ax[0].get_legend_handles_labels()
+    fig.legend(handles,labels,fontsize=9,loc='outside lower center',ncol=min(6,len(labels)))
     title={'A':'Free motion','B':'Rigid obstacle','C':'Hybrid force/motion',
            'D':'Rotation with simulated operator (representative trial 0)',
            'E':'Grinding-equivalent contact and vibration','F':'REF gain sweep'}[experiment]
@@ -179,7 +193,7 @@ def main():
         make_d_tracking(runs,args.output)
     payload=dict(source_sha256=manifest['source_sha256'],input_root=str(args.root),
                  expected_runs=manifest['expected_runs'],status_counts=dict(Counter(s['status'] for s,_ in runs)),
-                 validation='All saved runs checked for membership, length, time spacing, finite arrays; position RMSE and peak force independently recomputed.',
+                 validation='All saved runs checked for membership, length, time spacing, finite arrays; position RMSE and peak force independently recomputed; C force RMSE and D pitch/yaw discrepancy independently recomputed.',
                  checks=checks,runs=[s for s,_ in runs])
     (args.output/'metrics.json').write_text(json.dumps(payload,indent=2))
     rows=['# FR3 仿真结果','',f'运行数：{len(runs)}；状态：{payload["status_counts"]}。',
@@ -188,15 +202,56 @@ def main():
           '提前终止运行的指标仅涵盖终止前，不能与完整运行直接排名。完整参数和逐运行检查见 [metrics.json](metrics.json)。','',
           '|组|控制器|次数|完整完成|位置误差 RMS (mm)|参考误差 RMS (m/s)|采样峰值力 (N)|饱和样本比例|',
           '|---|---|---:|---:|---:|---:|---:|---:|']
+    findings=[]
+    representative={(s['experiment'],s['controller']):s['metrics'] for s,_ in runs if s['trial']==0}
+    if 'A' in manifest['experiments']:
+        values=[representative['A',c]['position_rmse_m']*1000 for c in ['impedance','admittance','hinf']]
+        findings.append(f'- A 自由运动的位置 RMS：普通阻抗 {values[0]:.3f} mm，导纳 {values[1]:.3f} mm，H∞ {values[2]:.3f} mm。')
+    if 'C' in manifest['experiments']:
+        values=[representative['C',c]['force_tracking_rmse_N'] for c in ['admittance','bidirectional','hinf']]
+        findings.append(f'- **C 尚未复现原文的平滑法向力跟踪。** 导纳、双向能量流、H∞ 的力 RMS 误差分别为 {values[0]:.3f}、{values[1]:.3f}、{values[2]:.3f} N；当前模型和采样条件下接触力明显振荡。运行未终止并不代表这项性能验证通过。')
+    if 'F' in manifest['experiments']:
+        values=[representative['F',c]['reference_error_position_rms_m_s'] for c in COMPARISONS['F']]
+        peaks=[representative['F',c]['force_peak_N'] for c in COMPARISONS['F']]
+        findings.append('- F 的 α=0.25/0.5/1 对应平移 REF RMS 为 '+ ' / '.join(f'{v:.5f}' for v in values)+' m/s；采样峰值力同时为 '+' / '.join(f'{v:.2f}' for v in peaks)+' N，应同时考虑交互峰值与误差。这是同一种子的闭环观测，不是 H∞ 范数或理论无源性的证明。')
+    if 'D' in manifest['experiments']:
+        ds=[s for s,_ in runs if s['experiment']=='D' and s['controller']=='impedance']
+        fraction=np.mean([s['metrics']['saturation_fraction'] for s in ds])
+        findings.append(f'- D 的普通阻抗平均有 {fraction:.2%} 日志样本出现至少一轴力矩饱和，性能差异也受 FR3 执行器限制影响。其他控制器的饱和比例见总表。虚拟施力包含固定形状脉冲和滚转握持模型，不含真人复杂交互反馈。')
+    if 'E' in manifest['experiments']:
+        findings.append('- E 只验证下压接触和等效振动条件；未模拟磨粒、材料去除或热效应。')
+    # Put material limitations before the large table, not only after figures.
+    method='控制律、跨机器人适配和未公开参数的选择见 [实现说明](../IMPLEMENTATION.md)。'
+    if (args.output/'SENSITIVITY.md').exists():method+='步长对比见 [敏感性检查](SENSITIVITY.md)。'
+    rows[6:6]=['','## 主要观察','']+findings+['',method,'']
     for e in manifest['experiments']:
         for c in COMPARISONS[e]:
             ss=[s for s,_ in runs if s['experiment']==e and s['controller']==c]
             def mean(k):return float(np.mean([s['metrics'][k] for s in ss]))
             rows.append(f'|{e}|{c}|{len(ss)}|{sum(s["status"]=="completed" for s in ss)}|{mean("position_rmse_m")*1000:.3f}|{mean("reference_error_position_rms_m_s"):.4f}|{max(s["metrics"]["force_peak_N"] for s in ss):.2f}|{mean("saturation_fraction"):.2%}|')
     rows+=['','位置误差在接触任务中包含期望的柔顺位移，不宜单独作为阻抗好坏的排名。REF 使用控制器收到的带噪测量；静态平衡偏差也包含动态阶段的惯性和阻尼效应。','',
+           'REF 是包含误差积分的参考速度差，不是实际末端速度。普通阻抗不使用该反馈，持续的小偏差会使这个积分指标积累到很大的数值。','',
            '图中轨迹来自 trial 0，每隔最多 5–6 ms 取点绘图；指标使用保存的全部 1 kHz 样本，未平滑。力峰值是已保存样本的最大值，不是所有 4 kHz 控制时刻或物理子步的全局最大值；饱和比例也是 1 kHz 样本估计。','']
-    for e in manifest['experiments']:rows += [f'## {e}',f'![{e}]({e}.png)','']
-    if 'D' in manifest['experiments']:rows += ['![D statistics](D_statistics.png)','', 'D 统计图的误差棒是运行间标准差，不是置信区间。每三个运行共享同一虚拟操作者配置，不能视为 30 个独立真人。','', '![D tracking](D_tracking.png)']
+    if 'D' in manifest['experiments']:
+        rows+=['## D 的旋转指标','',
+               '表内为运行间均值 ± 样本标准差，单位为度。静态平衡偏差在完整动态时间段计算，不应解释为纯静态刚度误差。','',
+               '|控制器|次数|Pitch 平衡偏差 MAE|Yaw 平衡偏差 MAE|最大滚转|第二阶段平均滚转|',
+               '|---|---:|---:|---:|---:|---:|']
+        for c in COMPARISONS['D']:
+            ss=[s for s,_ in runs if s['experiment']=='D' and s['controller']==c]
+            stats=[]
+            for key in ['pitch_equilibrium_error_mae_rad','yaw_equilibrium_error_mae_rad','maximum_roll_rad','phase2_roll_mean_rad']:
+                values=np.array([s['metrics'].get(key) for s in ss if s['metrics'].get(key) is not None])*180/np.pi
+                if len(values):stats.append(f'{values.mean():.4f} ± {values.std(ddof=1) if len(values)>1 else 0:.4f}')
+                else:stats.append('未进入第二阶段')
+            rows.append(f'|{c}|{len(ss)}|'+'|'.join(stats)+'|')
+        rows+=['']
+    for e in manifest['experiments']:
+        rows += [f'## {e}','',f'![{e}]({e}.png)','']
+        if e=='D':rows += ['![D statistics](D_statistics.png)','', 'D 统计图的误差棒是运行间标准差，不是置信区间。每三个运行共享同一虚拟操作者配置，不能视为 30 个独立真人。','', '![D tracking](D_tracking.png)','']
+    videos=[f'[{e} 组 H∞（两倍速）]({e}_hinf.mp4)' for e in 'BD' if (args.output/f'{e}_hinf.mp4').exists()]
+    if videos:rows+=['','## MuJoCo 回放','',' · '.join(videos),'',
+                     '回放使用已保存的关节轨迹。B 的墙面仅在显示时设为半透明，便于看清工具。','']
     (args.output/'RESULTS.md').write_text('\n'.join(rows)+'\n')
     print(json.dumps(dict(runs=len(runs),status_counts=payload['status_counts'],output=str(args.output))))
 
