@@ -1,0 +1,43 @@
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Build products (do not ignore .obj robot meshes)
+build/
+dist/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+*.o
+*.so
+*.a
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+
+# Generated experiment output
+/outputs/
+/results/
+/logs/
+*.log
+
+# OS and editor temporary files
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
