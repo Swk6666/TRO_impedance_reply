@@ -32,7 +32,7 @@ def main():
     if s['source_sha256']!=source_hash():
         raise ValueError('Runtime/scenario code differs from this recording; check out its recorded version first')
     a=np.load(args.run/'trajectory.npz')
-    scenario=Scenario(s['experiment'],a['desired'][0].astype(float),s['trial'])
+    scenario=Scenario(s['experiment'],a['desired'][0].astype(float),s['trial'],variant=s.get('scenario_variant','compact'))
     model=build_model(PlantParameters(**s['plant']),environment=scenario.environment())
     # Display-only transparency exposes the TCP behind the obstacle; these
     # colors do not change the geometry used in the recorded experiment.

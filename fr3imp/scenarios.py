@@ -38,7 +38,10 @@ def smoothstep(t, duration):
 
 
 class Scenario:
-    def __init__(self, name, initial_pose, trial=0):
+    def __init__(self, name, initial_pose, trial=0,variant="compact"):
+        if variant not in ("compact","paper_figure","paper_diagonal"):
+            raise ValueError("Unknown scenario variant")
+        self.variant=variant
         self.name = name
         self.p0 = np.asarray(initial_pose).copy()
         self.inertia, self.damping, self.stiffness = [np.array(v,dtype=float) for v in PARAMETERS[name]]
@@ -61,6 +64,14 @@ class Scenario:
             a[1] = 2*ay*(-2*np.sin(2*theta)*w*w+np.cos(2*theta)*acc)
             if self.name=='C':
                 force[2] = 10+3*np.sin(t)
+            if self.name=='C' and self.variant in ('paper_figure','paper_diagonal'):
+                # Digitized Fig. 9 vector paths: 50/150 mm half amplitudes,
+                # theta=(pi/12)*t. Starts at the center; 1.25 cycles in 30 s.
+                # Absolute Indy7 position is translated to the FR3 home pose.
+                theta=np.pi*t/12.;w=np.pi/12.
+                p[:2]=self.p0[:2]+[.05*np.sin(2*theta), .15*np.sin(theta)]
+                v[:2]=[.1*np.cos(2*theta)*w, .15*np.cos(theta)*w]
+                a[:2]=[-.2*np.sin(2*theta)*w*w, -.15*np.sin(theta)*w*w]
         elif self.name=='E':
             s,ds,dds=smoothstep(t,5.)
             omega=2*np.pi/8
@@ -80,6 +91,25 @@ class Scenario:
             # uncertain, friction-limited ordinary impedance baseline to
             # reach the same fixed obstacle as the robust controllers.
             return [dict(name='wall',pos=f'{x+.070} {y} {z}',size='.01 .20 .20')]
+        if self.name=='C' and self.variant in ('paper_figure','paper_diagonal'):
+            board=dict(name='whiteboard',pos=f'{x} {y} {z-.02}',size='.25 .35 .01')
+            if self.variant=='paper_figure':
+                # Fig. 8 shows a chamfered block, not an infinite plane.
+                # Fig. 9 suggests TCP limits dx-dy≈.08, then dx≈-.035 m.
+                # These are geometric estimates, not author-supplied CAD.
+                radius=.01
+                face=.08+np.sqrt(2)*radius
+                corner=-.035+radius
+                polygon=[(corner,-.32),(.20,-.32),(.20,.20-face),(corner,corner-face)]
+                vertices=[(px,py,pz) for pz in (-.01,.04) for px,py in polygon]
+                return [board,dict(name='threshold',pos=f'{x} {y} {z}',vertices=vertices)]
+            # Estimated diagonal adaptation line in Fig. 9: dx-dy=0.08 m.
+            # The tool radius and half-thickness shift the actual box center.
+            normal=np.array([1.,-1.])/np.sqrt(2)
+            center=np.array([x,y])+normal*(.08/np.sqrt(2)+.01+.006)
+            return [board,
+                    dict(name='threshold',pos=f'{center[0]} {center[1]} {z+.015}',
+                         size='.006 .25 .025',quat=f'{np.cos(np.pi/8)} 0 0 {-np.sin(np.pi/8)}')]
         if self.name=='C':
             return [dict(name='whiteboard',pos=f'{x+.04} {y} {z-.02}',size='.25 .25 .01'),
                     dict(name='threshold',pos=f'{x+.078} {y} {z+.015}',size='.006 .15 .025')]

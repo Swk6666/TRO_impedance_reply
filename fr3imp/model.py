@@ -25,6 +25,7 @@ class PlantParameters:
     nominal_tool_mass: float = 0.0
     timestep: float = .00025
     contact_timeconstant: float = .004
+    contact_dampratio: float = 1.
     contact_impedance: tuple = (.95,.99,.001)
     contact_friction: float = .25
 
@@ -86,7 +87,7 @@ def build_model(parameters=PlantParameters(), *, nominal=False,
                   fromto="0 0 0 0 0 0.11", mass="0", contype="0", conaffinity="0")
     ET.SubElement(tool, "geom", name="tool_tip", type="sphere", size="0.01", pos="0 0 0.12",
                   mass="0", contype="0" if nominal else "2", conaffinity="0" if nominal else "4",
-                  friction=f"{parameters.contact_friction} 0.005 0.0001", solref=f"{parameters.contact_timeconstant} 1", solimp=" ".join(map(str,parameters.contact_impedance)))
+                  friction=f"{parameters.contact_friction} 0.005 0.0001", solref=f"{parameters.contact_timeconstant} {parameters.contact_dampratio}", solimp=" ".join(map(str,parameters.contact_impedance)))
     sensors = ET.SubElement(root, "sensor")
     ET.SubElement(sensors, "force", name="wrist_force", site="wrist")
     ET.SubElement(sensors, "torque", name="wrist_torque", site="wrist")
@@ -97,9 +98,17 @@ def build_model(parameters=PlantParameters(), *, nominal=False,
         ET.SubElement(world, "geom", name="floor", type="plane", size="2 2 .1",
                       pos="0 0 -0.02", rgba="0.25 0.28 0.32 1", contype="4", conaffinity="3")
         for spec in environment or []:
-            attrs = {k: str(v) for k, v in spec.items()}
+            attrs = dict(spec)
+            if 'vertices' in attrs:
+                # A convex environment mesh, specified in local coordinates.
+                # MuJoCo computes its convex hull; no robot asset is modified.
+                mesh_name=attrs['name']+'_mesh'
+                ET.SubElement(root.find('asset'),'mesh',name=mesh_name,
+                              vertex=' '.join(map(str,np.asarray(attrs.pop('vertices')).ravel())))
+                attrs.update(type='mesh',mesh=mesh_name)
+            attrs = {k: str(v) for k, v in attrs.items()}
             defaults = dict(type="box", contype="4", conaffinity="2", friction=f"{parameters.contact_friction} 0.005 0.0001",
-                            solref=f"{parameters.contact_timeconstant} 1", solimp=" ".join(map(str,parameters.contact_impedance)), rgba="0.7 0.75 0.8 1")
+                            solref=f"{parameters.contact_timeconstant} {parameters.contact_dampratio}", solimp=" ".join(map(str,parameters.contact_impedance)), rgba="0.7 0.75 0.8 1")
             defaults.update(attrs)
             ET.SubElement(world, "geom", **defaults)
     else:

@@ -10,6 +10,7 @@ import numpy as np
 from scipy.spatial.transform import Rotation
 
 from .controllers import make_controller
+from .actuation import ActuatorParameters, TorqueInterface
 from .dynamics import NominalDynamics, angle_error, euler_rate_map
 from .model import ROOT, DT, HOME, TORQUE_LIMIT, PlantParameters, build_model, home_data
 from .scenarios import Scenario
@@ -18,7 +19,7 @@ from .sensors import SensorParameters, Sensors
 
 def source_hash():
     digest=hashlib.sha256()
-    for name in ('model.py','dynamics.py','sensors.py','scenarios.py','controllers.py','experiment.py'):
+    for name in ('model.py','dynamics.py','sensors.py','scenarios.py','controllers.py','actuation.py','experiment.py'):
         path=ROOT/'fr3imp'/name
         digest.update(path.name.encode());digest.update(path.read_bytes())
     digest.update((ROOT/'franka_fr3/fr3.xml').read_bytes())
@@ -91,7 +92,8 @@ def metrics_from_log(log,scenario):
 
 def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
                    duration=None,output='outputs',ideal=False,physics_substeps=4,
-                   control_period=DT,plant_parameters=None,sensor_parameters=None,c_profile="fr3"):
+                   control_period=DT,plant_parameters=None,sensor_parameters=None,c_profile="fr3",
+                   scenario_variant="compact",control_overrides=None,actuator_parameters=None):
     if c_profile not in ("fr3","legacy"):
         raise ValueError("c_profile must be fr3 or legacy")
     if control_period not in (.001,.00025):
@@ -110,6 +112,7 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
     defaults=PlantParameters(contact_timeconstant=.04,contact_impedance=(.5,.5,.001)) if adapted else PlantParameters()
     plant_parameters=replace(plant_parameters or defaults,timestep=dt/physics_substeps)
     sensor_parameters=sensor_parameters or SensorParameters()
+    actuator_parameters=actuator_parameters or ActuatorParameters()
     if ideal:
         plant_parameters=replace(plant_parameters,friction_scale=0,damping_scale=0,mass_error=0,
                                  tool_mass=0,nominal_tool_mass=0)
@@ -118,27 +121,35 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
     initial=home_data(nominal);site=nominal.site('tcp').id
     origin=initial.site_xmat[site].reshape(3,3).copy()
     initial_pose=np.r_[initial.site_xpos[site],np.zeros(3)]
-    scenario=Scenario(experiment,initial_pose,trial)
+    scenario=Scenario(experiment,initial_pose,trial,variant=scenario_variant)
     plant=build_model(plant_parameters,environment=scenario.environment(),visuals=False)
     data=home_data(plant)
     tcp=plant.site('tcp').id;tip=plant.geom('tool_tip').id;body=plant.body('tool').id
     dyn=NominalDynamics(nominal,origin)
-    ctrl=make_controller(controller,dyn,scenario,dt,alpha=.25 if adapted else 1.,
-                         nric_gain_scale=.1 if adapted else 1.)
+    settings=dict(alpha=.25 if adapted else 1.,nric_gain_scale=.1 if adapted else 1.)
+    settings.update(control_overrides or {})
+    ctrl=make_controller(controller,dyn,scenario,dt,**settings)
     sensor=Sensors(sensor_parameters,seed,dt)
     data.ctrl[:]=np.clip(dyn.evaluate(HOME,np.zeros(7)).gravity,-TORQUE_LIMIT,TORQUE_LIMIT)
     mujoco.mj_forward(plant,data)
+    interface=TorqueInterface(actuator_parameters,dt,data.ctrl.copy())
     duration=scenario.duration if duration is None else duration
     steps=round(duration/dt)
     names=['time','q','qvel','q_measured','v_measured','pose','velocity','desired','force_desired',
-           'force_true','force_contact','force_measured','force_raw_local','torque_command','torque_applied',
+           'force_true','force_contact','force_measured','force_raw_local','torque_command','torque_filtered','torque_applied',
            'reference_error','beta','tank','saturated','jacobian_sigma_min','interaction_work',
            'board_contact','threshold_contact']
-    records={name:[] for name in names}
+    diagnostic_defaults={name:np.zeros(size) for name,size in [('proxy_pose',6),('proxy_velocity',6),
+                         ('proxy_q',7),('proxy_v',7),('compensation_torque',7)]}
+    diagnostic_defaults.update({name:0. for name in ['power_environment','power_environment_exact',
+        'power_force_command','power_compensation','power_generation','storage_real','storage_nominal',
+        'beta_candidate','tank_dissipation','tank_jump','tank_mu']})
+    records={name:[] for name in names+list(diagnostic_defaults)}
     status='completed';reason=None;work=0.;started=time.perf_counter();step=-1;completed_steps=0
     print(f'START {experiment} {controller} trial={trial} duration={duration:g}s',flush=True)
     metadata=dict(experiment=experiment,controller=controller,trial=trial,seed=seed,
-                  requested_duration_s=duration,ideal=ideal,c_profile=c_profile if experiment=="C" else None,
+                  requested_duration_s=duration,ideal=ideal,scenario_variant=scenario_variant,
+                  control_settings=settings,actuator=asdict(actuator_parameters),c_profile=c_profile if experiment=="C" else None,
                   controller_parameters={**({"alpha":ctrl.alpha} if controller.startswith("hinf") else {}),
                                          **({"G":ctrl.G.tolist()} if hasattr(ctrl,"G") else {})},
                   control_period_s=dt,log_period_s=.001,log_stride=log_stride,
@@ -170,14 +181,15 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
             command=result.torque
             if not np.isfinite(command).all():
                 raise FloatingPointError('Non-finite commanded torque')
-            data.ctrl[:]=command # MJCF motor and joint limits clamp physically.
+            filtered=interface.step(command)
+            data.ctrl[:]=filtered # MJCF motor and joint limits clamp physically.
             work+=dt*float(physical@twist)
             if step%log_stride==0:
                 ref=scenario.reference(t)
                 values=[t,data.qpos.copy(),data.qvel.copy(),q,v,pose,velocity,ref.p,ref.force,
-                        physical,contact,measured,data.sensordata[:6].copy(),command,
-                        np.clip(command,-TORQUE_LIMIT,TORQUE_LIMIT),result.reference_error,
-                        result.beta,result.tank,float(np.any(abs(command)>TORQUE_LIMIT)),state.sigma_min,work]
+                        physical,contact,measured,data.sensordata[:6].copy(),command,filtered,
+                        np.clip(filtered,-TORQUE_LIMIT,TORQUE_LIMIT),result.reference_error,
+                        result.beta,result.tank,float(np.any(abs(filtered)>TORQUE_LIMIT)),state.sigma_min,work]
                 active_geoms=set()
                 for contact_index in range(data.ncon):
                     pair=data.contact[contact_index]
@@ -186,6 +198,8 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
                 values.extend(float(mujoco.mj_name2id(plant,mujoco.mjtObj.mjOBJ_GEOM,name) in active_geoms)
                               for name in ('whiteboard','threshold'))
                 for name,value in zip(names,values):records[name].append(value)
+                for name,default in diagnostic_defaults.items():
+                    records[name].append(result.diagnostics.get(name,default))
             if np.max(abs(data.qvel))>15:
                 raise FloatingPointError('Joint speed exceeds numerical experiment limit (15 rad/s)')
             if np.linalg.norm(physical[:3])>400:

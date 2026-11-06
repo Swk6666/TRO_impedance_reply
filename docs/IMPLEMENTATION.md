@@ -2,6 +2,8 @@
 
 状态：五种控制器和 A–F 场景已实现。原 137 次运行与 14 次积分步长检查是历史 4 kHz 数据，见 [历史结果](results/RESULTS.md)。当前按用户实际 FR3 设置，控制/传感器均为 1 kHz；C 已单独调参并完成消融、噪声种子与积分步长验证，见 [C 诊断报告](results/c-1khz/REPORT.md)。工程通过不等于论文全部性能结论复现。
 
+后续 C 审计恢复了论文矢量轨迹，加入带转角挡块、命令滤波开关、原增益对照、虚拟积分收敛和能量端口诊断，见 [机制证据审计](C_MECHANISM_AUDIT.md) 与 [最新结果](results/c-mechanism/REPORT.md)。下文的紧凑场景和增益仍对应保留的历史默认配置；最新对照采用显式独立设置，尚未完整复现论文性能差距。
+
 ## 来源
 
 1. Park, Park, Choi, *Nonlinear H-infinity Inverse-Optimal Impedance Control for Robotic Systems*, DOI: 10.1109/TRO.2026.3741518。本项目根目录的用户提供 PDF，特别是式 (39)、(50)–(62) 和第 VII 节。

@@ -4,7 +4,9 @@
 
 实现了 H∞ 阻抗、普通计算力矩阻抗、NRIC 导纳、双向能量流导纳和 super-twisting 滑模阻抗。FR3 的第七个自由度使用名义惯量加权的动态一致逆与零空间姿态控制。真实系统和控制器名义模型分离；摩擦、阻尼、工具质量、惯性误差及反馈测量噪声均进入闭环。
 
-**这是跨机器人仿真复现。** 原论文采用 Indy7 真机，原始轨迹和人手施力记录未公开；本项目明确给出 FR3 轨迹、接触几何、虚拟操作者和等效磨削振动。不能将仿真运行成功等同于论文性能结论已得到复现，也不能据此宣称真实 FR3 的稳定性或无源性。
+**这是跨机器人仿真复现，尚未完整复现论文性能差距及机制。** 原论文采用 Indy7 真机；C 的图示轨迹已从 PDF 矢量曲线恢复，但原始控制日志、人手施力和驱动模型未公开。本项目明确给出 FR3 轨迹、接触几何、虚拟操作者和等效磨削振动。不能将仿真运行成功等同于论文性能结论已得到复现，也不能据此宣称真实 FR3 的稳定性或无源性。
+
+C 的最新结果是 [性能与机制审计](docs/results/c-mechanism/REPORT.md)，来源和判据见 [证据审计](docs/C_MECHANISM_AUDIT.md)。它使用恢复的 100×300 mm 轨迹、带转角挡块，分别验证 100 Hz 命令滤波开关及论文原增益。默认 CLI 的紧凑场景和此前适配参数保留，便于重现历史结果。
 
 ## 安装与运行
 
@@ -31,6 +33,16 @@ OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python scripts/report_c.py
 ```
 
 C 默认使用 `--c-profile fr3`：H∞ α=0.25、两种导纳的 G 缩放为 0.1、共用柔顺笔尖接触参数。Λ/D/K、摩擦、阻尼、噪声保持原设置。笔尖参数未经实物标定。`--c-profile legacy` 保留旧接触参数和增益；`--control-period .00025 --physics-substeps 1 --c-profile legacy` 保留旧时序。只有 C 完成本轮 1 kHz 适配验证；A/B/D/E/F 的历史结果仍是 4 kHz。
+
+最新 C 审计使用单独的固定矩阵，不覆盖上述历史目录。先安装系统 `poppler-utils` 以读取论文矢量图，再运行：
+
+```bash
+OPENBLAS_NUM_THREADS=1 python scripts/digitize_paper_c.py
+OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python scripts/validate_c_mechanism.py
+OPENBLAS_NUM_THREADS=1 python scripts/report_c_mechanism.py
+```
+
+同一代码版本再次运行验证脚本会核对配置并续用已完成记录。FR3 组实际控制、关节反馈和 F/T 均为 1 kHz；虚拟模型内部 RK4 子步和物理积分子步不增加实际反馈频率。4 kHz 诊断组单独标记，不能作为真实 FR3 设置。
 
 历史 4 kHz 完整矩阵重跑与分析（独立输出目录）：
 
