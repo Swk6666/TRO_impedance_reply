@@ -1,5 +1,7 @@
 # FR3 仿真结果
 
+> 历史 4 kHz 控制 / 1 kHz F/T 数据，保留原指标。当前 C 的 1 kHz 适配与验证见 [新报告](c-1khz/REPORT.md)。
+
 运行数：137；状态：{'completed': 137}。
 控制代码 SHA-256：`712eb339f605ef41bb259ef90f1199b77ea77062b6f3dae85d99b8ac46531fb3`。
 

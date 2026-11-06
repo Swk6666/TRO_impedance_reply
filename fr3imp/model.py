@@ -11,7 +11,7 @@ import mujoco
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-DT = 0.00025
+DT = 0.001
 TORQUE_LIMIT = np.array([87., 87., 87., 87., 12., 12., 12.])
 HOME = np.array([0., 0., 0., -1.57079, 0., 1.57079, -0.7853])
 
@@ -23,7 +23,10 @@ class PlantParameters:
     mass_error: float = 0.10
     tool_mass: float = 0.4
     nominal_tool_mass: float = 0.0
-    timestep: float = DT
+    timestep: float = .00025
+    contact_timeconstant: float = .004
+    contact_impedance: tuple = (.95,.99,.001)
+    contact_friction: float = .25
 
 
 def build_model(parameters=PlantParameters(), *, nominal=False,
@@ -83,7 +86,7 @@ def build_model(parameters=PlantParameters(), *, nominal=False,
                   fromto="0 0 0 0 0 0.11", mass="0", contype="0", conaffinity="0")
     ET.SubElement(tool, "geom", name="tool_tip", type="sphere", size="0.01", pos="0 0 0.12",
                   mass="0", contype="0" if nominal else "2", conaffinity="0" if nominal else "4",
-                  friction="0.25 0.005 0.0001", solref="0.004 1", solimp="0.95 0.99 0.001")
+                  friction=f"{parameters.contact_friction} 0.005 0.0001", solref=f"{parameters.contact_timeconstant} 1", solimp=" ".join(map(str,parameters.contact_impedance)))
     sensors = ET.SubElement(root, "sensor")
     ET.SubElement(sensors, "force", name="wrist_force", site="wrist")
     ET.SubElement(sensors, "torque", name="wrist_torque", site="wrist")
@@ -95,8 +98,8 @@ def build_model(parameters=PlantParameters(), *, nominal=False,
                       pos="0 0 -0.02", rgba="0.25 0.28 0.32 1", contype="4", conaffinity="3")
         for spec in environment or []:
             attrs = {k: str(v) for k, v in spec.items()}
-            defaults = dict(type="box", contype="4", conaffinity="2", friction="0.25 0.005 0.0001",
-                            solref="0.004 1", solimp="0.95 0.99 0.001", rgba="0.7 0.75 0.8 1")
+            defaults = dict(type="box", contype="4", conaffinity="2", friction=f"{parameters.contact_friction} 0.005 0.0001",
+                            solref=f"{parameters.contact_timeconstant} 1", solimp=" ".join(map(str,parameters.contact_impedance)), rgba="0.7 0.75 0.8 1")
             defaults.update(attrs)
             ET.SubElement(world, "geom", **defaults)
     else:

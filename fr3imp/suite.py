@@ -20,8 +20,10 @@ def main():
     parser.add_argument('--output',default='outputs/suite')
     parser.add_argument('--duration',type=float)
     parser.add_argument('--ideal',action='store_true')
-    parser.add_argument('--physics-substeps',type=int,default=1)
+    parser.add_argument('--physics-substeps',type=int,default=4)
     parser.add_argument('--resume',action='store_true')
+    parser.add_argument('--control-period',type=float,choices=[.001,.00025],default=.001)
+    parser.add_argument('--c-profile',choices=['fr3','legacy'],default='fr3')
     args=parser.parse_args()
     if args.d_trials<1 or args.workers<1 or args.physics_substeps<1:
         parser.error('trial, worker and physics-substep counts must be positive')
@@ -34,7 +36,7 @@ def main():
         for controller in COMPARISONS[name]:
             for trial in range(args.d_trials if name=='D' else 1):
                 job=dict(experiment=name,controller=controller,trial=trial,seed=100+trial,
-                         duration=args.duration,ideal=args.ideal,output=str(root),physics_substeps=args.physics_substeps)
+                         duration=args.duration,ideal=args.ideal,output=str(root),physics_substeps=args.physics_substeps,control_period=args.control_period,c_profile=args.c_profile)
                 folder=root/f'{name}_{controller}_trial{trial:02d}_seed{100+trial}'
                 old=folder/'summary.json'
                 if args.resume and old.exists():
@@ -42,7 +44,9 @@ def main():
                     expected_duration=args.duration or (35 if name=='D' else 30)
                     if (summary['source_sha256']==version and summary['ideal']==args.ideal
                         and summary['requested_duration_s']==expected_duration
-                        and summary['physics_substeps']==args.physics_substeps):
+                        and summary['physics_substeps']==args.physics_substeps
+                        and summary['control_period_s']==args.control_period
+                        and summary.get('c_profile')==(args.c_profile if name=='C' else None)):
                         completed.append(summary);continue
                 jobs.append(job)
     manifest=dict(source_sha256=version,experiments=args.experiments,d_trials=args.d_trials,

@@ -26,7 +26,7 @@ class FeedbackTests(unittest.TestCase):
 
     def test_sampling_and_reproducibility(self):
         p=SensorParameters(tool_calibration_mass=0)
-        a,b=Sensors(p,4),Sensors(p,4)
+        a,b=Sensors(p,4,control_period=.00025),Sensors(p,4,control_period=.00025)
         records=[]
         for k in range(12):
             fa=a.wrench(k,np.zeros(6),np.eye(3))

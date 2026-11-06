@@ -51,7 +51,8 @@ def read_runs(root):
         np.testing.assert_allclose(np.diff(t),.001,atol=1e-10,rtol=0)
         if summary['status']=='completed':
             np.testing.assert_allclose(summary['simulated_duration_s'],summary['requested_duration_s'],atol=1e-8)
-            expected_samples=(round(summary['requested_duration_s']/summary['control_period_s'])+3)//4
+            stride=summary.get('log_stride',4)
+            expected_samples=(round(summary['requested_duration_s']/summary['control_period_s'])+stride-1)//stride
             if n != expected_samples:
                 raise ValueError(f'Incomplete sampling {folder}')
         # Deliberately independent of metrics_from_log (different expression).
@@ -209,7 +210,7 @@ def main():
         findings.append(f'- A 自由运动的位置 RMS：普通阻抗 {values[0]:.3f} mm，导纳 {values[1]:.3f} mm，H∞ {values[2]:.3f} mm。')
     if 'C' in manifest['experiments']:
         values=[representative['C',c]['force_tracking_rmse_N'] for c in ['admittance','bidirectional','hinf']]
-        findings.append(f'- **C 尚未复现原文的平滑法向力跟踪。** 导纳、双向能量流、H∞ 的力 RMS 误差分别为 {values[0]:.3f}、{values[1]:.3f}、{values[2]:.3f} N；当前模型和采样条件下接触力明显振荡。运行未终止并不代表这项性能验证通过。')
+        findings.append(f'- C 的导纳、双向能量流、H∞ 力 RMS 误差分别为 {values[0]:.3f}、{values[1]:.3f}、{values[2]:.3f} N。实际时序、接触与反馈增益见逐运行配置；应结合完整力曲线及限幅分析，不自动推断已复现论文性能。')
     if 'F' in manifest['experiments']:
         values=[representative['F',c]['reference_error_position_rms_m_s'] for c in COMPARISONS['F']]
         peaks=[representative['F',c]['force_peak_N'] for c in COMPARISONS['F']]
@@ -231,7 +232,7 @@ def main():
             rows.append(f'|{e}|{c}|{len(ss)}|{sum(s["status"]=="completed" for s in ss)}|{mean("position_rmse_m")*1000:.3f}|{mean("reference_error_position_rms_m_s"):.4f}|{max(s["metrics"]["force_peak_N"] for s in ss):.2f}|{mean("saturation_fraction"):.2%}|')
     rows+=['','位置误差在接触任务中包含期望的柔顺位移，不宜单独作为阻抗好坏的排名。REF 使用控制器收到的带噪测量；静态平衡偏差也包含动态阶段的惯性和阻尼效应。','',
            'REF 是包含误差积分的参考速度差，不是实际末端速度。普通阻抗不使用该反馈，持续的小偏差会使这个积分指标积累到很大的数值。','',
-           '图中轨迹来自 trial 0，每隔最多 5–6 ms 取点绘图；指标使用保存的全部 1 kHz 样本，未平滑。力峰值是已保存样本的最大值，不是所有 4 kHz 控制时刻或物理子步的全局最大值；饱和比例也是 1 kHz 样本估计。','']
+           '图中轨迹来自 trial 0，每隔最多 5–6 ms 取点绘图；指标使用保存的全部 1 kHz 样本，未平滑。力峰值是已保存样本的最大值，不是所有物理子步的全局最大值；饱和比例也是 1 kHz 样本估计。','']
     if 'D' in manifest['experiments']:
         rows+=['## D 的旋转指标','',
                '表内为运行间均值 ± 样本标准差，单位为度。静态平衡偏差在完整动态时间段计算，不应解释为纯静态刚度误差。','',

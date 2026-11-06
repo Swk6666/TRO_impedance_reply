@@ -19,7 +19,8 @@ class SensorParameters:
 
 
 class Sensors:
-    def __init__(self, parameters=SensorParameters(), seed=0):
+    def __init__(self, parameters=SensorParameters(), seed=0,control_period=DT):
+        self.dt=control_period
         self.parameters = parameters
         seq = np.random.SeedSequence(seed).spawn(2)
         self.joint_rng, self.force_rng = (np.random.default_rng(s) for s in seq)
@@ -34,8 +35,8 @@ class Sensors:
 
     def wrench(self, step, raw_local, measured_rotation, extra_noise=0.):
         p = self.parameters
-        period = round(p.force_period / DT)
-        if not np.isclose(period*DT, p.force_period):
+        period = round(p.force_period / self.dt)
+        if period<1 or not np.isclose(period*self.dt, p.force_period):
             raise ValueError("Force period must be an integer number of control periods")
         if step % period == 0:
             # MuJoCo's transmitted force is the parent-on-child wrench.

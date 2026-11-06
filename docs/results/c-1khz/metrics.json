@@ -1,0 +1,2466 @@
+{
+  "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+  "definitions": {
+    "force_rmse": "True world Fz minus desired Fz, all 30000 samples, no filtering",
+    "after_1s": "Exclude only t < 1 s; full-duration error is also reported",
+    "board_contact": "Active MuJoCo tip-whiteboard constraint, not a force threshold",
+    "peaks": "1 kHz samples, not all internal physics substeps"
+  },
+  "metrics": {
+    "admittance": {
+      "force_rmse_N": 0.6652395436096856,
+      "force_rmse_after_1s_N": 0.6477549015045245,
+      "force_rmse_at_threshold_N": 1.3021340007852613,
+      "force_measured_rmse_N": 0.6735511495627242,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.729503631591797,
+      "force_z_min_after_1s_N": 4.461419582366943,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.055,
+      "threshold_contact_end_s": 16.466,
+      "xy_position_rmse_mm": 6.491189257975724,
+      "median_board_penetration_mm": 1.0545551776885986,
+      "max_board_penetration_mm": 1.7427802085876465
+    },
+    "bidirectional": {
+      "force_rmse_N": 0.9446978547287609,
+      "force_rmse_after_1s_N": 0.9403872452642814,
+      "force_rmse_at_threshold_N": 1.5054881117768901,
+      "force_measured_rmse_N": 0.9575656915772014,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 16.16375160217285,
+      "force_z_min_after_1s_N": 5.881712436676025,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 15.014000000000001,
+      "threshold_contact_end_s": 15.945,
+      "xy_position_rmse_mm": 11.100836858137676,
+      "median_board_penetration_mm": 1.0749399662017822,
+      "max_board_penetration_mm": 1.7818212509155273
+    },
+    "contact_30ms": {
+      "force_rmse_N": 0.47752216518191903,
+      "force_rmse_after_1s_N": 0.4573429592643647,
+      "force_rmse_at_threshold_N": 1.3263368205363644,
+      "force_measured_rmse_N": 0.5065660527619679,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.547477722167969,
+      "force_z_min_after_1s_N": 5.140608310699463,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.046000000000001,
+      "threshold_contact_end_s": 16.485,
+      "xy_position_rmse_mm": 6.381043866467775,
+      "median_board_penetration_mm": 0.5510151386260986,
+      "max_board_penetration_mm": 0.904381275177002
+    },
+    "contact_50ms": {
+      "force_rmse_N": 0.421003595057283,
+      "force_rmse_after_1s_N": 0.3583409981771605,
+      "force_rmse_at_threshold_N": 0.6837439320427248,
+      "force_measured_rmse_N": 0.44313117611073216,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 14.7366943359375,
+      "force_z_min_after_1s_N": 5.187922954559326,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.022,
+      "threshold_contact_end_s": 16.492,
+      "xy_position_rmse_mm": 6.149132865061145,
+      "median_board_penetration_mm": 1.7150342464447021,
+      "max_board_penetration_mm": 2.5231242179870605
+    },
+    "contact_only": {
+      "force_rmse_N": 1.7391245961107074,
+      "force_rmse_after_1s_N": 1.74740487095542,
+      "force_rmse_at_threshold_N": 3.382002215558457,
+      "force_measured_rmse_N": 1.7693715584904688,
+      "force_z_min_N": -0.3927062153816223,
+      "force_z_max_N": 22.3773193359375,
+      "force_z_min_after_1s_N": -0.3927062153816223,
+      "saturation_fraction": 0.9688,
+      "board_contact_fraction_after_1s": 0.9986551724137931,
+      "threshold_contact_start_s": 13.457,
+      "threshold_contact_end_s": 16.535,
+      "xy_position_rmse_mm": 3.5381498719213793,
+      "median_board_penetration_mm": 0.9055435657501221,
+      "max_board_penetration_mm": 1.5816688537597656
+    },
+    "delay_1ms": {
+      "force_rmse_N": 0.4295977091991847,
+      "force_rmse_after_1s_N": 0.39092075046323566,
+      "force_rmse_at_threshold_N": 0.9652606722042985,
+      "force_measured_rmse_N": 0.4596903271150082,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.3458833694458,
+      "force_z_min_after_1s_N": 5.2361979484558105,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.037,
+      "threshold_contact_end_s": 16.535,
+      "xy_position_rmse_mm": 6.294148901066398,
+      "median_board_penetration_mm": 1.0508298873901367,
+      "max_board_penetration_mm": 1.6111135482788086
+    },
+    "friction_x1p5": {
+      "force_rmse_N": 0.5079349781185797,
+      "force_rmse_after_1s_N": 0.45944776171743107,
+      "force_rmse_at_threshold_N": 1.3731144779071445,
+      "force_measured_rmse_N": 0.5332044393580658,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 14.374443054199219,
+      "force_z_min_after_1s_N": 0.0,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 0.9999655172413793,
+      "threshold_contact_start_s": 14.347,
+      "threshold_contact_end_s": 16.538,
+      "xy_position_rmse_mm": 8.661229467504837,
+      "median_board_penetration_mm": 1.0499060153961182,
+      "max_board_penetration_mm": 1.6136765480041504
+    },
+    "gain_only": {
+      "force_rmse_N": 9.766201099881727,
+      "force_rmse_after_1s_N": 9.931135964803142,
+      "force_rmse_at_threshold_N": 13.93414149088725,
+      "force_measured_rmse_N": 9.22148651708872,
+      "force_z_min_N": -0.31292006373405457,
+      "force_z_max_N": 62.763092041015625,
+      "force_z_min_after_1s_N": -0.31292006373405457,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 0.6019310344827586,
+      "threshold_contact_start_s": 14.064,
+      "threshold_contact_end_s": 16.592,
+      "xy_position_rmse_mm": 6.409715219841718,
+      "median_board_penetration_mm": 0.0,
+      "max_board_penetration_mm": 0.0019073486328125
+    },
+    "legacy_1khz": {
+      "force_rmse_N": 10.93937836739792,
+      "force_rmse_after_1s_N": 11.10508165515967,
+      "force_rmse_at_threshold_N": 15.188820212664252,
+      "force_measured_rmse_N": 10.41165477914316,
+      "force_z_min_N": -6.932920932769775,
+      "force_z_max_N": 84.779296875,
+      "force_z_min_after_1s_N": -6.932920932769775,
+      "saturation_fraction": 0.9669,
+      "board_contact_fraction_after_1s": 0.538448275862069,
+      "threshold_contact_start_s": 13.912,
+      "threshold_contact_end_s": 16.516000000000002,
+      "xy_position_rmse_mm": 5.473509761186607,
+      "median_board_penetration_mm": 0.0,
+      "max_board_penetration_mm": 0.006794929504394531
+    },
+    "legacy_4khz": {
+      "force_rmse_N": 9.551197726788034,
+      "force_rmse_after_1s_N": 9.702770734208444,
+      "force_rmse_at_threshold_N": 14.43590900643655,
+      "force_measured_rmse_N": 9.006463144179426,
+      "force_z_min_N": -0.6080482006072998,
+      "force_z_max_N": 55.64835739135742,
+      "force_z_min_after_1s_N": -0.6080482006072998,
+      "saturation_fraction": 6.666666666666667e-05,
+      "board_contact_fraction_after_1s": 0.6056206896551725,
+      "threshold_contact_start_s": 14.058,
+      "threshold_contact_end_s": 16.509,
+      "xy_position_rmse_mm": 6.3607837136698,
+      "median_board_penetration_mm": 0.0,
+      "max_board_penetration_mm": 0.0019073486328125
+    },
+    "legacy_no_contact_friction": {
+      "force_rmse_N": 2.8438612305778888,
+      "force_rmse_after_1s_N": 2.8261465994770214,
+      "force_rmse_at_threshold_N": 4.40878589551841,
+      "force_measured_rmse_N": 2.850734121072939,
+      "force_z_min_N": -6.543119525304064e-05,
+      "force_z_max_N": 25.685916900634766,
+      "force_z_min_after_1s_N": -6.543119525304064e-05,
+      "saturation_fraction": 0.9755666666666667,
+      "board_contact_fraction_after_1s": 0.9999310344827587,
+      "threshold_contact_start_s": 13.227,
+      "threshold_contact_end_s": 16.479,
+      "xy_position_rmse_mm": 1.9924101876938927,
+      "median_board_penetration_mm": 0.0013113021850585938,
+      "max_board_penetration_mm": 0.00286102294921875
+    },
+    "legacy_no_joint_friction": {
+      "force_rmse_N": 10.047452585678853,
+      "force_rmse_after_1s_N": 10.192866765650246,
+      "force_rmse_at_threshold_N": 15.689196796330412,
+      "force_measured_rmse_N": 9.475651370748448,
+      "force_z_min_N": -7.549862861633301,
+      "force_z_max_N": 87.1563491821289,
+      "force_z_min_after_1s_N": -7.549862861633301,
+      "saturation_fraction": 0.9768333333333333,
+      "board_contact_fraction_after_1s": 0.6026896551724138,
+      "threshold_contact_start_s": 13.844,
+      "threshold_contact_end_s": 16.56,
+      "xy_position_rmse_mm": 5.572975138155436,
+      "median_board_penetration_mm": 5.9604644775390625e-05,
+      "max_board_penetration_mm": 0.007987022399902344
+    },
+    "legacy_no_noise": {
+      "force_rmse_N": 10.4284494699186,
+      "force_rmse_after_1s_N": 10.606266278527867,
+      "force_rmse_at_threshold_N": 14.407484951580564,
+      "force_measured_rmse_N": 9.896328931527757,
+      "force_z_min_N": -4.852629661560059,
+      "force_z_max_N": 70.29380798339844,
+      "force_z_min_after_1s_N": -4.852629661560059,
+      "saturation_fraction": 0.49523333333333336,
+      "board_contact_fraction_after_1s": 0.5671034482758621,
+      "threshold_contact_start_s": 14.062000000000001,
+      "threshold_contact_end_s": 16.518,
+      "xy_position_rmse_mm": 5.979591732057273,
+      "median_board_penetration_mm": 0.0,
+      "max_board_penetration_mm": 0.00667572021484375
+    },
+    "noise_x2": {
+      "force_rmse_N": 0.6060764335553258,
+      "force_rmse_after_1s_N": 0.5819324863827808,
+      "force_rmse_at_threshold_N": 1.0447745620268762,
+      "force_measured_rmse_N": 0.6654820438338511,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 16.187273025512695,
+      "force_z_min_after_1s_N": 4.562893867492676,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.022,
+      "threshold_contact_end_s": 16.486,
+      "xy_position_rmse_mm": 6.233010687071696,
+      "median_board_penetration_mm": 1.049429178237915,
+      "max_board_penetration_mm": 1.6112327575683594
+    },
+    "physics_125us": {
+      "force_rmse_N": 0.4296581936813609,
+      "force_rmse_after_1s_N": 0.38940416936947586,
+      "force_rmse_at_threshold_N": 0.9195619234003519,
+      "force_measured_rmse_N": 0.45543911338963206,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.108489036560059,
+      "force_z_min_after_1s_N": 5.170654296875,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.036,
+      "threshold_contact_end_s": 16.523,
+      "xy_position_rmse_mm": 6.294089619564974,
+      "median_board_penetration_mm": 1.0502040386199951,
+      "max_board_penetration_mm": 1.6111135482788086
+    },
+    "physics_500us": {
+      "force_rmse_N": 0.4289863418154751,
+      "force_rmse_after_1s_N": 0.3885749922398769,
+      "force_rmse_at_threshold_N": 0.9198127858840484,
+      "force_measured_rmse_N": 0.454559688260629,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 14.969557762145996,
+      "force_z_min_after_1s_N": 5.176241397857666,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.036,
+      "threshold_contact_end_s": 16.542,
+      "xy_position_rmse_mm": 6.29395905686022,
+      "median_board_penetration_mm": 1.0504424571990967,
+      "max_board_penetration_mm": 1.6111135482788086
+    },
+    "seed_101": {
+      "force_rmse_N": 0.42780383654301013,
+      "force_rmse_after_1s_N": 0.38345644020665515,
+      "force_rmse_at_threshold_N": 0.9222785456097401,
+      "force_measured_rmse_N": 0.4519324461720473,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.142828941345215,
+      "force_z_min_after_1s_N": 4.881100654602051,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.036,
+      "threshold_contact_end_s": 16.47,
+      "xy_position_rmse_mm": 6.294742260282832,
+      "median_board_penetration_mm": 1.051574945449829,
+      "max_board_penetration_mm": 1.6115307807922363
+    },
+    "seed_102": {
+      "force_rmse_N": 0.4302480938095348,
+      "force_rmse_after_1s_N": 0.38832733133483144,
+      "force_rmse_at_threshold_N": 0.9243722674757233,
+      "force_measured_rmse_N": 0.4556132888677151,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.164727210998535,
+      "force_z_min_after_1s_N": 5.166121959686279,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.037,
+      "threshold_contact_end_s": 16.522000000000002,
+      "xy_position_rmse_mm": 6.294553982585891,
+      "median_board_penetration_mm": 1.0507702827453613,
+      "max_board_penetration_mm": 1.6112327575683594
+    },
+    "seed_103": {
+      "force_rmse_N": 0.42611172051717305,
+      "force_rmse_after_1s_N": 0.38576421862777566,
+      "force_rmse_at_threshold_N": 0.909826458795454,
+      "force_measured_rmse_N": 0.45134321424054413,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.271269798278809,
+      "force_z_min_after_1s_N": 5.334600925445557,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.034,
+      "threshold_contact_end_s": 16.519000000000002,
+      "xy_position_rmse_mm": 6.2934317229349706,
+      "median_board_penetration_mm": 1.0505914688110352,
+      "max_board_penetration_mm": 1.612544059753418
+    },
+    "seed_104": {
+      "force_rmse_N": 0.42808603204899276,
+      "force_rmse_after_1s_N": 0.3866861082917227,
+      "force_rmse_at_threshold_N": 0.9114764134486646,
+      "force_measured_rmse_N": 0.4533225295298197,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.170496940612793,
+      "force_z_min_after_1s_N": 5.174327373504639,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.037,
+      "threshold_contact_end_s": 16.490000000000002,
+      "xy_position_rmse_mm": 6.295368435062645,
+      "median_board_penetration_mm": 1.0497570037841797,
+      "max_board_penetration_mm": 1.613020896911621
+    },
+    "tuned": {
+      "force_rmse_N": 0.42736356362019073,
+      "force_rmse_after_1s_N": 0.3867605882824834,
+      "force_rmse_at_threshold_N": 0.9235487833568136,
+      "force_measured_rmse_N": 0.4530139471202257,
+      "force_z_min_N": 0.0,
+      "force_z_max_N": 15.153711318969727,
+      "force_z_min_after_1s_N": 5.147220134735107,
+      "saturation_fraction": 0.0,
+      "board_contact_fraction_after_1s": 1.0,
+      "threshold_contact_start_s": 14.036,
+      "threshold_contact_end_s": 16.482,
+      "xy_position_rmse_mm": 6.294219325394347,
+      "median_board_penetration_mm": 1.0505914688110352,
+      "max_board_penetration_mm": 1.6111135482788086
+    }
+  },
+  "runs": {
+    "legacy_1khz": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "legacy",
+      "controller_parameters": {
+        "alpha": 1.0
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.004,
+        "contact_impedance": [
+          0.95,
+          0.99,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 20.849837864981964,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.005473509896546602,
+        "orientation_rmse_rad": 5.2704963309224695e-05,
+        "reference_error_position_rms_m_s": 0.007317197974771261,
+        "reference_error_rotation_rms_rad_s": 0.08705633878707886,
+        "force_peak_N": 87.38850402832031,
+        "moment_peak_Nm": 0.211940199136734,
+        "torque_peak_Nm": 70.97476959228516,
+        "torque_rms_Nm": 37.201473236083984,
+        "saturation_fraction": 0.9668999910354614,
+        "minimum_jacobian_singular_value": 0.10899694263935089,
+        "contact_fraction": 0.5592666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9939118027687073,
+        "force_tracking_rmse_N": 10.93937873840332
+      }
+    },
+    "gain_only": {
+      "experiment": "C",
+      "controller": "hinf_0.25",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "legacy",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.004,
+        "contact_impedance": [
+          0.95,
+          0.99,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.243600921996403,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006409714929759502,
+        "orientation_rmse_rad": 6.846831092843786e-05,
+        "reference_error_position_rms_m_s": 0.028767850250005722,
+        "reference_error_rotation_rms_rad_s": 0.05287470668554306,
+        "force_peak_N": 64.69471740722656,
+        "moment_peak_Nm": 0.15690506994724274,
+        "torque_peak_Nm": 51.82516860961914,
+        "torque_rms_Nm": 28.651512145996094,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10917896777391434,
+        "contact_fraction": 0.6241666666666666,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -1.0154492855072021,
+        "force_tracking_rmse_N": 9.76620101928711
+      }
+    },
+    "tuned": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.484161465021316,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.0063934954814612865,
+        "orientation_rmse_rad": 8.05629970273003e-05,
+        "reference_error_position_rms_m_s": 0.037137411534786224,
+        "reference_error_rotation_rms_rad_s": 0.07118797302246094,
+        "force_peak_N": 15.925821304321289,
+        "moment_peak_Nm": 0.036588143557310104,
+        "torque_peak_Nm": 32.75204086303711,
+        "torque_rms_Nm": 28.39419174194336,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.1095622181892395,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9506069421768188,
+        "force_tracking_rmse_N": 0.4273635447025299
+      }
+    },
+    "contact_only": {
+      "experiment": "C",
+      "controller": "hinf_1",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 1.0
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.569236948969774,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.0036734971217811108,
+        "orientation_rmse_rad": 4.174850619165227e-05,
+        "reference_error_position_rms_m_s": 0.008466841652989388,
+        "reference_error_rotation_rms_rad_s": 0.08752034604549408,
+        "force_peak_N": 23.06601333618164,
+        "moment_peak_Nm": 0.053363047540187836,
+        "torque_peak_Nm": 42.06035232543945,
+        "torque_rms_Nm": 36.719337463378906,
+        "saturation_fraction": 0.9688000082969666,
+        "minimum_jacobian_singular_value": 0.10886716842651367,
+        "contact_fraction": 0.9986666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.5321264266967773,
+        "force_tracking_rmse_N": 1.7391246557235718
+      }
+    },
+    "legacy_no_noise": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "legacy",
+      "controller_parameters": {
+        "alpha": 1.0
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.004,
+        "contact_impedance": [
+          0.95,
+          0.99,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 0,
+        "v_std": 0,
+        "force_std": 0,
+        "moment_std": 0,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.69532503001392,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.005979591980576515,
+        "orientation_rmse_rad": 5.493614298757166e-05,
+        "reference_error_position_rms_m_s": 0.007680033799260855,
+        "reference_error_rotation_rms_rad_s": 0.06336569041013718,
+        "force_peak_N": 74.24000549316406,
+        "moment_peak_Nm": 0.18015319108963013,
+        "torque_peak_Nm": 68.05484008789062,
+        "torque_rms_Nm": 33.297908782958984,
+        "saturation_fraction": 0.49523332715034485,
+        "minimum_jacobian_singular_value": 0.10909416526556015,
+        "contact_fraction": 0.5884,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -1.0120248794555664,
+        "force_tracking_rmse_N": 10.428449630737305
+      }
+    },
+    "legacy_no_joint_friction": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "legacy",
+      "controller_parameters": {
+        "alpha": 1.0
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.004,
+        "contact_impedance": [
+          0.95,
+          0.99,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.372657542000525,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.005572975147515535,
+        "orientation_rmse_rad": 5.754300218541175e-05,
+        "reference_error_position_rms_m_s": 0.004262344446033239,
+        "reference_error_rotation_rms_rad_s": 0.09049319475889206,
+        "force_peak_N": 89.83870697021484,
+        "moment_peak_Nm": 0.21787163615226746,
+        "torque_peak_Nm": 71.71095275878906,
+        "torque_rms_Nm": 37.61380386352539,
+        "saturation_fraction": 0.9768333435058594,
+        "minimum_jacobian_singular_value": 0.10907100886106491,
+        "contact_fraction": 0.6195666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9991214871406555,
+        "force_tracking_rmse_N": 10.047452926635742
+      }
+    },
+    "legacy_no_contact_friction": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "legacy",
+      "controller_parameters": {
+        "alpha": 1.0
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.004,
+        "contact_impedance": [
+          0.95,
+          0.99,
+          0.001
+        ],
+        "contact_friction": 0
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 22.158778958022594,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.001992410747334361,
+        "orientation_rmse_rad": 3.020063195435796e-05,
+        "reference_error_position_rms_m_s": 0.008742662146687508,
+        "reference_error_rotation_rms_rad_s": 0.08732733875513077,
+        "force_peak_N": 27.32486915588379,
+        "moment_peak_Nm": 2.730725100263953e-06,
+        "torque_peak_Nm": 58.789817810058594,
+        "torque_rms_Nm": 37.04216003417969,
+        "saturation_fraction": 0.9755666851997375,
+        "minimum_jacobian_singular_value": 0.10878835618495941,
+        "contact_fraction": 0.9963333333333333,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.004035350400954485,
+        "force_tracking_rmse_N": 2.8438613414764404
+      }
+    },
+    "physics_500us": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 2,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.0005,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 29.999999999975433,
+      "wall_time_s": 20.283622007991653,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006393250077962875,
+        "orientation_rmse_rad": 8.04076116764918e-05,
+        "reference_error_position_rms_m_s": 0.03712806850671768,
+        "reference_error_rotation_rms_rad_s": 0.07118548452854156,
+        "force_peak_N": 15.704559326171875,
+        "moment_peak_Nm": 0.03615700826048851,
+        "torque_peak_Nm": 32.73599624633789,
+        "torque_rms_Nm": 28.394367218017578,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10956865549087524,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9505828619003296,
+        "force_tracking_rmse_N": 0.4289863407611847
+      }
+    },
+    "physics_125us": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 8,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.000125,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.00000000009774,
+      "wall_time_s": 23.25720019399887,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006393368821591139,
+        "orientation_rmse_rad": 8.036001236177981e-05,
+        "reference_error_position_rms_m_s": 0.03711872175335884,
+        "reference_error_rotation_rms_rad_s": 0.07114867866039276,
+        "force_peak_N": 15.798519134521484,
+        "moment_peak_Nm": 0.03639310225844383,
+        "torque_peak_Nm": 32.746131896972656,
+        "torque_rms_Nm": 28.393766403198242,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.1095723882317543,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9506013989448547,
+        "force_tracking_rmse_N": 0.4296581745147705
+      }
+    },
+    "legacy_4khz": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "legacy",
+      "controller_parameters": {
+        "alpha": 1.0
+      },
+      "control_period_s": 0.00025,
+      "log_period_s": 0.001,
+      "log_stride": 4,
+      "physics_substeps": 1,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.004,
+        "contact_impedance": [
+          0.95,
+          0.99,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 120000,
+      "attempted_control_steps": 120000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 69.8849730049842,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.0063607837073504925,
+        "orientation_rmse_rad": 6.024601316312328e-05,
+        "reference_error_position_rms_m_s": 0.0073605370707809925,
+        "reference_error_rotation_rms_rad_s": 0.014014020562171936,
+        "force_peak_N": 57.36101531982422,
+        "moment_peak_Nm": 0.1391167938709259,
+        "torque_peak_Nm": 61.58073425292969,
+        "torque_rms_Nm": 28.848613739013672,
+        "saturation_fraction": 6.666666740784422e-05,
+        "minimum_jacobian_singular_value": 0.10922715812921524,
+        "contact_fraction": 0.6252333333333333,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9452700018882751,
+        "force_tracking_rmse_N": 9.55119800567627
+      }
+    },
+    "admittance": {
+      "experiment": "C",
+      "controller": "admittance",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "G": [
+          120.0,
+          120.0,
+          60.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
+        ]
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 52.813625522947405,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006587764248251915,
+        "orientation_rmse_rad": 0.0007679641130380332,
+        "reference_error_position_rms_m_s": 0.11264269798994064,
+        "reference_error_rotation_rms_rad_s": 7.576388359069824,
+        "force_peak_N": 16.509033203125,
+        "moment_peak_Nm": 0.037564314901828766,
+        "torque_peak_Nm": 32.808746337890625,
+        "torque_rms_Nm": 28.361431121826172,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10949987918138504,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.961467444896698,
+        "force_tracking_rmse_N": 0.6652395725250244
+      }
+    },
+    "bidirectional": {
+      "experiment": "C",
+      "controller": "bidirectional",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "G": [
+          120.0,
+          120.0,
+          60.0,
+          40.0,
+          40.0,
+          40.0,
+          40.0
+        ]
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 54.145529269997496,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.011161742731928825,
+        "orientation_rmse_rad": 0.0008345591486431658,
+        "reference_error_position_rms_m_s": 3.3705618381500244,
+        "reference_error_rotation_rms_rad_s": 3.191006660461426,
+        "force_peak_N": 16.551345825195312,
+        "moment_peak_Nm": 0.03720766678452492,
+        "torque_peak_Nm": 31.73281478881836,
+        "torque_rms_Nm": 28.093910217285156,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.11023180186748505,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.13907155394554138,
+        "min_tank_energy_J": 0.998159646987915,
+        "interaction_work_J": -0.9306622743606567,
+        "force_tracking_rmse_N": 0.9446977972984314
+      },
+      "tank_depletion_count": 0
+    },
+    "noise_x2": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 2e-05,
+        "v_std": 0.001,
+        "force_std": 0.2,
+        "moment_std": 0.01,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.14113439701032,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006332943215966225,
+        "orientation_rmse_rad": 7.843174535082653e-05,
+        "reference_error_position_rms_m_s": 0.03608057647943497,
+        "reference_error_rotation_rms_rad_s": 0.06847064942121506,
+        "force_peak_N": 16.68545913696289,
+        "moment_peak_Nm": 0.03852783888578415,
+        "torque_peak_Nm": 34.3096809387207,
+        "torque_rms_Nm": 28.40115737915039,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10957100242376328,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.949659526348114,
+        "force_tracking_rmse_N": 0.6060764193534851
+      }
+    },
+    "delay_1ms": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 1,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 22.62467240798287,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006393419578671455,
+        "orientation_rmse_rad": 8.040376997087151e-05,
+        "reference_error_position_rms_m_s": 0.0371476449072361,
+        "reference_error_rotation_rms_rad_s": 0.07117060571908951,
+        "force_peak_N": 16.028650283813477,
+        "moment_peak_Nm": 0.03701915219426155,
+        "torque_peak_Nm": 32.44667053222656,
+        "torque_rms_Nm": 28.392988204956055,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10957816243171692,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9507646560668945,
+        "force_tracking_rmse_N": 0.42959773540496826
+      }
+    },
+    "friction_x1p5": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.5,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.375
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 22.176595526048914,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.008732660673558712,
+        "orientation_rmse_rad": 0.00011047185398638248,
+        "reference_error_position_rms_m_s": 0.053991399705410004,
+        "reference_error_rotation_rms_rad_s": 0.10402487963438034,
+        "force_peak_N": 16.544147491455078,
+        "moment_peak_Nm": 0.05423295125365257,
+        "torque_peak_Nm": 33.71459197998047,
+        "torque_rms_Nm": 28.633493423461914,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10957701504230499,
+        "contact_fraction": 0.9999333333333333,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -1.3296473026275635,
+        "force_tracking_rmse_N": 0.5079349875450134
+      }
+    },
+    "contact_30ms": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.03,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 22.185361864045262,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006409206427633762,
+        "orientation_rmse_rad": 8.052247721934691e-05,
+        "reference_error_position_rms_m_s": 0.036485955119132996,
+        "reference_error_rotation_rms_rad_s": 0.07004597038030624,
+        "force_peak_N": 16.409908294677734,
+        "moment_peak_Nm": 0.038758937269449234,
+        "torque_peak_Nm": 32.567012786865234,
+        "torque_rms_Nm": 28.38582992553711,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10938715189695358,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9477874636650085,
+        "force_tracking_rmse_N": 0.4775221347808838
+      }
+    },
+    "contact_50ms": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 100,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.05,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 22.576520851056557,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006409293971955776,
+        "orientation_rmse_rad": 8.043489651754498e-05,
+        "reference_error_position_rms_m_s": 0.03803015872836113,
+        "reference_error_rotation_rms_rad_s": 0.07267916947603226,
+        "force_peak_N": 15.438984870910645,
+        "moment_peak_Nm": 0.03415367007255554,
+        "torque_peak_Nm": 32.8560905456543,
+        "torque_rms_Nm": 28.396427154541016,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10981112718582153,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9531577229499817,
+        "force_tracking_rmse_N": 0.4210036098957062
+      }
+    },
+    "seed_101": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 101,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 21.27451785298763,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006394024007022381,
+        "orientation_rmse_rad": 8.025810529943556e-05,
+        "reference_error_position_rms_m_s": 0.03715295344591141,
+        "reference_error_rotation_rms_rad_s": 0.07122382521629333,
+        "force_peak_N": 15.867311477661133,
+        "moment_peak_Nm": 0.03664686530828476,
+        "torque_peak_Nm": 32.654945373535156,
+        "torque_rms_Nm": 28.395004272460938,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10956192016601562,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9505677819252014,
+        "force_tracking_rmse_N": 0.42780381441116333
+      }
+    },
+    "seed_102": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 102,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 20.74761485599447,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006393830291926861,
+        "orientation_rmse_rad": 7.977110362844542e-05,
+        "reference_error_position_rms_m_s": 0.03710582107305527,
+        "reference_error_rotation_rms_rad_s": 0.07114780694246292,
+        "force_peak_N": 15.943941116333008,
+        "moment_peak_Nm": 0.03663906455039978,
+        "torque_peak_Nm": 32.98291778564453,
+        "torque_rms_Nm": 28.39630699157715,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10957366973161697,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9506952166557312,
+        "force_tracking_rmse_N": 0.43024808168411255
+      }
+    },
+    "seed_103": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 103,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 20.947514134983066,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006392715033143759,
+        "orientation_rmse_rad": 8.0012199759949e-05,
+        "reference_error_position_rms_m_s": 0.037131886929273605,
+        "reference_error_rotation_rms_rad_s": 0.07116702944040298,
+        "force_peak_N": 16.076194763183594,
+        "moment_peak_Nm": 0.03693947568535805,
+        "torque_peak_Nm": 32.27340316772461,
+        "torque_rms_Nm": 28.395912170410156,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10956664383411407,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9509760737419128,
+        "force_tracking_rmse_N": 0.42611169815063477
+      }
+    },
+    "seed_104": {
+      "experiment": "C",
+      "controller": "hinf",
+      "trial": 0,
+      "seed": 104,
+      "requested_duration_s": 30.0,
+      "ideal": false,
+      "c_profile": "fr3",
+      "controller_parameters": {
+        "alpha": 0.25
+      },
+      "control_period_s": 0.001,
+      "log_period_s": 0.001,
+      "log_stride": 1,
+      "physics_substeps": 4,
+      "plant": {
+        "friction_scale": 1.0,
+        "damping_scale": 1.0,
+        "mass_error": 0.1,
+        "tool_mass": 0.4,
+        "nominal_tool_mass": 0.0,
+        "timestep": 0.00025,
+        "contact_timeconstant": 0.04,
+        "contact_impedance": [
+          0.5,
+          0.5,
+          0.001
+        ],
+        "contact_friction": 0.25
+      },
+      "sensors": {
+        "q_std": 1e-05,
+        "v_std": 0.0005,
+        "force_std": 0.1,
+        "moment_std": 0.005,
+        "force_period": 0.001,
+        "delay_samples": 0,
+        "force_bias": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "tool_calibration_mass": 0.4
+      },
+      "mujoco_version": "3.16.0",
+      "source_sha256": "ecc1b42b75defc15222176a46e406ef30665c4805e3054909e36b1730321137b",
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      },
+      "status": "completed",
+      "termination_reason": null,
+      "completed_control_steps": 30000,
+      "attempted_control_steps": 30000,
+      "simulated_duration_s": 30.000000000052232,
+      "wall_time_s": 20.144522088987287,
+      "force_samples": 30000,
+      "metrics": {
+        "position_rmse_m": 0.006394632160663605,
+        "orientation_rmse_rad": 8.060515392571688e-05,
+        "reference_error_position_rms_m_s": 0.037136778235435486,
+        "reference_error_rotation_rms_rad_s": 0.07119213044643402,
+        "force_peak_N": 15.895269393920898,
+        "moment_peak_Nm": 0.036563850939273834,
+        "torque_peak_Nm": 32.49121856689453,
+        "torque_rms_Nm": 28.39620590209961,
+        "saturation_fraction": 0.0,
+        "minimum_jacobian_singular_value": 0.10956265032291412,
+        "contact_fraction": 0.9999666666666667,
+        "mean_beta": 0.0,
+        "min_tank_energy_J": 0.0,
+        "interaction_work_J": -0.9508983492851257,
+        "force_tracking_rmse_N": 0.4280860424041748
+      }
+    }
+  }
+}

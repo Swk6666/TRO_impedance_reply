@@ -16,28 +16,37 @@ source .venv/bin/activate
 python -m pip install -e .
 export OPENBLAS_NUM_THREADS=1
 python -m unittest discover -s tests -v
-python -m fr3imp --experiment B --controller hinf
+python -m fr3imp --experiment C --controller hinf
 ```
 
-MuJoCo 固定为 3.16.0。控制周期 0.25 ms（4 kHz），F/T 采样 1 ms（1 kHz）；默认无力滤波。工厂函数将原位置执行器转换成有真实力矩限制的直接电机，不修改模型资源原文件。
+MuJoCo 固定为 3.16.0。按实际 FR3 设置，默认控制与 F/T 采样均为 1 ms（1000 Hz），无力滤波。默认每周期 4 个物理子步（250 μs），子步内保持力矩，不重算控制器或采样反馈。工厂函数将原位置执行器转换成有真实力矩限制的直接电机，不修改模型资源原文件。
 
 本次记录的实验环境是 Python 3.14.6，直接依赖版本见 [requirements-lock.txt](requirements-lock.txt)。在匹配的 Python 环境中可先执行 `python -m pip install -r requirements-lock.txt`，再安装项目。
 
-完整矩阵及分析：
+C 组的 1 kHz 调整与验证见 [诊断报告](docs/results/c-1khz/REPORT.md)：
 
 ```bash
-python -m fr3imp.suite --experiments ABCDEF --d-trials 30 --workers 4 --output outputs/suite
-python -m fr3imp.analyze outputs/suite --output docs/results
+OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python scripts/validate_c.py
+OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python scripts/report_c.py
+```
+
+C 默认使用 `--c-profile fr3`：H∞ α=0.25、两种导纳的 G 缩放为 0.1、共用柔顺笔尖接触参数。Λ/D/K、摩擦、阻尼、噪声保持原设置。笔尖参数未经实物标定。`--c-profile legacy` 保留旧接触参数和增益；`--control-period .00025 --physics-substeps 1 --c-profile legacy` 保留旧时序。只有 C 完成本轮 1 kHz 适配验证；A/B/D/E/F 的历史结果仍是 4 kHz。
+
+历史 4 kHz 完整矩阵重跑与分析（独立输出目录）：
+
+```bash
+python -m fr3imp.suite --experiments ABCDEF --d-trials 30 --workers 4 --control-period .00025 --physics-substeps 1 --c-profile legacy --output outputs/legacy-suite
+python -m fr3imp.analyze outputs/legacy-suite --output outputs/legacy-report
 ```
 
 接触组的物理步长检查与结果核对：
 
 ```bash
-python -m fr3imp.suite --experiments BCEF --physics-substeps 2 --workers 4 --output outputs/sensitivity-substeps2
-python -m fr3imp.compare_steps outputs/suite outputs/sensitivity-substeps2 --output docs/results
+python -m fr3imp.suite --experiments BCEF --physics-substeps 2 --control-period .00025 --c-profile legacy --workers 4 --output outputs/legacy-substeps2
+python -m fr3imp.compare_steps outputs/legacy-suite outputs/legacy-substeps2 --output outputs/legacy-report
 ```
 
-用 `--resume` 续跑已完成且代码哈希、参数一致的运行。用 `--physics-substeps 2` 将物理积分步长减半，控制与传感器频率保持不变。`--ideal` 关闭本项目加入的模型误差、工具质量、摩擦、阻尼和传感器噪声，用于单独检查理想条件。
+用 `--resume` 续跑已完成且代码哈希、参数一致的运行。在当前默认 1 kHz / 4 子步设置下，用 `--physics-substeps 8` 将物理积分步长减半，控制与传感器频率保持不变。`--ideal` 关闭本项目加入的模型误差、工具质量、摩擦、阻尼和传感器噪声，用于单独检查理想条件。
 
 |组|场景|比较|默认时长/数量|
 |---|---|---|---|
@@ -58,11 +67,11 @@ python -m fr3imp.compare_steps outputs/suite outputs/sensitivity-substeps2 --out
 
 ```bash
 # 从已保存的关节轨迹生成真实 MuJoCo 画面；不是重新运行控制器。
-MUJOCO_GL=egl python -m fr3imp.replay outputs/suite/B_hinf_trial00_seed100 \
-  --time 15 --image outputs/B.png --video outputs/B.mp4 --speed 2
+MUJOCO_GL=egl python -m fr3imp.replay outputs/c-validation/tuned/C_hinf_trial00_seed100 \
+  --time 15 --image outputs/C.png --video outputs/C.mp4 --speed 2
 ```
 
-MP4 需要系统安装 `ffmpeg`；Linux 无显示器时可使用 EGL。`--speed 2` 表示两倍速回放。图表和逐项指标见运行后生成的 [仿真结果](docs/results/RESULTS.md)。
+MP4 需要系统安装 `ffmpeg`；Linux 无显示器时可使用 EGL。`--speed 2` 表示两倍速回放。C 的最新图表见 [1 kHz 诊断报告](docs/results/c-1khz/REPORT.md)；原 137 次运行见 [历史 4 kHz 结果](docs/results/RESULTS.md)。历史日志回放需检出其对应代码版本。
 
 ## 论文与实现依据
 

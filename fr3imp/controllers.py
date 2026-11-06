@@ -19,7 +19,8 @@ class ControlOutput:
 
 
 class Controller:
-    def __init__(self, dynamics, scenario, alpha=1.):
+    def __init__(self, dynamics, scenario, alpha=1.,control_period=DT):
+        self.dt=control_period
         self.dynamics=dynamics; self.scenario=scenario; self.alpha=alpha
         self.integral=np.zeros(6); self.started=False
         self.L=scenario.inertia; self.D=scenario.damping; self.K=scenario.stiffness
@@ -36,7 +37,7 @@ class Controller:
         vref=reference.v+(self.D*e+self.integral)/self.L
         aref=reference.a+(self.D*edot+self.K*e+F-Fdes)/self.L
         s=vref-state.pdot
-        self.integral+=DT*(self.K*e+F-Fdes)
+        self.integral+=self.dt*(self.K*e+F-Fdes)
         return F,vref,aref,s
 
 
@@ -75,7 +76,7 @@ class SlidingMode(Impedance):
         K1=np.array([30,30,25,25,25,25,25] if self.scenario.name=='E'
                     else [50,50,40,40,40,40,40])
         correction=K1*np.sqrt(norm)*sign+.1*self.integral_sign
-        self.integral_sign+=DT*sign
+        self.integral_sign+=self.dt*sign
         acceleration=state.Jplus@(aref-state.Jdot@state.v)+correction
         tau=state.M@acceleration+state.bias-state.J.T@F
         tau+=state.null.T@(12*(HOME-state.q)-4*state.v)
@@ -83,11 +84,11 @@ class SlidingMode(Impedance):
 
 
 class Admittance(Controller):
-    def __init__(self,*args,**kwargs):
+    def __init__(self,*args,gain_scale=1.,**kwargs):
         super().__init__(*args,**kwargs)
         self.proxy=NominalDynamics(self.dynamics.model,self.dynamics.origin)
         self.qn=HOME.copy(); self.vn=np.zeros(7); self.integral_joint=np.zeros(7)
-        self.G=np.array([1200,1200,600,400,400,400,400.])
+        self.G=gain_scale*np.array([1200,1200,600,400,400,400,400.])
         self.Kp=np.array([60,60,40,30,30,30,30.]); self.Ki=np.full(7,5.)
 
     def nominal_acceleration(self,t,q,v,wrench):
@@ -105,16 +106,16 @@ class Admittance(Controller):
         def rhs(time,value):
             acc,_,_=self.nominal_acceleration(time,value[:7],value[7:],wrench)
             return np.r_[value[7:],acc]
-        k1=rhs(t,y); k2=rhs(t+DT/2,y+DT/2*k1)
-        k3=rhs(t+DT/2,y+DT/2*k2); k4=rhs(t+DT,y+DT*k3)
-        y+=DT/6*(k1+2*k2+2*k3+k4)
+        k1=rhs(t,y); k2=rhs(t+self.dt/2,y+self.dt/2*k1)
+        k3=rhs(t+self.dt/2,y+self.dt/2*k2); k4=rhs(t+self.dt,y+self.dt*k3)
+        y+=self.dt/6*(k1+2*k2+2*k3+k4)
         self.qn=y[:7];self.vn=y[7:]
 
     def step(self,t,state,wrench):
         _,torque,_=self.nominal_acceleration(t,self.qn,self.vn,wrench)
         error=self.qn-state.q; velocity_error=self.vn-state.v
         correction=self.G*(velocity_error+self.Kp*error+self.Ki*self.integral_joint)
-        self.integral_joint+=DT*error
+        self.integral_joint+=self.dt*error
         _,_,_,s=self.references(state,self.scenario.reference(t),wrench)
         self.advance_proxy(t,wrench)
         return ControlOutput(torque+correction,s)
@@ -128,7 +129,8 @@ class EnergyTank:
     The discrete jump cost (beta-new - beta-old)*(Sr-Sn) is accounted for
     explicitly. Numerical depletion is logged, never silently hidden.
     """
-    def __init__(self,initial=1.,minimum=.05,maximum=1.):
+    def __init__(self,initial=1.,minimum=.05,maximum=1.,control_period=DT):
+        self.dt=control_period
         self.energy=initial;self.minimum=minimum;self.maximum=maximum
         self.beta=0.;self.depletion_count=0
 
@@ -140,7 +142,7 @@ class EnergyTank:
         else:
             beta=0.
         mu=generation if compensation<=0 and self.energy>self.minimum else 0.
-        delta=DT*((1-beta)*diss_nominal+beta*diss_real-(1-beta)*mu)
+        delta=self.dt*((1-beta)*diss_nominal+beta*diss_real-(1-beta)*mu)
         delta-=(beta-self.beta)*(Sr-Sn)
         if self.energy<self.maximum or delta<0:
             self.energy+=delta
@@ -154,7 +156,7 @@ class EnergyTank:
 class Bidirectional(Admittance):
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
-        self.tank=EnergyTank()
+        self.tank=EnergyTank(control_period=self.dt)
         self.frozen_beta=0.;self.frozen_correction=np.zeros(7)
 
     def nominal_acceleration(self,t,q,v,wrench):
@@ -185,16 +187,18 @@ class Bidirectional(Admittance):
         # lambda=1 auxiliary control, with the force-command port for C.
         auxiliary=state.gravity+state.J.T@(self.K*er-self.D*state.pdot-state.generalized_wrench(ref.force))
         auxiliary+=state.null.T@(12*(HOME-state.q)-4*state.v)
-        self.integral_joint+=DT*eq
+        self.integral_joint+=self.dt*eq
         self.frozen_beta=beta;self.frozen_correction=correction
         _,_,_,s=self.references(state,ref,wrench)
         self.advance_proxy(t,wrench)
         return ControlOutput(auxiliary+(1-beta)*correction,s,beta,self.tank.energy)
 
 
-def make_controller(name,dynamics,scenario):
+def make_controller(name,dynamics,scenario,control_period=DT,*,alpha=1.,nric_gain_scale=1.):
     if name.startswith('hinf'):
-        alpha=float(name.split('_')[1]) if '_' in name else 1.
-        return HInfinity(dynamics,scenario,alpha)
-    return {'impedance':Impedance,'smc':SlidingMode,'admittance':Admittance,
-            'bidirectional':Bidirectional}[name](dynamics,scenario)
+        alpha=float(name.split('_')[1]) if '_' in name else alpha
+        return HInfinity(dynamics,scenario,alpha,control_period)
+    cls={'impedance':Impedance,'smc':SlidingMode,'admittance':Admittance,
+         'bidirectional':Bidirectional}[name]
+    kwargs={'gain_scale':nric_gain_scale} if issubclass(cls,Admittance) else {}
+    return cls(dynamics,scenario,control_period=control_period,**kwargs)

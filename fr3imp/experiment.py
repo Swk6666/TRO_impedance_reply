@@ -1,5 +1,5 @@
-"""Headless experiment runner; 4 kHz control, 1 kHz held F/T measurements."""
-from dataclasses import asdict
+"""Headless experiment runner; 1 kHz FR3 control and F/T; independent physics substeps."""
+from dataclasses import asdict, replace
 import hashlib
 import json
 from pathlib import Path
@@ -90,18 +90,29 @@ def metrics_from_log(log,scenario):
 
 
 def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
-                   duration=None,output='outputs',ideal=False,physics_substeps=1):
+                   duration=None,output='outputs',ideal=False,physics_substeps=4,
+                   control_period=DT,plant_parameters=None,sensor_parameters=None,c_profile="fr3"):
+    if c_profile not in ("fr3","legacy"):
+        raise ValueError("c_profile must be fr3 or legacy")
+    if control_period not in (.001,.00025):
+        raise ValueError("Supported control periods: .001 (FR3), .00025 (paper legacy)")
+    dt=control_period
+    log_stride=round(.001/dt)
     if not isinstance(physics_substeps,int) or physics_substeps<1:
         raise ValueError('physics_substeps must be a positive integer')
-    if duration is not None and (not np.isfinite(duration) or duration<DT or not np.isclose(duration/DT,round(duration/DT))):
+    if duration is not None and (not np.isfinite(duration) or duration<dt or not np.isclose(duration/dt,round(duration/dt))):
         raise ValueError('duration must be a positive integer number of control periods')
     folder=Path(output)/f'{experiment}_{controller}_trial{trial:02d}_seed{seed}'
     folder.mkdir(parents=True,exist_ok=True)
-    plant_parameters=PlantParameters(timestep=DT/physics_substeps)
-    sensor_parameters=SensorParameters()
+    # Explicit FR3 C adaptation: soft marker contact and sampled feedback gains.
+    # Contact parameters are assumptions, not identified material properties.
+    adapted=experiment=="C" and c_profile=="fr3"
+    defaults=PlantParameters(contact_timeconstant=.04,contact_impedance=(.5,.5,.001)) if adapted else PlantParameters()
+    plant_parameters=replace(plant_parameters or defaults,timestep=dt/physics_substeps)
+    sensor_parameters=sensor_parameters or SensorParameters()
     if ideal:
-        plant_parameters=PlantParameters(friction_scale=0,damping_scale=0,mass_error=0,
-                                         tool_mass=0,nominal_tool_mass=0,timestep=DT/physics_substeps)
+        plant_parameters=replace(plant_parameters,friction_scale=0,damping_scale=0,mass_error=0,
+                                 tool_mass=0,nominal_tool_mass=0)
         sensor_parameters=SensorParameters(q_std=0,v_std=0,force_std=0,moment_std=0,tool_calibration_mass=0)
     nominal=build_model(plant_parameters,nominal=True,visuals=False)
     initial=home_data(nominal);site=nominal.site('tcp').id
@@ -112,20 +123,25 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
     data=home_data(plant)
     tcp=plant.site('tcp').id;tip=plant.geom('tool_tip').id;body=plant.body('tool').id
     dyn=NominalDynamics(nominal,origin)
-    ctrl=make_controller(controller,dyn,scenario)
-    sensor=Sensors(sensor_parameters,seed)
+    ctrl=make_controller(controller,dyn,scenario,dt,alpha=.25 if adapted else 1.,
+                         nric_gain_scale=.1 if adapted else 1.)
+    sensor=Sensors(sensor_parameters,seed,dt)
     data.ctrl[:]=np.clip(dyn.evaluate(HOME,np.zeros(7)).gravity,-TORQUE_LIMIT,TORQUE_LIMIT)
     mujoco.mj_forward(plant,data)
     duration=scenario.duration if duration is None else duration
-    steps=round(duration/DT)
+    steps=round(duration/dt)
     names=['time','q','qvel','q_measured','v_measured','pose','velocity','desired','force_desired',
            'force_true','force_contact','force_measured','force_raw_local','torque_command','torque_applied',
-           'reference_error','beta','tank','saturated','jacobian_sigma_min','interaction_work']
+           'reference_error','beta','tank','saturated','jacobian_sigma_min','interaction_work',
+           'board_contact','threshold_contact']
     records={name:[] for name in names}
     status='completed';reason=None;work=0.;started=time.perf_counter();step=-1;completed_steps=0
     print(f'START {experiment} {controller} trial={trial} duration={duration:g}s',flush=True)
     metadata=dict(experiment=experiment,controller=controller,trial=trial,seed=seed,
-                  requested_duration_s=duration,ideal=ideal,control_period_s=DT,
+                  requested_duration_s=duration,ideal=ideal,c_profile=c_profile if experiment=="C" else None,
+                  controller_parameters={**({"alpha":ctrl.alpha} if controller.startswith("hinf") else {}),
+                                         **({"G":ctrl.G.tolist()} if hasattr(ctrl,"G") else {})},
+                  control_period_s=dt,log_period_s=.001,log_stride=log_stride,
                   physics_substeps=physics_substeps,plant=asdict(plant_parameters),
                   sensors=asdict(sensor_parameters),mujoco_version=mujoco.__version__,
                   source_sha256=source_hash(),impedance=dict(inertia=scenario.inertia.tolist(),
@@ -133,7 +149,7 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
     (folder/'config.json').write_text(json.dumps(metadata,indent=2))
     try:
         for step in range(steps):
-            t=step*DT
+            t=step*dt
             # Causal sample: the sensor observes the state and held command
             # from the preceding control interval, before the next torque.
             mujoco.mj_forward(plant,data)
@@ -155,13 +171,20 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
             if not np.isfinite(command).all():
                 raise FloatingPointError('Non-finite commanded torque')
             data.ctrl[:]=command # MJCF motor and joint limits clamp physically.
-            work+=DT*float(physical@twist)
-            if step%4==0:
+            work+=dt*float(physical@twist)
+            if step%log_stride==0:
                 ref=scenario.reference(t)
                 values=[t,data.qpos.copy(),data.qvel.copy(),q,v,pose,velocity,ref.p,ref.force,
                         physical,contact,measured,data.sensordata[:6].copy(),command,
                         np.clip(command,-TORQUE_LIMIT,TORQUE_LIMIT),result.reference_error,
                         result.beta,result.tank,float(np.any(abs(command)>TORQUE_LIMIT)),state.sigma_min,work]
+                active_geoms=set()
+                for contact_index in range(data.ncon):
+                    pair=data.contact[contact_index]
+                    if tip in (pair.geom1,pair.geom2) and pair.efc_address>=0:
+                        active_geoms.update((pair.geom1,pair.geom2))
+                values.extend(float(mujoco.mj_name2id(plant,mujoco.mjtObj.mjOBJ_GEOM,name) in active_geoms)
+                              for name in ('whiteboard','threshold'))
                 for name,value in zip(names,values):records[name].append(value)
             if np.max(abs(data.qvel))>15:
                 raise FloatingPointError('Joint speed exceeds numerical experiment limit (15 rad/s)')
