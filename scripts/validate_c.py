@@ -42,7 +42,7 @@ def cases():
 def run_case(name, settings, root):
     kwargs = dict(experiment='C', controller='hinf', seed=100, output=str(root/name))
     kwargs.update(settings)
-    return name, run_experiment(**kwargs)
+    return name, run_experiment(**kwargs,profile='legacy')
 
 
 def main():

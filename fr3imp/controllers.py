@@ -23,6 +23,7 @@ class Controller:
     def __init__(self, dynamics, scenario, alpha=1.,control_period=DT):
         self.dt=control_period
         self.dynamics=dynamics; self.scenario=scenario; self.alpha=alpha
+        self.posture=scenario.initial_q.copy()
         self.integral=np.zeros(6); self.started=False
         self.L=scenario.inertia; self.D=scenario.damping; self.K=scenario.stiffness
 
@@ -49,7 +50,7 @@ class HInfinity(Controller):
         gain=self.alpha*(np.array([1000.,1000.,1000.,50.,50.,50.])+1/.1**2)
         task_force=(state.inertia@aref+self.dynamics.task_coriolis_product(vref)
                     +state.Jplus.T@state.gravity-F+gain*s)
-        tau=state.J.T@task_force+self.dynamics.null_torque(HOME)
+        tau=state.J.T@task_force+self.dynamics.null_torque(self.posture)
         return ControlOutput(tau,s)
 
 
@@ -59,7 +60,7 @@ class Impedance(Controller):
         # (54)-(55), extended to 7 axes using the inertia-weighted inverse.
         acceleration=state.Jplus@(aref-state.Jdot@state.v)
         tau=state.M@acceleration+state.bias-state.J.T@F
-        tau+=state.null.T@(12*(HOME-state.q)-4*state.v)
+        tau+=state.null.T@(12*(self.posture-state.q)-4*state.v)
         return ControlOutput(tau,s)
 
 
@@ -80,7 +81,7 @@ class SlidingMode(Impedance):
         self.integral_sign+=self.dt*sign
         acceleration=state.Jplus@(aref-state.Jdot@state.v)+correction
         tau=state.M@acceleration+state.bias-state.J.T@F
-        tau+=state.null.T@(12*(HOME-state.q)-4*state.v)
+        tau+=state.null.T@(12*(self.posture-state.q)-4*state.v)
         return ControlOutput(tau,s)
 
 
@@ -91,7 +92,7 @@ class Admittance(Controller):
         self.virtual_substeps=virtual_substeps
         super().__init__(*args,**kwargs)
         self.proxy=NominalDynamics(self.dynamics.model,self.dynamics.origin)
-        self.qn=HOME.copy(); self.vn=np.zeros(7); self.integral_joint=np.zeros(7)
+        self.qn=self.posture.copy(); self.vn=np.zeros(7); self.integral_joint=np.zeros(7)
         self.G=gain_scale*np.array([1200,1200,600,400,400,400,400.])
         self.Kp=np.array([60,60,40,30,30,30,30.]); self.Ki=np.full(7,5.)
 
@@ -101,7 +102,7 @@ class Admittance(Controller):
         e=angle_error(ref.p,n.p)
         F=n.generalized_wrench(wrench-ref.force)
         aref=ref.a+(self.D*(ref.v-n.pdot)+self.K*e+F)/self.L
-        acc=n.Jplus@(aref-n.Jdot@v)+n.null@(12*(HOME-q)-4*v)
+        acc=n.Jplus@(aref-n.Jdot@v)+n.null@(12*(self.posture-q)-4*v)
         torque=n.M@acc+n.bias-n.J.T@n.generalized_wrench(wrench)
         return acc,torque,n
 
@@ -205,7 +206,7 @@ class Bidirectional(Admittance):
         # Hybrid C adds the desired force to the external-force input port.
         F=n.generalized_wrench(wrench-ref.force)
         tau=n.J.T@(self.K*error-self.D*n.pdot)
-        tau+=n.null.T@(12*(HOME-q)-4*v)
+        tau+=n.null.T@(12*(self.posture-q)-4*v)
         c=n.bias-n.gravity
         correction=self.frozen_correction
         if self.coupling_update=='stages':
@@ -236,7 +237,7 @@ class Bidirectional(Admittance):
                            tank_jump=self.tank.jump,tank_mu=self.tank.mu)
         # lambda=1 auxiliary control, with the force-command port for C.
         auxiliary=state.gravity+state.J.T@(self.K*er-self.D*state.pdot-state.generalized_wrench(ref.force))
-        auxiliary+=state.null.T@(12*(HOME-state.q)-4*state.v)
+        auxiliary+=state.null.T@(12*(self.posture-state.q)-4*state.v)
         self.integral_joint+=self.dt*eq
         self.held_real_q=state.q.copy();self.held_real_v=state.v.copy()
         self.held_integral=self.integral_joint-self.dt*eq
@@ -247,10 +248,10 @@ class Bidirectional(Admittance):
 
 
 def make_controller(name,dynamics,scenario,control_period=DT,*,alpha=1.,nric_gain_scale=1.,energy_port="net",beta_override=None,
-                    virtual_substeps=1,coupling_update="held"):
+                    virtual_substeps=1,coupling_update="held",ref_gain_scale=1.):
     if name.startswith('hinf'):
         alpha=float(name.split('_')[1]) if '_' in name else alpha
-        return HInfinity(dynamics,scenario,alpha,control_period)
+        return HInfinity(dynamics,scenario,alpha*ref_gain_scale,control_period)
     cls={'impedance':Impedance,'smc':SlidingMode,'admittance':Admittance,
          'bidirectional':Bidirectional}[name]
     kwargs={'gain_scale':nric_gain_scale,'virtual_substeps':virtual_substeps} if issubclass(cls,Admittance) else {}

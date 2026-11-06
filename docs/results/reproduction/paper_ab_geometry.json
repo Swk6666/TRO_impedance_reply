@@ -1,0 +1,26 @@
+{
+  "pdf_sha256": "262b66fd82b3fae080727f250cd79d8316329ff5832508f981d21d7d31ddfaa0",
+  "figure": 6,
+  "pdf_page": 14,
+  "half_amplitude_m": [
+    0.12998415820067039,
+    0.12997755706383166
+  ],
+  "center_m": [
+    0.570332719078513,
+    -0.20247557651631712
+  ],
+  "max_phase_error_rad": 0.0002407385879714674,
+  "trajectory": "dx=.13*sin(pi*t/6); dy=.13*sin(pi*t/12)",
+  "estimated_wall": {
+    "slope": 1.0249918842788606,
+    "offset_m": 0.12371931727837929,
+    "implemented": "dx-dy=.125 m"
+  },
+  "limitations": [
+    "Drawing data, not author raw logs.",
+    "A trajectory reused according to text; F explicitly repeats B.",
+    "World center translated to a nonsingular FR3 posture.",
+    "Contact geometry estimated from plotted adaptation; no author CAD."
+  ]
+}

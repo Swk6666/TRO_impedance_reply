@@ -1,0 +1,21 @@
+.............START C bidirectional trial=0 duration=0.05s
+END C bidirectional: completed, t=0.050s, position RMSE=0.00135m;
+.......sssSTART F hinf_0.25 trial=0 duration=0.01s
+END F hinf_0.25: completed, t=0.010s, position RMSE=0.00040m;
+START F hinf_0.5 trial=0 duration=0.01s
+END F hinf_0.5: completed, t=0.010s, position RMSE=0.00040m;
+START F hinf_1 trial=0 duration=0.01s
+END F hinf_1: completed, t=0.010s, position RMSE=0.00040m;
+.....START C hinf trial=0 duration=30s
+END C hinf: completed, t=30.000s, position RMSE=0.00639m;
+.START C hinf trial=0 duration=0.012s
+END C hinf: completed, t=0.012s, position RMSE=0.00030m;
+START C hinf trial=0 duration=0.012s
+END C hinf: completed, t=0.012s, position RMSE=0.00030m;
+START C hinf trial=0 duration=0.012s
+END C hinf: completed, t=0.012s, position RMSE=0.00030m;
+.
+----------------------------------------------------------------------
+Ran 30 tests in 11.839s
+
+OK (skipped=3)

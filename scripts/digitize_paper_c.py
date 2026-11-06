@@ -29,12 +29,21 @@ BOUNDS={'force':(66.502081,392.001598,399.393983,656.647314),
         'xy':(71.950521,397.450038,1075.294689,1332.023640)}
 
 
+def svg_property(element,name):
+    """Poppler versions emit either presentation attributes or CSS styles."""
+    direct=element.get(name)
+    if direct is None:
+        match=re.search(r'(?:^|;)\s*'+re.escape(name)+r'\s*:\s*([^;]+)',element.get('style',''))
+        direct=match.group(1) if match else ''
+    return re.sub(r'\s+','',direct)
+
+
 def paths(surface,color,bounds,dashed=None):
     result=[]
     for path in surface.iter(NS+'path'):
-        if 'stroke:'+COLORS[color]+';' not in path.get('style',''):
+        if svg_property(path,'stroke')!=COLORS[color]:
             continue
-        if dashed is not None and ('stroke-dasharray:' in path.get('style','')) != dashed:
+        if dashed is not None and bool(svg_property(path,'stroke-dasharray')) != dashed:
             continue
         commands=path.get('d','')
         if set(re.findall('[A-Za-z]',commands))-{'M','L'}:

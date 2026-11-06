@@ -1,0 +1,103 @@
+{
+  "runtime_source_sha256": "1ca942baf2501965b1063402f7e64d252280516417cf6bc5f900b0bdfd9322a7",
+  "main_runs": 134,
+  "sensitivity_runs": 51,
+  "qualitative_checks": 16,
+  "all_qualitative_checks_passed": true,
+  "local_links_checked": true,
+  "resume_reused_all_185_records": true,
+  "png_verified": [
+    "A.png",
+    "B.png",
+    "B_impedance.png",
+    "C.png",
+    "C_impedance.png",
+    "C_paper.png",
+    "D.png",
+    "D_statistics.png",
+    "D_tracking.png",
+    "F.png",
+    "F_gain.png",
+    "scene_A.png",
+    "scene_B.png",
+    "scene_C.png",
+    "scene_D.png",
+    "scene_F.png"
+  ],
+  "video_verified": {
+    "A_hinf.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 960,
+          "height": 720,
+          "nb_frames": "450"
+        }
+      ],
+      "format": {
+        "duration": "15.000000"
+      }
+    },
+    "B_hinf.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 960,
+          "height": 720,
+          "nb_frames": "450"
+        }
+      ],
+      "format": {
+        "duration": "15.000000"
+      }
+    },
+    "C_hinf.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 960,
+          "height": 720,
+          "nb_frames": "450"
+        }
+      ],
+      "format": {
+        "duration": "15.000000"
+      }
+    },
+    "D_hinf.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 960,
+          "height": 720,
+          "nb_frames": "525"
+        }
+      ],
+      "format": {
+        "duration": "17.500000"
+      }
+    },
+    "F_hinf.mp4": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "width": 960,
+          "height": 720,
+          "nb_frames": "450"
+        }
+      ],
+      "format": {
+        "duration": "15.000000"
+      }
+    }
+  },
+  "tests": {
+    "passed": 27,
+    "skipped_E": 3
+  }
+}

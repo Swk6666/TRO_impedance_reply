@@ -80,7 +80,7 @@ def run_case(name,settings,root,caches):
             if candidate.parent!=destination:
                 shutil.copytree(candidate.parent,destination,dirs_exist_ok=True)
             return name,summary,str(candidate)
-    result=run_experiment(**settings,output=root/name)
+    result=run_experiment(**settings,output=root/name,profile='legacy')
     return name,result,None
 
 

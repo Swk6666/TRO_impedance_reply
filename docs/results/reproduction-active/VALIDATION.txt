@@ -1,0 +1,42 @@
+test_admittance_proxy_realizes_task_impedance (test_control_laws.ClosedLoopTests.test_admittance_proxy_realizes_task_impedance) ... ok
+test_hinf_reference_error_obeys_closed_loop_decay (test_control_laws.ClosedLoopTests.test_hinf_reference_error_obeys_closed_loop_decay) ... ok
+test_impedance_realizes_desired_differential_equation (test_control_laws.ClosedLoopTests.test_impedance_realizes_desired_differential_equation) ... ok
+test_analytic_jacobian_and_derivative (test_dynamics.DynamicsTests.test_analytic_jacobian_and_derivative) ... ok
+test_coriolis_product_against_christoffel (test_dynamics.DynamicsTests.test_coriolis_product_against_christoffel) ... ok
+test_headless_mesh_removal_preserves_physics (test_dynamics.DynamicsTests.test_headless_mesh_removal_preserves_physics) ... ok
+test_plant_nominal_separation (test_dynamics.DynamicsTests.test_plant_nominal_separation) ... ok
+test_redundancy_and_power_duality (test_dynamics.DynamicsTests.test_redundancy_and_power_duality) ... ok
+test_task_space_energy_identity (test_dynamics.DynamicsTests.test_task_space_energy_identity) ... ok
+test_beta_one_removes_the_compensator_from_real_torque (test_energy_ports.EnergyPortTests.test_beta_one_removes_the_compensator_from_real_torque) ... ok
+test_command_filter_matches_analytic_step (test_energy_ports.EnergyPortTests.test_command_filter_matches_analytic_step) ... ok
+test_force_command_is_a_separate_power_supply (test_energy_ports.EnergyPortTests.test_force_command_is_a_separate_power_supply) ... ok
+test_source_rule_suppresses_cancellable_power (test_energy_ports.EnergyPortTests.test_source_rule_suppresses_cancellable_power) ... ok
+test_virtual_substeps_do_not_resample_physical_feedback (test_energy_ports.EnergyPortTests.test_virtual_substeps_do_not_resample_physical_feedback) ... START C bidirectional trial=0 duration=0.05s
+END C bidirectional: completed, t=0.050s, position RMSE=0.00135m;
+ok
+test_critically_damped_step_matches_analytic_solution (test_evaluation.ImpedanceEvaluationTests.test_critically_damped_step_matches_analytic_solution) ... ok
+test_zero_stiffness_force_axis_has_no_artificial_spring (test_evaluation.ImpedanceEvaluationTests.test_zero_stiffness_force_axis_has_no_artificial_spring) ... ok
+test_measurement_noise_changes_control (test_feedback.FeedbackTests.test_measurement_noise_changes_control) ... ok
+test_modulation_branches_and_tank_accounting (test_feedback.FeedbackTests.test_modulation_branches_and_tank_accounting) ... ok
+test_physical_wrist_sensor_sign_origin_and_gravity (test_feedback.FeedbackTests.test_physical_wrist_sensor_sign_origin_and_gravity) ... ok
+test_sampling_and_reproducibility (test_feedback.FeedbackTests.test_sampling_and_reproducibility) ... ok
+test_fixed_tool_matches_centrifugal_force_and_tcp_moment (test_grinder.GrinderTests.test_fixed_tool_matches_centrifugal_force_and_tcp_moment) ... skipped 'Experiment E is deferred by user instruction in AGENTS.md'
+test_rotor_is_hidden_from_controller_and_logged_for_replay (test_grinder.GrinderTests.test_rotor_is_hidden_from_controller_and_logged_for_replay) ... skipped 'Experiment E is deferred by user instruction in AGENTS.md'
+test_spinning_contact_is_dissipative_and_coulomb_bounded (test_grinder.GrinderTests.test_spinning_contact_is_dissipative_and_coulomb_bounded) ... skipped 'Experiment E is deferred by user instruction in AGENTS.md'
+test_paper_reference_derivatives_and_f_repeats_b (test_scenarios.ScenarioTests.test_paper_reference_derivatives_and_f_repeats_b) ... ok
+test_virtual_operator_releases_and_is_power_dual (test_scenarios.ScenarioTests.test_virtual_operator_releases_and_is_power_dual) ... ok
+test_hybrid_contact_regression_at_one_khz (test_timing.TimingTests.test_hybrid_contact_regression_at_one_khz) ... START C hinf trial=0 duration=30s
+END C hinf: completed, t=30.000s, position RMSE=0.00639m;
+ok
+test_sensor_and_control_counts_with_independent_physics (test_timing.TimingTests.test_sensor_and_control_counts_with_independent_physics) ... START C hinf trial=0 duration=0.012s
+END C hinf: completed, t=0.012s, position RMSE=0.00029m;
+START C hinf trial=0 duration=0.012s
+END C hinf: completed, t=0.012s, position RMSE=0.00029m;
+START C hinf trial=0 duration=0.012s
+END C hinf: completed, t=0.012s, position RMSE=0.00029m;
+ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 11.002s
+
+OK (skipped=3)

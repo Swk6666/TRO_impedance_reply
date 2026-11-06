@@ -1,0 +1,5597 @@
+{
+  "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+  "runs": {
+    "6000rpm_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 100.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 70.10768434900001,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010665972717106342,
+          "orientation_rmse_rad": 0.001456397119909525,
+          "reference_error_position_rms_m_s": 3.3156092166900635,
+          "reference_error_rotation_rms_rad_s": 1.5487726926803589,
+          "force_peak_N": 24.008747100830078,
+          "moment_peak_Nm": 0.056830547749996185,
+          "torque_peak_Nm": 39.56499481201172,
+          "torque_rms_Nm": 37.17398452758789,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460665613412857,
+          "contact_fraction": 0.8331666666666667,
+          "mean_beta": 0.19735774397850037,
+          "min_tank_energy_J": 0.9982694983482361,
+          "interaction_work_J": -0.01984255760908127,
+          "dynamic_impedance_position_rmse_m": 0.008118770488995699,
+          "dynamic_impedance_rotation_rmse_rad": 0.0014598494688303008,
+          "reference_error_position_mean_m_s": 2.7505860328674316,
+          "reference_error_position_std_m_s": 1.851361632347107,
+          "equilibrium_position_error_mean_m": 0.007954011640354237,
+          "equilibrium_position_error_std_m": 0.003213931906869263,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.007914061129687093
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "8864e9cfa29e79c29dd1180e49948464b8df97a16cefc3b6a939ea8e9b97ca24",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 2.9067115783691406,
+        "rotor_speed_mean_rpm": 5908.354663151228,
+        "rotor_motor_peak_Nm": 0.21989351511001587,
+        "force_true_normal_mean_N": 11.562032699584961,
+        "force_true_normal_std_N": 3.0237860679626465,
+        "force_true_normal_peak_N": 23.228513717651367,
+        "force_measured_normal_mean_N": 11.55963134765625,
+        "force_measured_normal_std_N": 1.9658281803131104,
+        "force_measured_normal_peak_N": 21.106224060058594,
+        "grinding_mean_power_W": -85.72809600830078,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "6000rpm_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 100.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.92664064499968,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007417251355946064,
+          "orientation_rmse_rad": 7.572902541141957e-05,
+          "reference_error_position_rms_m_s": 0.015475706197321415,
+          "reference_error_rotation_rms_rad_s": 0.014898880384862423,
+          "force_peak_N": 34.911312103271484,
+          "moment_peak_Nm": 0.08281082659959793,
+          "torque_peak_Nm": 39.357818603515625,
+          "torque_rms_Nm": 39.18830871582031,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606636762619019,
+          "contact_fraction": 0.8269333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.034684646874666214,
+          "dynamic_impedance_position_rmse_m": 9.991469906394569e-05,
+          "dynamic_impedance_rotation_rmse_rad": 5.779485750051291e-05,
+          "reference_error_position_mean_m_s": 0.015149098820984364,
+          "reference_error_position_std_m_s": 0.0031626380514353514,
+          "equilibrium_position_error_mean_m": 0.0019469347674425596,
+          "equilibrium_position_error_std_m": 0.0017221373634479155,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013622746365523964
+        }
+      },
+      "trajectory_sha256": "4d6077e8ca5144653111c43bff21a12f644fa6113a402205c4eaf0aa3a4649f0",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 3.5702524185180664,
+        "rotor_speed_mean_rpm": 5935.812183965688,
+        "rotor_motor_peak_Nm": 0.16509564220905304,
+        "force_true_normal_mean_N": 7.908690929412842,
+        "force_true_normal_std_N": 2.6347367763519287,
+        "force_true_normal_peak_N": 33.92375183105469,
+        "force_measured_normal_mean_N": 7.907572269439697,
+        "force_measured_normal_std_N": 1.8821676969528198,
+        "force_measured_normal_peak_N": 28.016517639160156,
+        "grinding_mean_power_W": -58.9478645324707,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "6000rpm_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 100.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.872067479999714,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007424099836498499,
+          "orientation_rmse_rad": 0.0005020052194595337,
+          "reference_error_position_rms_m_s": 0.052459776401519775,
+          "reference_error_rotation_rms_rad_s": 0.25505733489990234,
+          "force_peak_N": 31.626598358154297,
+          "moment_peak_Nm": 0.07586507499217987,
+          "torque_peak_Nm": 44.76587677001953,
+          "torque_rms_Nm": 39.19274139404297,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.146066352725029,
+          "contact_fraction": 0.83,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.030020250007510185,
+          "dynamic_impedance_position_rmse_m": 0.0003983308297053706,
+          "dynamic_impedance_rotation_rmse_rad": 0.0005022623757049985,
+          "reference_error_position_mean_m_s": 0.05101309344172478,
+          "reference_error_position_std_m_s": 0.012234893627464771,
+          "equilibrium_position_error_mean_m": 0.0021050596218684676,
+          "equilibrium_position_error_std_m": 0.0017479177151553645,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013966134896670963
+        }
+      },
+      "trajectory_sha256": "8f1e35f6f5f616f1a08fa33561130c02aaff137dd9755eed7730ed0103da1ea4",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 3.093385696411133,
+        "rotor_speed_mean_rpm": 5935.707983759586,
+        "rotor_motor_peak_Nm": 0.17004583775997162,
+        "force_true_normal_mean_N": 7.913689613342285,
+        "force_true_normal_std_N": 2.7982943058013916,
+        "force_true_normal_peak_N": 30.710243225097656,
+        "force_measured_normal_mean_N": 7.911775588989258,
+        "force_measured_normal_std_N": 1.8403778076171875,
+        "force_measured_normal_peak_N": 26.784757614135742,
+        "grinding_mean_power_W": -58.99764633178711,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "balanced_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 70.56124523800008,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010841304436326027,
+          "orientation_rmse_rad": 0.0016474591102451086,
+          "reference_error_position_rms_m_s": 3.6721136569976807,
+          "reference_error_rotation_rms_rad_s": 1.2145756483078003,
+          "force_peak_N": 28.663415908813477,
+          "moment_peak_Nm": 0.06902505457401276,
+          "torque_peak_Nm": 39.08968734741211,
+          "torque_rms_Nm": 36.941429138183594,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460665762424469,
+          "contact_fraction": 0.8163333333333334,
+          "mean_beta": 0.20685981214046478,
+          "min_tank_energy_J": 0.9981788992881775,
+          "interaction_work_J": -0.030377598479390144,
+          "dynamic_impedance_position_rmse_m": 0.00845306940542315,
+          "dynamic_impedance_rotation_rmse_rad": 0.0016536653263051204,
+          "reference_error_position_mean_m_s": 3.035367250442505,
+          "reference_error_position_std_m_s": 2.066631317138672,
+          "equilibrium_position_error_mean_m": 0.008245151120420744,
+          "equilibrium_position_error_std_m": 0.0031955947833379643,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.008157158474075199
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "ee4fba441423fdccdeddce198d85f0a25a12207865533f4428e0e286f6fbb43a",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 0.5370111465454102,
+        "rotor_speed_mean_rpm": 8905.274154006886,
+        "rotor_motor_peak_Nm": 0.23205329477787018,
+        "force_true_normal_mean_N": 11.970195770263672,
+        "force_true_normal_std_N": 2.8851170539855957,
+        "force_true_normal_peak_N": 27.85230827331543,
+        "force_measured_normal_mean_N": 11.963907241821289,
+        "force_measured_normal_std_N": 2.6397147178649902,
+        "force_measured_normal_peak_N": 25.947086334228516,
+        "grinding_mean_power_W": -134.17530822753906,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "balanced_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.81776394699955,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007413400802761316,
+          "orientation_rmse_rad": 8.182853343896568e-05,
+          "reference_error_position_rms_m_s": 0.015553195029497147,
+          "reference_error_rotation_rms_rad_s": 0.016629131510853767,
+          "force_peak_N": 45.19517135620117,
+          "moment_peak_Nm": 0.10763947665691376,
+          "torque_peak_Nm": 37.91984939575195,
+          "torque_rms_Nm": 39.17671585083008,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460665762424469,
+          "contact_fraction": 0.8024333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.031714797019958496,
+          "dynamic_impedance_position_rmse_m": 9.593716841785345e-05,
+          "dynamic_impedance_rotation_rmse_rad": 6.595691832211513e-05,
+          "reference_error_position_mean_m_s": 0.015124446712434292,
+          "reference_error_position_std_m_s": 0.0036267077084630728,
+          "equilibrium_position_error_mean_m": 0.0012220831170586437,
+          "equilibrium_position_error_std_m": 0.0020135388248897585,
+          "contact_loss_fraction_after_6s": 0.00016666666666666666,
+          "tangential_tracking_rmse_m": 0.0013637839884207258
+        }
+      },
+      "trajectory_sha256": "6cf04976592206538c8953c4b3669f03e45fdc3d27d214e16c99b9a773b56ba4",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 0.39996621012687683,
+        "rotor_speed_mean_rpm": 8935.992631028348,
+        "rotor_motor_peak_Nm": 0.1691780537366867,
+        "force_true_normal_mean_N": 7.907289028167725,
+        "force_true_normal_std_N": 2.335129499435425,
+        "force_true_normal_peak_N": 43.90464401245117,
+        "force_measured_normal_mean_N": 7.903097629547119,
+        "force_measured_normal_std_N": 1.8494365215301514,
+        "force_measured_normal_peak_N": 34.358638763427734,
+        "grinding_mean_power_W": -88.80533599853516,
+        "longest_contact_loss_ms": 3.0
+      }
+    },
+    "balanced_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.922191964000376,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007420423906296492,
+          "orientation_rmse_rad": 0.0006114192074164748,
+          "reference_error_position_rms_m_s": 0.058689266443252563,
+          "reference_error_rotation_rms_rad_s": 0.29350849986076355,
+          "force_peak_N": 47.35352325439453,
+          "moment_peak_Nm": 0.11325547844171524,
+          "torque_peak_Nm": 42.59870910644531,
+          "torque_rms_Nm": 39.18217468261719,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460665762424469,
+          "contact_fraction": 0.8034333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.022885765880346298,
+          "dynamic_impedance_position_rmse_m": 0.0004481392406970427,
+          "dynamic_impedance_rotation_rmse_rad": 0.0006118081576484328,
+          "reference_error_position_mean_m_s": 0.05707255378365517,
+          "reference_error_position_std_m_s": 0.013680419884622097,
+          "equilibrium_position_error_mean_m": 0.0014686058417048078,
+          "equilibrium_position_error_std_m": 0.0020124133913365333,
+          "contact_loss_fraction_after_6s": 8.333333333333333e-05,
+          "tangential_tracking_rmse_m": 0.0013975226068593458
+        }
+      },
+      "trajectory_sha256": "7c2643ef61e2726e1cf0e6b5f57988f6c9b5def7e1b329ae6f5d9dbadc50d7b4",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 0.29210543632507324,
+        "rotor_speed_mean_rpm": 8935.72743491191,
+        "rotor_motor_peak_Nm": 0.18410053849220276,
+        "force_true_normal_mean_N": 7.903857231140137,
+        "force_true_normal_std_N": 2.4710991382598877,
+        "force_true_normal_peak_N": 45.99330520629883,
+        "force_measured_normal_mean_N": 7.907495021820068,
+        "force_measured_normal_std_N": 2.059459924697876,
+        "force_measured_normal_peak_N": 36.321067810058594,
+        "grinding_mean_power_W": -88.56651306152344,
+        "longest_contact_loss_ms": 2.0
+      }
+    },
+    "double_imbalance_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0002,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 70.24612520099981,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.009878351353108883,
+          "orientation_rmse_rad": 0.0006459085270762444,
+          "reference_error_position_rms_m_s": 1.614335536956787,
+          "reference_error_rotation_rms_rad_s": 2.313946008682251,
+          "force_peak_N": 33.58201599121094,
+          "moment_peak_Nm": 0.07801799476146698,
+          "torque_peak_Nm": 40.210445404052734,
+          "torque_rms_Nm": 38.526336669921875,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460658609867096,
+          "contact_fraction": 0.5619,
+          "mean_beta": 0.08428515493869781,
+          "min_tank_energy_J": 0.99827641248703,
+          "interaction_work_J": 0.15057362616062164,
+          "dynamic_impedance_position_rmse_m": 0.006599193520153573,
+          "dynamic_impedance_rotation_rmse_rad": 0.000632859281830772,
+          "reference_error_position_mean_m_s": 1.4249838590621948,
+          "reference_error_position_std_m_s": 0.7586173415184021,
+          "equilibrium_position_error_mean_m": 0.00976795963767631,
+          "equilibrium_position_error_std_m": 0.003986925657571027,
+          "contact_loss_fraction_after_6s": 0.0013333333333333333,
+          "tangential_tracking_rmse_m": 0.0065265057996400895
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "79166d783aa8c03f5f9340f83253f2eb8716a02023ec6c301bb746466f1d20fc",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 11.637903213500977,
+        "rotor_speed_mean_rpm": 8925.469918861298,
+        "rotor_motor_peak_Nm": 0.18838512897491455,
+        "force_true_normal_mean_N": 9.458598136901855,
+        "force_true_normal_std_N": 8.731060981750488,
+        "force_true_normal_peak_N": 32.64707565307617,
+        "force_measured_normal_mean_N": 9.42933177947998,
+        "force_measured_normal_std_N": 4.07245397567749,
+        "force_measured_normal_peak_N": 21.073789596557617,
+        "grinding_mean_power_W": -105.60282135009766,
+        "longest_contact_loss_ms": 9.0
+      }
+    },
+    "double_imbalance_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0002,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.82910092200018,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007486417423933744,
+          "orientation_rmse_rad": 5.262702325126156e-05,
+          "reference_error_position_rms_m_s": 0.01675828918814659,
+          "reference_error_rotation_rms_rad_s": 0.024547848850488663,
+          "force_peak_N": 46.015708923339844,
+          "moment_peak_Nm": 0.11056776344776154,
+          "torque_peak_Nm": 42.115238189697266,
+          "torque_rms_Nm": 39.843772888183594,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606569707393646,
+          "contact_fraction": 0.47053333333333336,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.24394844472408295,
+          "dynamic_impedance_position_rmse_m": 0.0002329135079615112,
+          "dynamic_impedance_rotation_rmse_rad": 4.506624341012656e-05,
+          "reference_error_position_mean_m_s": 0.016451815143227577,
+          "reference_error_position_std_m_s": 0.0031903013586997986,
+          "equilibrium_position_error_mean_m": 0.0071564403278484975,
+          "equilibrium_position_error_std_m": 0.004855480690334129,
+          "contact_loss_fraction_after_6s": 0.005791666666666666,
+          "tangential_tracking_rmse_m": 0.0014336992786541493
+        }
+      },
+      "trajectory_sha256": "1726305ea52fcb6d737cff4f4c47a7d4e2d7d0a55b4c6fed664a8f79e6dd8622",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 10.435564041137695,
+        "rotor_speed_mean_rpm": 8940.099045245828,
+        "rotor_motor_peak_Nm": 0.1628347486257553,
+        "force_true_normal_mean_N": 8.203107833862305,
+        "force_true_normal_std_N": 9.066422462463379,
+        "force_true_normal_peak_N": 44.700443267822266,
+        "force_measured_normal_mean_N": 7.973918437957764,
+        "force_measured_normal_std_N": 6.809455871582031,
+        "force_measured_normal_peak_N": 42.0904426574707,
+        "grinding_mean_power_W": -91.79288482666016,
+        "longest_contact_loss_ms": 13.0
+      }
+    },
+    "double_imbalance_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0002,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.96873226400021,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.00747278705239296,
+          "orientation_rmse_rad": 0.00026306419749744236,
+          "reference_error_position_rms_m_s": 0.037628043442964554,
+          "reference_error_rotation_rms_rad_s": 0.14577169716358185,
+          "force_peak_N": 53.99667739868164,
+          "moment_peak_Nm": 0.12922394275665283,
+          "torque_peak_Nm": 49.4264030456543,
+          "torque_rms_Nm": 39.5291862487793,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606569707393646,
+          "contact_fraction": 0.5019,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.12601089477539062,
+          "dynamic_impedance_position_rmse_m": 0.0002914822542353658,
+          "dynamic_impedance_rotation_rmse_rad": 0.0002621739266420129,
+          "reference_error_position_mean_m_s": 0.03597095236182213,
+          "reference_error_position_std_m_s": 0.011043558828532696,
+          "equilibrium_position_error_mean_m": 0.0067208864873591415,
+          "equilibrium_position_error_std_m": 0.0044063859502445285,
+          "contact_loss_fraction_after_6s": 0.0030833333333333333,
+          "tangential_tracking_rmse_m": 0.0014178352173482385
+        }
+      },
+      "trajectory_sha256": "d9fefa63c0ad648bedbbbd8b26a0ddc0a5480a23e2cbf635d2736cebdadbffe2",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 12.161052703857422,
+        "rotor_speed_mean_rpm": 8937.63122099789,
+        "rotor_motor_peak_Nm": 0.18081195652484894,
+        "force_true_normal_mean_N": 8.071163177490234,
+        "force_true_normal_std_N": 8.43625545501709,
+        "force_true_normal_peak_N": 52.466163635253906,
+        "force_measured_normal_mean_N": 7.961205005645752,
+        "force_measured_normal_std_N": 5.586944580078125,
+        "force_measured_normal_peak_N": 36.37240982055664,
+        "grinding_mean_power_W": -90.35607147216797,
+        "longest_contact_loss_ms": 18.0
+      }
+    },
+    "fixed_point_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "point"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 61.70874639300018,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010965503752231598,
+          "orientation_rmse_rad": 0.0010050431592389941,
+          "reference_error_position_rms_m_s": 1.854569673538208,
+          "reference_error_rotation_rms_rad_s": 2.8998215198516846,
+          "force_peak_N": 20.396686553955078,
+          "moment_peak_Nm": 0.04909960925579071,
+          "torque_peak_Nm": 39.4891471862793,
+          "torque_rms_Nm": 37.9854850769043,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606615900993347,
+          "contact_fraction": 0.8365333333333334,
+          "mean_beta": 0.13579308986663818,
+          "min_tank_energy_J": 0.9982631206512451,
+          "interaction_work_J": -0.6384040117263794,
+          "dynamic_impedance_position_rmse_m": 0.007048226554679655,
+          "dynamic_impedance_rotation_rmse_rad": 0.0010488157984492518,
+          "reference_error_position_mean_m_s": 1.6575286388397217,
+          "reference_error_position_std_m_s": 0.8318818211555481,
+          "equilibrium_position_error_mean_m": 0.007205816323344553,
+          "equilibrium_position_error_std_m": 0.0027809330786180567,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.008588504457109052
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "8dbee9f2074633ed938d5bcdb115fdfa03170745b41fb0df3ecc3c0406a1b30c",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.3141374588012695,
+        "rotor_speed_mean_rpm": 8999.999643281812,
+        "rotor_motor_peak_Nm": 0.00020386393589433283,
+        "force_true_normal_mean_N": 10.155055046081543,
+        "force_true_normal_std_N": 3.651576042175293,
+        "force_true_normal_peak_N": 19.78769302368164,
+        "force_measured_normal_mean_N": 10.160128593444824,
+        "force_measured_normal_std_N": 2.47200870513916,
+        "force_measured_normal_peak_N": 18.73335838317871,
+        "grinding_mean_power_W": 0.0,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "fixed_point_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "point"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 10.940629898000225,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007381685543805361,
+          "orientation_rmse_rad": 5.8841844293056056e-05,
+          "reference_error_position_rms_m_s": 0.015506780706346035,
+          "reference_error_rotation_rms_rad_s": 0.014398466795682907,
+          "force_peak_N": 19.736467361450195,
+          "moment_peak_Nm": 0.04771414399147034,
+          "torque_peak_Nm": 39.81532287597656,
+          "torque_rms_Nm": 39.20217514038086,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.8473333333333334,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": -0.558781087398529,
+          "dynamic_impedance_position_rmse_m": 9.187205948892014e-05,
+          "dynamic_impedance_rotation_rmse_rad": 4.563468297692368e-05,
+          "reference_error_position_mean_m_s": 0.01523002702742815,
+          "reference_error_position_std_m_s": 0.002916591940447688,
+          "equilibrium_position_error_mean_m": 0.003239545410559097,
+          "equilibrium_position_error_std_m": 0.0020345777179837147,
+          "contact_loss_fraction_after_6s": 0.002458333333333333,
+          "tangential_tracking_rmse_m": 0.0016120964898876935
+        }
+      },
+      "trajectory_sha256": "30f4ceb77ac6c1b9ab4ad8034fdc65038ac7b21307cffc443494c39256148c39",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 5.980892181396484,
+        "rotor_speed_mean_rpm": 8999.997415428086,
+        "rotor_motor_peak_Nm": 0.00019651468028314412,
+        "force_true_normal_mean_N": 7.951847076416016,
+        "force_true_normal_std_N": 3.8268377780914307,
+        "force_true_normal_peak_N": 15.71354866027832,
+        "force_measured_normal_mean_N": 7.935505390167236,
+        "force_measured_normal_std_N": 2.4811923503875732,
+        "force_measured_normal_peak_N": 13.690934181213379,
+        "grinding_mean_power_W": 0.0,
+        "longest_contact_loss_ms": 2.0
+      }
+    },
+    "fixed_point_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "point"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 10.915239990000373,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007390256971120834,
+          "orientation_rmse_rad": 0.000350594287738204,
+          "reference_error_position_rms_m_s": 0.04267178103327751,
+          "reference_error_rotation_rms_rad_s": 0.1881140023469925,
+          "force_peak_N": 22.033498764038086,
+          "moment_peak_Nm": 0.05325634032487869,
+          "torque_peak_Nm": 45.682029724121094,
+          "torque_rms_Nm": 39.18183517456055,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.8479333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": -0.5783337950706482,
+          "dynamic_impedance_position_rmse_m": 0.00030856142841670847,
+          "dynamic_impedance_rotation_rmse_rad": 0.0003496502418892075,
+          "reference_error_position_mean_m_s": 0.04068443924188614,
+          "reference_error_position_std_m_s": 0.0128707904368639,
+          "equilibrium_position_error_mean_m": 0.003202940923677636,
+          "equilibrium_position_error_std_m": 0.002004811453312707,
+          "contact_loss_fraction_after_6s": 0.0025416666666666665,
+          "tangential_tracking_rmse_m": 0.0016740296203130228
+        }
+      },
+      "trajectory_sha256": "95207040e0d2224c9187e94d27bd1a9e3f81872e0a60b0cf440c4f58962e5a72",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.476771354675293,
+        "rotor_speed_mean_rpm": 8999.998270578253,
+        "rotor_motor_peak_Nm": 0.0002986073086503893,
+        "force_true_normal_mean_N": 7.942002773284912,
+        "force_true_normal_std_N": 3.7865915298461914,
+        "force_true_normal_peak_N": 15.464862823486328,
+        "force_measured_normal_mean_N": 7.937138557434082,
+        "force_measured_normal_std_N": 2.43345046043396,
+        "force_measured_normal_peak_N": 14.035682678222656,
+        "grinding_mean_power_W": 0.0,
+        "longest_contact_loss_ms": 2.0
+      }
+    },
+    "frictionless_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.0,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 69.86177957200016,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.009903508238494396,
+          "orientation_rmse_rad": 0.0010300233261659741,
+          "reference_error_position_rms_m_s": 1.9582279920578003,
+          "reference_error_rotation_rms_rad_s": 2.483142614364624,
+          "force_peak_N": 46.95197296142578,
+          "moment_peak_Nm": 0.06995221227407455,
+          "torque_peak_Nm": 39.4891471862793,
+          "torque_rms_Nm": 37.926307678222656,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606615900993347,
+          "contact_fraction": 0.8222,
+          "mean_beta": 0.1398860216140747,
+          "min_tank_energy_J": 0.9982631206512451,
+          "interaction_work_J": 0.02092328853905201,
+          "dynamic_impedance_position_rmse_m": 0.007228942423245511,
+          "dynamic_impedance_rotation_rmse_rad": 0.0010308230083305098,
+          "reference_error_position_mean_m_s": 1.7388346195220947,
+          "reference_error_position_std_m_s": 0.9006168842315674,
+          "equilibrium_position_error_mean_m": 0.007984560112027321,
+          "equilibrium_position_error_std_m": 0.003327268654922599,
+          "contact_loss_fraction_after_6s": 0.008541666666666666,
+          "tangential_tracking_rmse_m": 0.006885911535798936
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "bc0d0df3c0d26851265f3dd6a1351529c05432359a6de73b253da20d9a06a726",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.3141374588012695,
+        "rotor_speed_mean_rpm": 9000.002038052953,
+        "rotor_motor_peak_Nm": 0.0009264994296245277,
+        "force_true_normal_mean_N": 10.258004188537598,
+        "force_true_normal_std_N": 5.237363815307617,
+        "force_true_normal_peak_N": 46.95197296142578,
+        "force_measured_normal_mean_N": 10.2606840133667,
+        "force_measured_normal_std_N": 2.6146631240844727,
+        "force_measured_normal_peak_N": 33.70006561279297,
+        "grinding_mean_power_W": 0.0,
+        "longest_contact_loss_ms": 25.0
+      }
+    },
+    "frictionless_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.0,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "terminated",
+        "termination_reason": "Tool contact force exceeds experiment cutoff (400 N)",
+        "completed_control_steps": 17789,
+        "attempted_control_steps": 17790,
+        "simulated_duration_s": 17.788999999993926,
+        "wall_time_s": 10.549075535999691,
+        "force_samples": 17790,
+        "metrics": {
+          "position_rmse_m": 0.006656983867287636,
+          "orientation_rmse_rad": 4.642969724955037e-05,
+          "reference_error_position_rms_m_s": 0.015756137669086456,
+          "reference_error_rotation_rms_rad_s": 0.01501958817243576,
+          "force_peak_N": 1829.0316162109375,
+          "moment_peak_Nm": 7.502063751220703,
+          "torque_peak_Nm": 87.0,
+          "torque_rms_Nm": 39.765289306640625,
+          "saturation_fraction": 0.0003934794804081321,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.5907251264755481,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.02171560376882553,
+          "dynamic_impedance_position_rmse_m": 0.0001037783654321732,
+          "dynamic_impedance_rotation_rmse_rad": 4.636031619854802e-05,
+          "reference_error_position_mean_m_s": 0.015418502502143383,
+          "reference_error_position_std_m_s": 0.0032443292438983917,
+          "equilibrium_position_error_mean_m": 0.004467402054776105,
+          "equilibrium_position_error_std_m": 0.014524755527092958,
+          "contact_loss_fraction_after_6s": 0.018829516539440202,
+          "tangential_tracking_rmse_m": 8.80522324389326e-05
+        }
+      },
+      "trajectory_sha256": "59a86eaf698dbc803900b73f3c126d77dc511aea523eef99a61b67045cc2213c",
+      "samples": 17790,
+      "diagnostics": {
+        "longest_saturation_s": 0.006,
+        "free_measured_force_rms_N": 5.980892181396484,
+        "rotor_speed_mean_rpm": 8999.895015265149,
+        "rotor_motor_peak_Nm": 0.17649725079536438,
+        "force_true_normal_mean_N": 7.723196983337402,
+        "force_true_normal_std_N": 18.494436264038086,
+        "force_true_normal_peak_N": 235.88299560546875,
+        "force_measured_normal_mean_N": 7.78134298324585,
+        "force_measured_normal_std_N": 12.907379150390625,
+        "force_measured_normal_peak_N": 169.400390625,
+        "grinding_mean_power_W": 0.0,
+        "longest_contact_loss_ms": 60.0
+      }
+    },
+    "frictionless_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.0,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "terminated",
+        "termination_reason": "Tool contact force exceeds experiment cutoff (400 N)",
+        "completed_control_steps": 26010,
+        "attempted_control_steps": 26011,
+        "simulated_duration_s": 26.01000000003318,
+        "wall_time_s": 15.991059033000056,
+        "force_samples": 26011,
+        "metrics": {
+          "position_rmse_m": 0.007071536500006914,
+          "orientation_rmse_rad": 0.00036483496660366654,
+          "reference_error_position_rms_m_s": 0.044481802731752396,
+          "reference_error_rotation_rms_rad_s": 0.1880066841840744,
+          "force_peak_N": 1824.425537109375,
+          "moment_peak_Nm": 7.469683647155762,
+          "torque_peak_Nm": 87.0,
+          "torque_rms_Nm": 39.477569580078125,
+          "saturation_fraction": 3.844527236651629e-05,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.716696782130637,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": -0.008723767474293709,
+          "dynamic_impedance_position_rmse_m": 0.000289516676868269,
+          "dynamic_impedance_rotation_rmse_rad": 0.0003650060750387999,
+          "reference_error_position_mean_m_s": 0.04251363128423691,
+          "reference_error_position_std_m_s": 0.013085182756185532,
+          "equilibrium_position_error_mean_m": 0.00431472283502997,
+          "equilibrium_position_error_std_m": 0.012087758425191227,
+          "contact_loss_fraction_after_6s": 0.027584828344410575,
+          "tangential_tracking_rmse_m": 0.00022846675021910695
+        }
+      },
+      "trajectory_sha256": "d802f821b9693e3cad4328f292e54257352c9afe6f5c757fae79be34141b827e",
+      "samples": 26011,
+      "diagnostics": {
+        "longest_saturation_s": 0.001,
+        "free_measured_force_rms_N": 6.476771354675293,
+        "rotor_speed_mean_rpm": 8999.6592209926,
+        "rotor_motor_peak_Nm": 0.17801320552825928,
+        "force_true_normal_mean_N": 7.833889961242676,
+        "force_true_normal_std_N": 14.499701499938965,
+        "force_true_normal_peak_N": 196.89035034179688,
+        "force_measured_normal_mean_N": 7.830441474914551,
+        "force_measured_normal_std_N": 10.140671730041504,
+        "force_measured_normal_peak_N": 136.8529052734375,
+        "grinding_mean_power_W": 0.0,
+        "longest_contact_loss_ms": 72.0
+      }
+    },
+    "half_imbalance_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 5e-05,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 69.96151814799941,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010549226775765419,
+          "orientation_rmse_rad": 0.0013364787446334958,
+          "reference_error_position_rms_m_s": 2.9257054328918457,
+          "reference_error_rotation_rms_rad_s": 1.6041264533996582,
+          "force_peak_N": 28.6980037689209,
+          "moment_peak_Nm": 0.0685591995716095,
+          "torque_peak_Nm": 38.900028228759766,
+          "torque_rms_Nm": 37.36353302001953,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606651663780212,
+          "contact_fraction": 0.8154333333333333,
+          "mean_beta": 0.17967425286769867,
+          "min_tank_energy_J": 0.998285174369812,
+          "interaction_work_J": -0.009747907519340515,
+          "dynamic_impedance_position_rmse_m": 0.007902938096106716,
+          "dynamic_impedance_rotation_rmse_rad": 0.0013397791998407248,
+          "reference_error_position_mean_m_s": 2.4605424404144287,
+          "reference_error_position_std_m_s": 1.582871913909912,
+          "equilibrium_position_error_mean_m": 0.007914575276323726,
+          "equilibrium_position_error_std_m": 0.00330184314302524,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.007728750347646547
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "655b71acb492d2a7ec74cf73d83c624312dc32cff72d7066972ed34b2e4c60e4",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 3.360222339630127,
+        "rotor_speed_mean_rpm": 8910.858397436537,
+        "rotor_motor_peak_Nm": 0.21973465383052826,
+        "force_true_normal_mean_N": 11.246269226074219,
+        "force_true_normal_std_N": 3.5119271278381348,
+        "force_true_normal_peak_N": 27.886566162109375,
+        "force_measured_normal_mean_N": 11.244403839111328,
+        "force_measured_normal_std_N": 2.2194008827209473,
+        "force_measured_normal_peak_N": 22.537033081054688,
+        "grinding_mean_power_W": -126.07258605957031,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "half_imbalance_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 5e-05,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.109055750999687,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007413267623633146,
+          "orientation_rmse_rad": 7.543316314695403e-05,
+          "reference_error_position_rms_m_s": 0.015480822883546352,
+          "reference_error_rotation_rms_rad_s": 0.014961493201553822,
+          "force_peak_N": 44.40953826904297,
+          "moment_peak_Nm": 0.10525235533714294,
+          "torque_peak_Nm": 38.84120178222656,
+          "torque_rms_Nm": 39.182342529296875,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460663229227066,
+          "contact_fraction": 0.8044333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.033636461943387985,
+          "dynamic_impedance_position_rmse_m": 9.903433132870853e-05,
+          "dynamic_impedance_rotation_rmse_rad": 5.738277079240278e-05,
+          "reference_error_position_mean_m_s": 0.015148528851568699,
+          "reference_error_position_std_m_s": 0.0031902885530143976,
+          "equilibrium_position_error_mean_m": 0.0024253396043909105,
+          "equilibrium_position_error_std_m": 0.0021701981935179616,
+          "contact_loss_fraction_after_6s": 8.333333333333333e-05,
+          "tangential_tracking_rmse_m": 0.0013618234723256106
+        }
+      },
+      "trajectory_sha256": "ae4a66cf61f0073857424bc891d029381537d439c72fcfc053a8073a90f8c9b6",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 3.163227081298828,
+        "rotor_speed_mean_rpm": 8935.8142057827,
+        "rotor_motor_peak_Nm": 0.17137384414672852,
+        "force_true_normal_mean_N": 7.902602672576904,
+        "force_true_normal_std_N": 3.332427501678467,
+        "force_true_normal_peak_N": 43.15384292602539,
+        "force_measured_normal_mean_N": 7.90317964553833,
+        "force_measured_normal_std_N": 2.0611677169799805,
+        "force_measured_normal_peak_N": 35.5733528137207,
+        "grinding_mean_power_W": -88.72268676757812,
+        "longest_contact_loss_ms": 1.0
+      }
+    },
+    "half_imbalance_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 5e-05,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.06120713099972,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007420682348310947,
+          "orientation_rmse_rad": 0.00046707733417861164,
+          "reference_error_position_rms_m_s": 0.050502412021160126,
+          "reference_error_rotation_rms_rad_s": 0.2421901822090149,
+          "force_peak_N": 48.204689025878906,
+          "moment_peak_Nm": 0.11489557474851608,
+          "torque_peak_Nm": 43.87330627441406,
+          "torque_rms_Nm": 39.177024841308594,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460663080215454,
+          "contact_fraction": 0.8090333333333334,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.032137759029865265,
+          "dynamic_impedance_position_rmse_m": 0.00038344218915244957,
+          "dynamic_impedance_rotation_rmse_rad": 0.00046719851500088476,
+          "reference_error_position_mean_m_s": 0.04902030900120735,
+          "reference_error_position_std_m_s": 0.012145066633820534,
+          "equilibrium_position_error_mean_m": 0.00247006798497546,
+          "equilibrium_position_error_std_m": 0.0021136650042508573,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013934548622884688
+        }
+      },
+      "trajectory_sha256": "80ebc21991f7d9588f6f523d8859d18d541c6a89e299feebfa7a94ee728178cc",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 3.2784061431884766,
+        "rotor_speed_mean_rpm": 8935.604310533818,
+        "rotor_motor_peak_Nm": 0.17896577715873718,
+        "force_true_normal_mean_N": 7.9038543701171875,
+        "force_true_normal_std_N": 3.367171287536621,
+        "force_true_normal_peak_N": 46.827091217041016,
+        "force_measured_normal_mean_N": 7.908413887023926,
+        "force_measured_normal_std_N": 2.1382839679718018,
+        "force_measured_normal_peak_N": 34.55821990966797,
+        "grinding_mean_power_W": -88.7474594116211,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "main_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 71.4121261679993,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010290035977959633,
+          "orientation_rmse_rad": 0.0010927963303402066,
+          "reference_error_position_rms_m_s": 2.2518622875213623,
+          "reference_error_rotation_rms_rad_s": 1.8875939846038818,
+          "force_peak_N": 28.603429794311523,
+          "moment_peak_Nm": 0.06684029847383499,
+          "torque_peak_Nm": 39.4891471862793,
+          "torque_rms_Nm": 37.749053955078125,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606615900993347,
+          "contact_fraction": 0.8155666666666667,
+          "mean_beta": 0.15068469941616058,
+          "min_tank_energy_J": 0.9982631206512451,
+          "interaction_work_J": 0.01921379379928112,
+          "dynamic_impedance_position_rmse_m": 0.00741388184900445,
+          "dynamic_impedance_rotation_rmse_rad": 0.001094358878014456,
+          "reference_error_position_mean_m_s": 1.9623817205429077,
+          "reference_error_position_std_m_s": 1.1045100688934326,
+          "equilibrium_position_error_mean_m": 0.008313641121150791,
+          "equilibrium_position_error_std_m": 0.0034097271025566784,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0073252345882294
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "93e8bfeb3ed499b0403e29a86dafa22e4691d66b5d7f37d38bc67ccba1cc9b4f",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.3141374588012695,
+        "rotor_speed_mean_rpm": 8915.75471525784,
+        "rotor_motor_peak_Nm": 0.21616500616073608,
+        "force_true_normal_mean_N": 10.618226051330566,
+        "force_true_normal_std_N": 5.3519673347473145,
+        "force_true_normal_peak_N": 27.812742233276367,
+        "force_measured_normal_mean_N": 10.614004135131836,
+        "force_measured_normal_std_N": 2.2247092723846436,
+        "force_measured_normal_peak_N": 23.052013397216797,
+        "grinding_mean_power_W": -118.35245513916016,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "main_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.235400386999572,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007413699757307768,
+          "orientation_rmse_rad": 6.953433330636472e-05,
+          "reference_error_position_rms_m_s": 0.015509672462940216,
+          "reference_error_rotation_rms_rad_s": 0.014566834084689617,
+          "force_peak_N": 37.7314338684082,
+          "moment_peak_Nm": 0.08935938775539398,
+          "torque_peak_Nm": 39.81532287597656,
+          "torque_rms_Nm": 39.22096252441406,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.7336,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.06271787732839584,
+          "dynamic_impedance_position_rmse_m": 9.272606733815883e-05,
+          "dynamic_impedance_rotation_rmse_rad": 4.95705663414991e-05,
+          "reference_error_position_mean_m_s": 0.015232525765895844,
+          "reference_error_position_std_m_s": 0.0029189237393438816,
+          "equilibrium_position_error_mean_m": 0.00444032593828281,
+          "equilibrium_position_error_std_m": 0.003114885535528055,
+          "contact_loss_fraction_after_6s": 0.000125,
+          "tangential_tracking_rmse_m": 0.0013628279653676563
+        }
+      },
+      "trajectory_sha256": "8ae0a1f12bb074b03ea04d5ed9c5c99a6b980baaf915cd3e35d138bd491a2537",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 5.980892181396484,
+        "rotor_speed_mean_rpm": 8935.722109225653,
+        "rotor_motor_peak_Nm": 0.1745455265045166,
+        "force_true_normal_mean_N": 7.900747299194336,
+        "force_true_normal_std_N": 5.660041809082031,
+        "force_true_normal_peak_N": 36.66753005981445,
+        "force_measured_normal_mean_N": 7.903388023376465,
+        "force_measured_normal_std_N": 3.0280838012695312,
+        "force_measured_normal_peak_N": 31.3641414642334,
+        "grinding_mean_power_W": -88.35618591308594,
+        "longest_contact_loss_ms": 3.0
+      }
+    },
+    "main_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.31885840399991,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007419494446367025,
+          "orientation_rmse_rad": 0.0003486072237137705,
+          "reference_error_position_rms_m_s": 0.04237719625234604,
+          "reference_error_rotation_rms_rad_s": 0.1848471760749817,
+          "force_peak_N": 49.73750305175781,
+          "moment_peak_Nm": 0.11803687363862991,
+          "torque_peak_Nm": 45.682029724121094,
+          "torque_rms_Nm": 39.215030670166016,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.7617666666666667,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.048119187355041504,
+          "dynamic_impedance_position_rmse_m": 0.00031348804460062387,
+          "dynamic_impedance_rotation_rmse_rad": 0.0003478421107615853,
+          "reference_error_position_mean_m_s": 0.040288761258125305,
+          "reference_error_position_std_m_s": 0.013139348477125168,
+          "equilibrium_position_error_mean_m": 0.0042242858749650565,
+          "equilibrium_position_error_std_m": 0.0029377181821093885,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013855421581138126
+        }
+      },
+      "trajectory_sha256": "7c95b62217723103fd0940b31d5c1a6fe0c2ea3b6c9a0f47b03c6c40f8f55cec",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.476771354675293,
+        "rotor_speed_mean_rpm": 8935.56407196957,
+        "rotor_motor_peak_Nm": 0.18010655045509338,
+        "force_true_normal_mean_N": 7.9037251472473145,
+        "force_true_normal_std_N": 5.379572868347168,
+        "force_true_normal_peak_N": 48.33175277709961,
+        "force_measured_normal_mean_N": 7.907511234283447,
+        "force_measured_normal_std_N": 2.7966482639312744,
+        "force_measured_normal_peak_N": 32.16061019897461,
+        "grinding_mean_power_W": -88.47162628173828,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "physics16_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 16,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 6.25e-05,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 29.999999999722586,
+        "wall_time_s": 90.133157493,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.01018128264695406,
+          "orientation_rmse_rad": 0.0009697593632154167,
+          "reference_error_position_rms_m_s": 1.9864320755004883,
+          "reference_error_rotation_rms_rad_s": 1.8953807353973389,
+          "force_peak_N": 26.57497787475586,
+          "moment_peak_Nm": 0.06205936521291733,
+          "torque_peak_Nm": 39.275299072265625,
+          "torque_rms_Nm": 37.89387893676758,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460661143064499,
+          "contact_fraction": 0.8146,
+          "mean_beta": 0.13504615426063538,
+          "min_tank_energy_J": 0.998345136642456,
+          "interaction_work_J": 0.02132761850953102,
+          "dynamic_impedance_position_rmse_m": 0.007217837137208751,
+          "dynamic_impedance_rotation_rmse_rad": 0.0009710333520703109,
+          "reference_error_position_mean_m_s": 1.7634700536727905,
+          "reference_error_position_std_m_s": 0.9143770933151245,
+          "equilibrium_position_error_mean_m": 0.008163969685799879,
+          "equilibrium_position_error_std_m": 0.003295337820367546,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.007132596183711786
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "e25a0fa3e5385517e6d7dc292eac9f8486061d8583037dac113b3e42788b2d7a",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.42324161529541,
+        "rotor_speed_mean_rpm": 8917.710146373956,
+        "rotor_motor_peak_Nm": 0.19232557713985443,
+        "force_true_normal_mean_N": 10.372586250305176,
+        "force_true_normal_std_N": 5.312984466552734,
+        "force_true_normal_peak_N": 25.840055465698242,
+        "force_measured_normal_mean_N": 10.370388984680176,
+        "force_measured_normal_std_N": 2.1304640769958496,
+        "force_measured_normal_peak_N": 21.141002655029297,
+        "grinding_mean_power_W": -115.66587829589844,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "physics16_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 16,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 6.25e-05,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 29.999999999722586,
+        "wall_time_s": 38.613368291999905,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.00741381524130702,
+          "orientation_rmse_rad": 6.951453542569652e-05,
+          "reference_error_position_rms_m_s": 0.01552446000277996,
+          "reference_error_rotation_rms_rad_s": 0.014650454744696617,
+          "force_peak_N": 37.458274841308594,
+          "moment_peak_Nm": 0.09000273048877716,
+          "torque_peak_Nm": 39.92225646972656,
+          "torque_rms_Nm": 39.2279167175293,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606595039367676,
+          "contact_fraction": 0.7343,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.06398293375968933,
+          "dynamic_impedance_position_rmse_m": 9.229866119516569e-05,
+          "dynamic_impedance_rotation_rmse_rad": 4.961941757296561e-05,
+          "reference_error_position_mean_m_s": 0.015248047187924385,
+          "reference_error_position_std_m_s": 0.0029164862353354692,
+          "equilibrium_position_error_mean_m": 0.004432943049349406,
+          "equilibrium_position_error_std_m": 0.003107679598648477,
+          "contact_loss_fraction_after_6s": 0.00016666666666666666,
+          "tangential_tracking_rmse_m": 0.0013636018777406485
+        }
+      },
+      "trajectory_sha256": "4235e65c198f7cf65057ed0771b8c4591b26dd39d0390b53e67fe0f5787d1323",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 5.998140811920166,
+        "rotor_speed_mean_rpm": 8935.738296348454,
+        "rotor_motor_peak_Nm": 0.17489995062351227,
+        "force_true_normal_mean_N": 7.902239799499512,
+        "force_true_normal_std_N": 5.65196418762207,
+        "force_true_normal_peak_N": 36.37001419067383,
+        "force_measured_normal_mean_N": 7.903430938720703,
+        "force_measured_normal_std_N": 3.109795570373535,
+        "force_measured_normal_peak_N": 34.73139572143555,
+        "grinding_mean_power_W": -88.36929321289062,
+        "longest_contact_loss_ms": 4.0
+      }
+    },
+    "physics16_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 16,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 6.25e-05,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 29.999999999722586,
+        "wall_time_s": 38.395896934999655,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.00741961132735014,
+          "orientation_rmse_rad": 0.0003464316250756383,
+          "reference_error_position_rms_m_s": 0.042079515755176544,
+          "reference_error_rotation_rms_rad_s": 0.18260236084461212,
+          "force_peak_N": 50.15028762817383,
+          "moment_peak_Nm": 0.11900630593299866,
+          "torque_peak_Nm": 45.83412170410156,
+          "torque_rms_Nm": 39.22146224975586,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606595039367676,
+          "contact_fraction": 0.7604666666666666,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.04750567674636841,
+          "dynamic_impedance_position_rmse_m": 0.00031222216371360324,
+          "dynamic_impedance_rotation_rmse_rad": 0.00034562362051357925,
+          "reference_error_position_mean_m_s": 0.03997776657342911,
+          "reference_error_position_std_m_s": 0.013132552616298199,
+          "equilibrium_position_error_mean_m": 0.004235585283364048,
+          "equilibrium_position_error_std_m": 0.0029420519899474936,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013858062931846936
+        }
+      },
+      "trajectory_sha256": "90290c0ec277770288889fe62ad10f0b27555da7b1b40ca552e60db35cd47b0e",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.494608402252197,
+        "rotor_speed_mean_rpm": 8935.580797652854,
+        "rotor_motor_peak_Nm": 0.18826615810394287,
+        "force_true_normal_mean_N": 7.905045509338379,
+        "force_true_normal_std_N": 5.389684677124023,
+        "force_true_normal_peak_N": 48.73035430908203,
+        "force_measured_normal_mean_N": 7.907461166381836,
+        "force_measured_normal_std_N": 2.8260891437530518,
+        "force_measured_normal_peak_N": 31.30084800720215,
+        "grinding_mean_power_W": -88.4818115234375,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "physics8_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 8,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.000125,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.00000000009774,
+        "wall_time_s": 77.4427197820005,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010213752277195454,
+          "orientation_rmse_rad": 0.0010032369755208492,
+          "reference_error_position_rms_m_s": 2.0510716438293457,
+          "reference_error_rotation_rms_rad_s": 1.9151978492736816,
+          "force_peak_N": 27.602184295654297,
+          "moment_peak_Nm": 0.06521044671535492,
+          "torque_peak_Nm": 39.284019470214844,
+          "torque_rms_Nm": 37.858516693115234,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606612920761108,
+          "contact_fraction": 0.8153666666666667,
+          "mean_beta": 0.13908903300762177,
+          "min_tank_energy_J": 0.9982922673225403,
+          "interaction_work_J": 0.020513324066996574,
+          "dynamic_impedance_position_rmse_m": 0.00727176808915984,
+          "dynamic_impedance_rotation_rmse_rad": 0.0010046565550155154,
+          "reference_error_position_mean_m_s": 1.8138008117675781,
+          "reference_error_position_std_m_s": 0.9576125144958496,
+          "equilibrium_position_error_mean_m": 0.008197108351064528,
+          "equilibrium_position_error_std_m": 0.0033325791969833892,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.007191729358921318
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "1a97d4e332621776c7be0a25a427ef4a12029279443b7f0840ec67a7d39fb9f0",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.391623497009277,
+        "rotor_speed_mean_rpm": 8917.249990436687,
+        "rotor_motor_peak_Nm": 0.20250822603702545,
+        "force_true_normal_mean_N": 10.432618141174316,
+        "force_true_normal_std_N": 5.318626403808594,
+        "force_true_normal_peak_N": 26.836624145507812,
+        "force_measured_normal_mean_N": 10.42922306060791,
+        "force_measured_normal_std_N": 2.1657352447509766,
+        "force_measured_normal_peak_N": 19.89546775817871,
+        "grinding_mean_power_W": -116.3157730102539,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "physics8_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 8,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.000125,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.00000000009774,
+        "wall_time_s": 25.66601136600002,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007413740269839764,
+          "orientation_rmse_rad": 6.954951822990552e-05,
+          "reference_error_position_rms_m_s": 0.015520171262323856,
+          "reference_error_rotation_rms_rad_s": 0.014620738103985786,
+          "force_peak_N": 50.78086471557617,
+          "moment_peak_Nm": 0.12040703743696213,
+          "torque_peak_Nm": 39.888572692871094,
+          "torque_rms_Nm": 39.22671890258789,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606596529483795,
+          "contact_fraction": 0.7333333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.06400454044342041,
+          "dynamic_impedance_position_rmse_m": 9.219764668956568e-05,
+          "dynamic_impedance_rotation_rmse_rad": 4.9638878893527524e-05,
+          "reference_error_position_mean_m_s": 0.01524387113749981,
+          "reference_error_position_std_m_s": 0.0029154974035918713,
+          "equilibrium_position_error_mean_m": 0.004445403660788675,
+          "equilibrium_position_error_std_m": 0.0031250180027772934,
+          "contact_loss_fraction_after_6s": 0.00016666666666666666,
+          "tangential_tracking_rmse_m": 0.0013631896180355163
+        }
+      },
+      "trajectory_sha256": "307a4a3bf89ab996a754f8de818e7e9247bda9ce268b96349dc9ab3bb168aa03",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 5.991584777832031,
+        "rotor_speed_mean_rpm": 8935.743565293702,
+        "rotor_motor_peak_Nm": 0.1753944605588913,
+        "force_true_normal_mean_N": 7.902821063995361,
+        "force_true_normal_std_N": 5.671694755554199,
+        "force_true_normal_peak_N": 49.34486770629883,
+        "force_measured_normal_mean_N": 7.903402805328369,
+        "force_measured_normal_std_N": 3.0913538932800293,
+        "force_measured_normal_peak_N": 36.83799362182617,
+        "grinding_mean_power_W": -88.37628936767578,
+        "longest_contact_loss_ms": 4.0
+      }
+    },
+    "physics8_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 8,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.000125,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.00000000009774,
+        "wall_time_s": 26.02286311500029,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.0074196853674948215,
+          "orientation_rmse_rad": 0.0003471061063464731,
+          "reference_error_position_rms_m_s": 0.04218379035592079,
+          "reference_error_rotation_rms_rad_s": 0.18333721160888672,
+          "force_peak_N": 29.454694747924805,
+          "moment_peak_Nm": 0.0676053985953331,
+          "torque_peak_Nm": 45.78396987915039,
+          "torque_rms_Nm": 39.22153854370117,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606596529483795,
+          "contact_fraction": 0.7617333333333334,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.04759620130062103,
+          "dynamic_impedance_position_rmse_m": 0.00031280931162287854,
+          "dynamic_impedance_rotation_rmse_rad": 0.00034633572853884364,
+          "reference_error_position_mean_m_s": 0.04008529335260391,
+          "reference_error_position_std_m_s": 0.013139312155544758,
+          "equilibrium_position_error_mean_m": 0.004231542780821674,
+          "equilibrium_position_error_std_m": 0.0029327368472017905,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013862567863303702
+        }
+      },
+      "trajectory_sha256": "5b61de07de7f793689fe78a3884a40b2b62df220b98aafe5ea8473ba116cf866",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.488523960113525,
+        "rotor_speed_mean_rpm": 8935.610244038915,
+        "rotor_motor_peak_Nm": 0.18839332461357117,
+        "force_true_normal_mean_N": 7.906227111816406,
+        "force_true_normal_std_N": 5.38102388381958,
+        "force_true_normal_peak_N": 28.643526077270508,
+        "force_measured_normal_mean_N": 7.907451629638672,
+        "force_measured_normal_std_N": 2.805391550064087,
+        "force_measured_normal_peak_N": 22.191858291625977,
+        "grinding_mean_power_W": -88.49764251708984,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "rigid_contact_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.004,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.95,
+            0.99,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 67.51244681599928,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010340818203985691,
+          "orientation_rmse_rad": 0.0010253346990793943,
+          "reference_error_position_rms_m_s": 2.259723424911499,
+          "reference_error_rotation_rms_rad_s": 1.7773456573486328,
+          "force_peak_N": 262.6041564941406,
+          "moment_peak_Nm": 0.8473967909812927,
+          "torque_peak_Nm": 39.4891471862793,
+          "torque_rms_Nm": 37.6635627746582,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606615900993347,
+          "contact_fraction": 0.7147333333333333,
+          "mean_beta": 0.14918503165245056,
+          "min_tank_energy_J": 0.9982631206512451,
+          "interaction_work_J": -0.015125594101846218,
+          "dynamic_impedance_position_rmse_m": 0.0073721941404620624,
+          "dynamic_impedance_rotation_rmse_rad": 0.0010545056971770913,
+          "reference_error_position_mean_m_s": 1.9661026000976562,
+          "reference_error_position_std_m_s": 1.1139076948165894,
+          "equilibrium_position_error_mean_m": 0.009709919172251582,
+          "equilibrium_position_error_std_m": 0.0059956757709354125,
+          "contact_loss_fraction_after_6s": 0.015041666666666667,
+          "tangential_tracking_rmse_m": 0.007286638840441315
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "cae066de23f22d60a3ff0350ce3fba4bfd6ecede3f2b211dd62d095b43099efa",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.3141374588012695,
+        "rotor_speed_mean_rpm": 8914.299535097423,
+        "rotor_motor_peak_Nm": 0.23677480220794678,
+        "force_true_normal_mean_N": 10.74809741973877,
+        "force_true_normal_std_N": 9.066596031188965,
+        "force_true_normal_peak_N": 254.82139587402344,
+        "force_measured_normal_mean_N": 10.749428749084473,
+        "force_measured_normal_std_N": 5.048122406005859,
+        "force_measured_normal_peak_N": 189.82766723632812,
+        "grinding_mean_power_W": -118.25633239746094,
+        "longest_contact_loss_ms": 27.0
+      }
+    },
+    "rigid_contact_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.004,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.95,
+            0.99,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 18.975894129000153,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007490353658795357,
+          "orientation_rmse_rad": 7.152094622142613e-05,
+          "reference_error_position_rms_m_s": 0.015599408186972141,
+          "reference_error_rotation_rms_rad_s": 0.015350770205259323,
+          "force_peak_N": 132.94032287597656,
+          "moment_peak_Nm": 0.3047812879085541,
+          "torque_peak_Nm": 49.98145294189453,
+          "torque_rms_Nm": 39.20458984375,
+          "saturation_fraction": 0.00013333333481568843,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.5255666666666666,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.004817240405827761,
+          "dynamic_impedance_position_rmse_m": 0.00011904309099036543,
+          "dynamic_impedance_rotation_rmse_rad": 5.2448715683246556e-05,
+          "reference_error_position_mean_m_s": 0.015288191847503185,
+          "reference_error_position_std_m_s": 0.003100438741967082,
+          "equilibrium_position_error_mean_m": 0.006428895694203798,
+          "equilibrium_position_error_std_m": 0.006090527790984855,
+          "contact_loss_fraction_after_6s": 0.013041666666666667,
+          "tangential_tracking_rmse_m": 0.0013652919979971524
+        }
+      },
+      "trajectory_sha256": "5474604616d04eaddb38461c23e562a7c81c34da0c23d7178355585f868b1259",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.004,
+        "free_measured_force_rms_N": 5.980892181396484,
+        "rotor_speed_mean_rpm": 8934.91252053276,
+        "rotor_motor_peak_Nm": 0.5,
+        "force_true_normal_mean_N": 7.987131595611572,
+        "force_true_normal_std_N": 9.269028663635254,
+        "force_true_normal_peak_N": 129.3878631591797,
+        "force_measured_normal_mean_N": 7.988786220550537,
+        "force_measured_normal_std_N": 5.27482271194458,
+        "force_measured_normal_peak_N": 97.40546417236328,
+        "grinding_mean_power_W": -88.06387329101562,
+        "longest_contact_loss_ms": 19.0
+      }
+    },
+    "rigid_contact_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 100,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.004,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.95,
+            0.99,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "terminated",
+        "termination_reason": "Tool contact force exceeds experiment cutoff (400 N)",
+        "completed_control_steps": 10766,
+        "attempted_control_steps": 10767,
+        "simulated_duration_s": 10.765999999997584,
+        "wall_time_s": 5.666998575999969,
+        "force_samples": 10767,
+        "metrics": {
+          "position_rmse_m": 0.005989572033286095,
+          "orientation_rmse_rad": 0.00044445149251259863,
+          "reference_error_position_rms_m_s": 0.051306333392858505,
+          "reference_error_rotation_rms_rad_s": 0.23899929225444794,
+          "force_peak_N": 662.356201171875,
+          "moment_peak_Nm": 2.2544426918029785,
+          "torque_peak_Nm": 87.0,
+          "torque_rms_Nm": 40.68867874145508,
+          "saturation_fraction": 9.287638386012986e-05,
+          "minimum_jacobian_singular_value": 0.14606599509716034,
+          "contact_fraction": 0.38710875824277885,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": -0.03965838626027107,
+          "dynamic_impedance_position_rmse_m": 0.0003660373918298088,
+          "dynamic_impedance_rotation_rmse_rad": 0.0004542258333982438,
+          "reference_error_position_mean_m_s": 0.04901350289583206,
+          "reference_error_position_std_m_s": 0.015166287310421467,
+          "equilibrium_position_error_mean_m": 0.004381164085975038,
+          "equilibrium_position_error_std_m": 0.008495771898731111,
+          "contact_loss_fraction_after_6s": 0.02118732955737361,
+          "tangential_tracking_rmse_m": 0.0014123467735381529
+        }
+      },
+      "trajectory_sha256": "f68b347db4ebabc71f589d14f9c2e5b1d2e932ed2e947df527adf96c3d7c8a20",
+      "samples": 10767,
+      "diagnostics": {
+        "longest_saturation_s": 0.001,
+        "free_measured_force_rms_N": 6.476771354675293,
+        "rotor_speed_mean_rpm": 8954.907570419982,
+        "rotor_motor_peak_Nm": 0.5,
+        "force_true_normal_mean_N": 7.833803653717041,
+        "force_true_normal_std_N": 12.993617057800293,
+        "force_true_normal_peak_N": 132.33302307128906,
+        "force_measured_normal_mean_N": 7.880206108093262,
+        "force_measured_normal_std_N": 8.497682571411133,
+        "force_measured_normal_peak_N": 97.23912811279297,
+        "grinding_mean_power_W": -89.83440399169922,
+        "longest_contact_loss_ms": 35.0
+      }
+    },
+    "seed101_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 101,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 71.69628147099957,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010281112045049667,
+          "orientation_rmse_rad": 0.0010872019920498133,
+          "reference_error_position_rms_m_s": 2.2075307369232178,
+          "reference_error_rotation_rms_rad_s": 2.0183563232421875,
+          "force_peak_N": 32.59965515136719,
+          "moment_peak_Nm": 0.07612437754869461,
+          "torque_peak_Nm": 39.74613952636719,
+          "torque_rms_Nm": 37.75954055786133,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606598019599915,
+          "contact_fraction": 0.8156333333333333,
+          "mean_beta": 0.14994341135025024,
+          "min_tank_energy_J": 0.9984042048454285,
+          "interaction_work_J": 0.02204320766031742,
+          "dynamic_impedance_position_rmse_m": 0.007404063819752734,
+          "dynamic_impedance_rotation_rmse_rad": 0.0010879177944872539,
+          "reference_error_position_mean_m_s": 1.927162528038025,
+          "reference_error_position_std_m_s": 1.0766788721084595,
+          "equilibrium_position_error_mean_m": 0.008308398690872631,
+          "equilibrium_position_error_std_m": 0.0034136426464088086,
+          "contact_loss_fraction_after_6s": 8.333333333333333e-05,
+          "tangential_tracking_rmse_m": 0.007303279110845859
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "dbef3eecfe23cd8c1245290bbf53a615e94fc5d6cb38269393c04dd8bd221a3d",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.330769062042236,
+        "rotor_speed_mean_rpm": 8915.880552442532,
+        "rotor_motor_peak_Nm": 0.2040700614452362,
+        "force_true_normal_mean_N": 10.59820556640625,
+        "force_true_normal_std_N": 5.34649658203125,
+        "force_true_normal_peak_N": 29.038942337036133,
+        "force_measured_normal_mean_N": 10.593599319458008,
+        "force_measured_normal_std_N": 2.199392318725586,
+        "force_measured_normal_peak_N": 21.039718627929688,
+        "grinding_mean_power_W": -118.13594055175781,
+        "longest_contact_loss_ms": 1.0
+      }
+    },
+    "seed101_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 101,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.504814383999474,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007413493003696203,
+          "orientation_rmse_rad": 6.918096914887428e-05,
+          "reference_error_position_rms_m_s": 0.015510846860706806,
+          "reference_error_rotation_rms_rad_s": 0.014559556730091572,
+          "force_peak_N": 53.09754943847656,
+          "moment_peak_Nm": 0.12595918774604797,
+          "torque_peak_Nm": 39.68109130859375,
+          "torque_rms_Nm": 39.22222137451172,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606596529483795,
+          "contact_fraction": 0.7329333333333333,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.06239047646522522,
+          "dynamic_impedance_position_rmse_m": 9.079353856964558e-05,
+          "dynamic_impedance_rotation_rmse_rad": 4.903453667991728e-05,
+          "reference_error_position_mean_m_s": 0.015234092250466347,
+          "reference_error_position_std_m_s": 0.002916981466114521,
+          "equilibrium_position_error_mean_m": 0.0044428401689345035,
+          "equilibrium_position_error_std_m": 0.003136220897852352,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013622024173540839
+        }
+      },
+      "trajectory_sha256": "9609377b7d6893e7e32780227f82af7c915057e55ab2e930bcffa62be812b3aa",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 5.97809362411499,
+        "rotor_speed_mean_rpm": 8935.74115680231,
+        "rotor_motor_peak_Nm": 0.16754399240016937,
+        "force_true_normal_mean_N": 7.902226448059082,
+        "force_true_normal_std_N": 5.671404838562012,
+        "force_true_normal_peak_N": 51.596866607666016,
+        "force_measured_normal_mean_N": 7.903420448303223,
+        "force_measured_normal_std_N": 3.0417211055755615,
+        "force_measured_normal_peak_N": 35.450653076171875,
+        "grinding_mean_power_W": -88.37257385253906,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "seed101_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 101,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.116249745999994,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007419557310640812,
+          "orientation_rmse_rad": 0.000347319059073925,
+          "reference_error_position_rms_m_s": 0.04236622899770737,
+          "reference_error_rotation_rms_rad_s": 0.18469496071338654,
+          "force_peak_N": 53.67939758300781,
+          "moment_peak_Nm": 0.12796328961849213,
+          "torque_peak_Nm": 46.157955169677734,
+          "torque_rms_Nm": 39.21638488769531,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606596529483795,
+          "contact_fraction": 0.7635,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.04797971993684769,
+          "dynamic_impedance_position_rmse_m": 0.0003135804576860718,
+          "dynamic_impedance_rotation_rmse_rad": 0.00034657596560881774,
+          "reference_error_position_mean_m_s": 0.040275078266859055,
+          "reference_error_position_std_m_s": 0.013145944103598595,
+          "equilibrium_position_error_mean_m": 0.004221575869115171,
+          "equilibrium_position_error_std_m": 0.0029377196606383974,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.0013867930329390648
+        }
+      },
+      "trajectory_sha256": "f36faff095cb93432c5a58fc94c2a760737b2cb8b6ee281210518542af77d2b7",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.474694728851318,
+        "rotor_speed_mean_rpm": 8935.605357698487,
+        "rotor_motor_peak_Nm": 0.18180690705776215,
+        "force_true_normal_mean_N": 7.907007694244385,
+        "force_true_normal_std_N": 5.37347412109375,
+        "force_true_normal_peak_N": 52.14401626586914,
+        "force_measured_normal_mean_N": 7.907829284667969,
+        "force_measured_normal_std_N": 2.7485690116882324,
+        "force_measured_normal_peak_N": 34.814022064208984,
+        "grinding_mean_power_W": -88.51348876953125,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "seed102_bidirectional": {
+      "summary": {
+        "experiment": "E",
+        "controller": "bidirectional",
+        "trial": 0,
+        "seed": 102,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "G": [
+            1200.0,
+            1200.0,
+            600.0,
+            400.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 71.1328337519999,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.010266156867146492,
+          "orientation_rmse_rad": 0.0010719163110479712,
+          "reference_error_position_rms_m_s": 2.1786670684814453,
+          "reference_error_rotation_rms_rad_s": 1.9806537628173828,
+          "force_peak_N": 29.0855770111084,
+          "moment_peak_Nm": 0.06952544301748276,
+          "torque_peak_Nm": 40.05508804321289,
+          "torque_rms_Nm": 37.775821685791016,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460665613412857,
+          "contact_fraction": 0.8159333333333333,
+          "mean_beta": 0.1481415331363678,
+          "min_tank_energy_J": 0.9983415007591248,
+          "interaction_work_J": 0.02227403037250042,
+          "dynamic_impedance_position_rmse_m": 0.007369895163240844,
+          "dynamic_impedance_rotation_rmse_rad": 0.0010727827441979873,
+          "reference_error_position_mean_m_s": 1.9085044860839844,
+          "reference_error_position_std_m_s": 1.050809621810913,
+          "equilibrium_position_error_mean_m": 0.00827937281473752,
+          "equilibrium_position_error_std_m": 0.00339243744051002,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.007283498817955263
+        },
+        "tank_depletion_count": 0
+      },
+      "trajectory_sha256": "d11f3a8063e8d6c0dc3d951114eb48419d0e8f490c827eb8edf6d50c5482c706",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.318184852600098,
+        "rotor_speed_mean_rpm": 8916.152478662361,
+        "rotor_motor_peak_Nm": 0.214617520570755,
+        "force_true_normal_mean_N": 10.558685302734375,
+        "force_true_normal_std_N": 5.3361592292785645,
+        "force_true_normal_peak_N": 28.262760162353516,
+        "force_measured_normal_mean_N": 10.555403709411621,
+        "force_measured_normal_std_N": 2.183087110519409,
+        "force_measured_normal_peak_N": 21.46633529663086,
+        "grinding_mean_power_W": -117.7004165649414,
+        "longest_contact_loss_ms": 0.0
+      }
+    },
+    "seed102_hinf": {
+      "summary": {
+        "experiment": "E",
+        "controller": "hinf",
+        "trial": 0,
+        "seed": 102,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {
+          "alpha": 1.0
+        },
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.358271387999594,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007413432002067566,
+          "orientation_rmse_rad": 6.959684105822816e-05,
+          "reference_error_position_rms_m_s": 0.015509102493524551,
+          "reference_error_rotation_rms_rad_s": 0.014565800316631794,
+          "force_peak_N": 46.97309112548828,
+          "moment_peak_Nm": 0.11132067441940308,
+          "torque_peak_Nm": 40.20477294921875,
+          "torque_rms_Nm": 39.22238540649414,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.1460663080215454,
+          "contact_fraction": 0.7338,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.06373584270477295,
+          "dynamic_impedance_position_rmse_m": 9.215899697369562e-05,
+          "dynamic_impedance_rotation_rmse_rad": 4.94456914810653e-05,
+          "reference_error_position_mean_m_s": 0.015232883393764496,
+          "reference_error_position_std_m_s": 0.002914022421464324,
+          "equilibrium_position_error_mean_m": 0.004445052628559902,
+          "equilibrium_position_error_std_m": 0.0031251551586556742,
+          "contact_loss_fraction_after_6s": 0.000125,
+          "tangential_tracking_rmse_m": 0.0013619248545691724
+        }
+      },
+      "trajectory_sha256": "cbe427e55629f7695626e741e94b3766e9a94b4823a1a86c20def8a13e45cacd",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 5.981077671051025,
+        "rotor_speed_mean_rpm": 8935.73901526456,
+        "rotor_motor_peak_Nm": 0.17149658501148224,
+        "force_true_normal_mean_N": 7.901635646820068,
+        "force_true_normal_std_N": 5.671412944793701,
+        "force_true_normal_peak_N": 45.6443977355957,
+        "force_measured_normal_mean_N": 7.903338432312012,
+        "force_measured_normal_std_N": 3.0438663959503174,
+        "force_measured_normal_peak_N": 37.82712936401367,
+        "grinding_mean_power_W": -88.36432647705078,
+        "longest_contact_loss_ms": 3.0
+      }
+    },
+    "seed102_smc": {
+      "summary": {
+        "experiment": "E",
+        "controller": "smc",
+        "trial": 0,
+        "seed": 102,
+        "profile": "paper",
+        "requested_duration_s": 30.0,
+        "ideal": false,
+        "scenario_variant": "paper_figure",
+        "initial_q": [
+          0.0,
+          0.0,
+          0.0,
+          -1.57079,
+          0.0,
+          1.57079,
+          -0.7853
+        ],
+        "grinder_model": "rotor",
+        "control_settings": {
+          "alpha": 1.0,
+          "nric_gain_scale": 1.0,
+          "energy_port": "physical",
+          "coupling_update": "stages",
+          "virtual_substeps": 4
+        },
+        "actuator": {
+          "cutoff_hz": 100,
+          "torque_rate_limit": 0.0
+        },
+        "c_profile": null,
+        "controller_parameters": {},
+        "control_period_s": 0.001,
+        "log_period_s": 0.001,
+        "log_stride": 1,
+        "physics_substeps": 4,
+        "plant": {
+          "friction_scale": 1.0,
+          "damping_scale": 1.0,
+          "mass_error": 0.1,
+          "tool_mass": 1.8,
+          "nominal_tool_mass": 0.0,
+          "timestep": 0.00025,
+          "contact_timeconstant": 0.02,
+          "contact_dampratio": 1.0,
+          "contact_impedance": [
+            0.5,
+            0.5,
+            0.001
+          ],
+          "contact_friction": 0.25,
+          "rotor_mass": 0.1,
+          "rotor_eccentricity": 0.0001,
+          "rotor_frequency_hz": 150.0,
+          "grinder_contact": "disc"
+        },
+        "sensors": {
+          "q_std": 1e-05,
+          "v_std": 0.0005,
+          "force_std": 0.1,
+          "moment_std": 0.005,
+          "force_period": 0.001,
+          "delay_samples": 0,
+          "force_bias": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "tool_calibration_mass": 1.8
+        },
+        "mujoco_version": "3.16.0",
+        "source_sha256": "45fe9e1558458a622ad78af08f0ae8567c0ac0c9787cfbbad876a9a765d864c5",
+        "impedance": {
+          "inertia": [
+            10.0,
+            10.0,
+            10.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "damping": [
+            400.0,
+            400.0,
+            400.0,
+            40.0,
+            40.0,
+            40.0
+          ],
+          "stiffness": [
+            1000.0,
+            1000.0,
+            1000.0,
+            400.0,
+            400.0,
+            400.0
+          ]
+        },
+        "status": "completed",
+        "termination_reason": null,
+        "completed_control_steps": 30000,
+        "attempted_control_steps": 30000,
+        "simulated_duration_s": 30.000000000052232,
+        "wall_time_s": 19.199418330999833,
+        "force_samples": 30000,
+        "metrics": {
+          "position_rmse_m": 0.007419377565383911,
+          "orientation_rmse_rad": 0.0003481940948404372,
+          "reference_error_position_rms_m_s": 0.04237660765647888,
+          "reference_error_rotation_rms_rad_s": 0.1847836971282959,
+          "force_peak_N": 28.6314640045166,
+          "moment_peak_Nm": 0.06542934477329254,
+          "torque_peak_Nm": 45.7521858215332,
+          "torque_rms_Nm": 39.214691162109375,
+          "saturation_fraction": 0.0,
+          "minimum_jacobian_singular_value": 0.14606626331806183,
+          "contact_fraction": 0.7635,
+          "mean_beta": 0.0,
+          "min_tank_energy_J": 0.0,
+          "interaction_work_J": 0.048146363347768784,
+          "dynamic_impedance_position_rmse_m": 0.00031372202146607577,
+          "dynamic_impedance_rotation_rmse_rad": 0.00034742619085602073,
+          "reference_error_position_mean_m_s": 0.04029218852519989,
+          "reference_error_position_std_m_s": 0.013126946985721588,
+          "equilibrium_position_error_mean_m": 0.004217096713924456,
+          "equilibrium_position_error_std_m": 0.002931143407625441,
+          "contact_loss_fraction_after_6s": 0.0,
+          "tangential_tracking_rmse_m": 0.001385813115350748
+        }
+      },
+      "trajectory_sha256": "71e8397713ec8f90b65306210394ba7718557ef6869779d3e7fbecd4bc68d6dd",
+      "samples": 30000,
+      "diagnostics": {
+        "longest_saturation_s": 0.0,
+        "free_measured_force_rms_N": 6.476846218109131,
+        "rotor_speed_mean_rpm": 8935.562415741997,
+        "rotor_motor_peak_Nm": 0.188008114695549,
+        "force_true_normal_mean_N": 7.903600692749023,
+        "force_true_normal_std_N": 5.368163108825684,
+        "force_true_normal_peak_N": 27.85018539428711,
+        "force_measured_normal_mean_N": 7.907700538635254,
+        "force_measured_normal_std_N": 2.8073348999023438,
+        "force_measured_normal_peak_N": 22.68613624572754,
+        "grinding_mean_power_W": -88.47203826904297,
+        "longest_contact_loss_ms": 0.0
+      }
+    }
+  }
+}

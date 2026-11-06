@@ -1,0 +1,267 @@
+{
+  "description": "Declared qualitative FR3 adaptation checks, not certification or exact paper reproduction.",
+  "source_sha256": "1ca942baf2501965b1063402f7e64d252280516417cf6bc5f900b0bdfd9322a7",
+  "common_task_settings_checked": [
+    "plant",
+    "sensors",
+    "impedance",
+    "initial_q",
+    "actuator",
+    "operator_stiffness_scale",
+    "operator_torque_scale",
+    "operator_roll_hold"
+  ],
+  "main_status": {
+    "completed": 134
+  },
+  "checks": [
+    {
+      "group": "main",
+      "effect": "A robust tracking materially improves over ordinary impedance",
+      "passed": true,
+      "values": {
+        "admittance": 0.016208991901205363,
+        "hinf": 0.02496494598081629
+      }
+    },
+    {
+      "group": "main",
+      "effect": "B admittance contact chatter; H-infinity avoids saturation",
+      "passed": true,
+      "values": {
+        "force_ripple_rms_N": {
+          "admittance": 18.023764352775828,
+          "hinf": 2.0178304954070927
+        },
+        "saturation_fraction": {
+          "admittance": 0.07213333249092102,
+          "hinf": 0.0
+        }
+      }
+    },
+    {
+      "group": "main",
+      "effect": "C full-board chatter contrast and improved force tracking",
+      "passed": true,
+      "values": {
+        "force_rmse_N": {
+          "admittance": 8.894225120544434,
+          "bidirectional": 1.7430061101913452,
+          "hinf": 0.6249056458473206
+        },
+        "free_board_ripple_N": {
+          "admittance": 7.616289703457237,
+          "hinf": 0.18585303557767588
+        }
+      }
+    },
+    {
+      "group": "main",
+      "effect": "F approximate inverse gain/REF trend and decreasing equilibrium discrepancy",
+      "passed": true,
+      "values": {
+        "ref_mean_m_s": [
+          0.11503013968467712,
+          0.05911393091082573,
+          0.029911674559116364
+        ],
+        "equilibrium_mean_m": [
+          0.0007124361589609951,
+          0.0006439390445118192,
+          0.0006229882262173045
+        ],
+        "adjacent_ref_ratios": [
+          1.9459057774080672,
+          1.9762828989729435
+        ]
+      }
+    },
+    {
+      "group": "seed101",
+      "effect": "A robust tracking materially improves over ordinary impedance",
+      "passed": true,
+      "values": {
+        "admittance": 0.016313657657291897,
+        "hinf": 0.024953313194977147
+      }
+    },
+    {
+      "group": "seed101",
+      "effect": "B admittance contact chatter; H-infinity avoids saturation",
+      "passed": true,
+      "values": {
+        "force_ripple_rms_N": {
+          "admittance": 17.97643750831549,
+          "hinf": 1.9957711891377619
+        },
+        "saturation_fraction": {
+          "admittance": 0.07173333317041397,
+          "hinf": 0.0
+        }
+      }
+    },
+    {
+      "group": "seed101",
+      "effect": "C full-board chatter contrast and improved force tracking",
+      "passed": true,
+      "values": {
+        "force_rmse_N": {
+          "admittance": 8.921053886413574,
+          "bidirectional": 1.7339239120483398,
+          "hinf": 0.615263819694519
+        },
+        "free_board_ripple_N": {
+          "admittance": 7.79692245361936,
+          "hinf": 0.18256427273373801
+        }
+      }
+    },
+    {
+      "group": "seed101",
+      "effect": "F approximate inverse gain/REF trend and decreasing equilibrium discrepancy",
+      "passed": true,
+      "values": {
+        "ref_mean_m_s": [
+          0.11503662168979645,
+          0.05912001058459282,
+          0.02992236241698265
+        ],
+        "equilibrium_mean_m": [
+          0.0007135505002130095,
+          0.0006489710693664516,
+          0.0006187749809212385
+        ],
+        "adjacent_ref_ratios": [
+          1.9458153094406918,
+          1.9757801794098595
+        ]
+      }
+    },
+    {
+      "group": "seed102",
+      "effect": "A robust tracking materially improves over ordinary impedance",
+      "passed": true,
+      "values": {
+        "admittance": 0.015980511268060573,
+        "hinf": 0.024849635896075008
+      }
+    },
+    {
+      "group": "seed102",
+      "effect": "B admittance contact chatter; H-infinity avoids saturation",
+      "passed": true,
+      "values": {
+        "force_ripple_rms_N": {
+          "admittance": 18.227705062414145,
+          "hinf": 1.9524380526993235
+        },
+        "saturation_fraction": {
+          "admittance": 0.07403333485126495,
+          "hinf": 0.0
+        }
+      }
+    },
+    {
+      "group": "seed102",
+      "effect": "C full-board chatter contrast and improved force tracking",
+      "passed": true,
+      "values": {
+        "force_rmse_N": {
+          "admittance": 8.797493934631348,
+          "bidirectional": 1.7663664817810059,
+          "hinf": 0.6316070556640625
+        },
+        "free_board_ripple_N": {
+          "admittance": 7.507147860155485,
+          "hinf": 0.18638221205150077
+        }
+      }
+    },
+    {
+      "group": "seed102",
+      "effect": "F approximate inverse gain/REF trend and decreasing equilibrium discrepancy",
+      "passed": true,
+      "values": {
+        "ref_mean_m_s": [
+          0.11503790318965912,
+          0.059135936200618744,
+          0.02989770658314228
+        ],
+        "equilibrium_mean_m": [
+          0.0007131875918887253,
+          0.00063982188758832,
+          0.0006176966163712405
+        ],
+        "adjacent_ref_ratios": [
+          1.9453129616379603,
+          1.9779422222961522
+        ]
+      }
+    },
+    {
+      "group": "physics8",
+      "effect": "B admittance contact chatter; H-infinity avoids saturation",
+      "passed": true,
+      "values": {
+        "force_ripple_rms_N": {
+          "admittance": 18.064256382864034,
+          "hinf": 1.9883585469293297
+        },
+        "saturation_fraction": {
+          "admittance": 0.07276666909456253,
+          "hinf": 0.0
+        }
+      }
+    },
+    {
+      "group": "physics8",
+      "effect": "C full-board chatter contrast and improved force tracking",
+      "passed": true,
+      "values": {
+        "force_rmse_N": {
+          "admittance": 8.893305778503418,
+          "bidirectional": 1.746444821357727,
+          "hinf": 0.6309995651245117
+        },
+        "free_board_ripple_N": {
+          "admittance": 7.817814640505722,
+          "hinf": 0.18605963649861376
+        }
+      }
+    },
+    {
+      "group": "physics8",
+      "effect": "F approximate inverse gain/REF trend and decreasing equilibrium discrepancy",
+      "passed": true,
+      "values": {
+        "ref_mean_m_s": [
+          0.1149958148598671,
+          0.05911237746477127,
+          0.029906058683991432
+        ],
+        "equilibrium_mean_m": [
+          0.0007146789073359476,
+          0.0006299648958585194,
+          0.0006235980035460578
+        ],
+        "adjacent_ref_ratios": [
+          1.9453762442290572,
+          1.9766020688113555
+        ]
+      }
+    },
+    {
+      "group": "D all trials",
+      "effect": "D H-infinity completes both poses without saturation",
+      "passed": true,
+      "values": {
+        "trials": 30,
+        "phase2_roll_range_deg": [
+          89.999995674289,
+          90.00004348561319
+        ]
+      }
+    }
+  ],
+  "all_qualitative_checks_passed": true
+}

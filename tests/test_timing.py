@@ -21,7 +21,7 @@ class TimingTests(unittest.TestCase):
 
     def test_hybrid_contact_regression_at_one_khz(self):
         with tempfile.TemporaryDirectory() as root:
-            result = run_experiment('C', seed=100, output=root)
+            result = run_experiment('C', seed=100, output=root,profile='legacy')
             self.assertEqual(result['status'], 'completed')
             self.assertEqual(result['completed_control_steps'], 30000)
             self.assertEqual(result['force_samples'], 30000)

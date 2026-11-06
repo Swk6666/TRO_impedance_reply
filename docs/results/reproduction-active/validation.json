@@ -1,0 +1,13 @@
+{
+  "scope": "ABCDF",
+  "E_deferred_by": "AGENTS.md",
+  "runtime_versions": [
+    "b71d9601c33cf08de5f9de070f1706812bda542e77fb033570d89134b2b54e57"
+  ],
+  "main_runs": 134,
+  "sensitivity_runs": 51,
+  "tests": {
+    "passed": 24,
+    "skipped_deferred_E": 3
+  }
+}

@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--video',type=Path)
     parser.add_argument('--speed',type=float,default=2.,help='video playback speed relative to simulation')
     parser.add_argument('--fps',type=int,default=30)
+    parser.add_argument('--no-trails',action='store_true',help='Hide desired/actual TCP paths (display only)')
     args=parser.parse_args()
     if not args.image and not args.video:parser.error('choose --image and/or --video')
     if args.speed<=0 or args.fps<=0:parser.error('speed and fps must be positive')
@@ -32,7 +33,7 @@ def main():
     if s['source_sha256']!=source_hash():
         raise ValueError('Runtime/scenario code differs from this recording; check out its recorded version first')
     a=np.load(args.run/'trajectory.npz')
-    scenario=Scenario(s['experiment'],a['desired'][0].astype(float),s['trial'],variant=s.get('scenario_variant','compact'))
+    scenario=Scenario(s['experiment'],a['desired'][0].astype(float),s['trial'],variant=s.get('scenario_variant','compact'),initial_q=s.get('initial_q'),grinder_model=s.get('grinder_model') or 'external')
     model=build_model(PlantParameters(**s['plant']),environment=scenario.environment())
     # Display-only transparency exposes the TCP behind the obstacle; these
     # colors do not change the geometry used in the recorded experiment.
@@ -48,9 +49,25 @@ def main():
     camera.azimuth=135;camera.elevation=-22
     def render_at(renderer,t):
         index=min(int(np.searchsorted(a['time'],t)),len(a['time'])-1)
-        data.qpos[:]=a['q'][index];data.qvel[:]=a['qvel'][index]
+        data.qpos[:]=a['plant_q' if 'plant_q' in a else 'q'][index]
+        data.qvel[:]=a['plant_qvel' if 'plant_qvel' in a else 'qvel'][index]
         mujoco.mj_forward(model,data)
         renderer.update_scene(data,camera=camera)
+        if not args.no_trails:
+            # Overlay saved paths only; never alter qpos or the contact model.
+            # At most 600 segments per trace keeps rendering bounded.
+            for path,end,rgba in [(a['desired'][:,:3],len(a['time'])-1,[.1,.8,.35,1.]),
+                                  (a['pose'][:,:3],index,[1.,.45,.08,1.])]:
+                indices=np.unique(np.linspace(0,end,min(601,end+1),dtype=int))
+                for left,right in zip(indices[:-1],indices[1:]):
+                    if renderer.scene.ngeom>=renderer.scene.maxgeom:break
+                    start,finish=path[left].astype(float),path[right].astype(float)
+                    if np.linalg.norm(finish-start)<1e-5:continue
+                    geom=renderer.scene.geoms[renderer.scene.ngeom]
+                    mujoco.mjv_initGeom(geom,mujoco.mjtGeom.mjGEOM_LINE,np.zeros(3),np.zeros(3),
+                                       np.eye(3).ravel(),np.array(rgba,dtype=np.float32))
+                    mujoco.mjv_connector(geom,mujoco.mjtGeom.mjGEOM_LINE,3.,start,finish)
+                    renderer.scene.ngeom+=1
         return renderer.render()
     with mujoco.Renderer(model,height=720,width=960) as renderer:
         if args.image:

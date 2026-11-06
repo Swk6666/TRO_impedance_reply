@@ -1,0 +1,20 @@
+{
+  "main_runs": 137,
+  "sensitivity_runs": 65,
+  "source_sha256": "4724490cfea612a41a421c5346e393c5c220c006520b5f9f13ccf6442a227338",
+  "tests": 24,
+  "all_formal_runs_completed": true,
+  "resume_reused_all_runs": true,
+  "checks": [
+    "matrix membership",
+    "uniform 1 kHz timestamps",
+    "full run lengths",
+    "finite arrays",
+    "independent position RMSE and force peaks",
+    "posture and proxy initial conditions",
+    "applied torque clipping",
+    "no energy-tank depletion",
+    "runtime source hash consistency"
+  ],
+  "qualification": "Completion is not stability certification; filter-off saturation and missing paper effects are explicitly retained in REPORT.md."
+}
