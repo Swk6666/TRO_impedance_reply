@@ -86,14 +86,14 @@ class SlidingMode(Impedance):
 
 
 class Admittance(Controller):
-    def __init__(self,*args,gain_scale=1.,virtual_substeps=1,**kwargs):
+    def __init__(self,*args,gain_scale=1.,gain_vector=None,virtual_substeps=1,**kwargs):
         if not isinstance(virtual_substeps,int) or virtual_substeps<1:
             raise ValueError("virtual_substeps must be a positive integer")
         self.virtual_substeps=virtual_substeps
         super().__init__(*args,**kwargs)
         self.proxy=NominalDynamics(self.dynamics.model,self.dynamics.origin)
         self.qn=self.posture.copy(); self.vn=np.zeros(7); self.integral_joint=np.zeros(7)
-        self.G=gain_scale*np.array([1200,1200,600,400,400,400,400.])
+        self.G=gain_scale*np.array([1200,1200,600,400,400,400,400.] if gain_vector is None else gain_vector,dtype=float)
         self.Kp=np.array([60,60,40,30,30,30,30.]); self.Ki=np.full(7,5.)
 
     def nominal_acceleration(self,t,q,v,wrench):
@@ -248,12 +248,12 @@ class Bidirectional(Admittance):
 
 
 def make_controller(name,dynamics,scenario,control_period=DT,*,alpha=1.,nric_gain_scale=1.,energy_port="net",beta_override=None,
-                    virtual_substeps=1,coupling_update="held",ref_gain_scale=1.):
+                    virtual_substeps=1,coupling_update="held",ref_gain_scale=1.,nric_gain_vector=None):
     if name.startswith('hinf'):
         alpha=float(name.split('_')[1]) if '_' in name else alpha
         return HInfinity(dynamics,scenario,alpha*ref_gain_scale,control_period)
     cls={'impedance':Impedance,'smc':SlidingMode,'admittance':Admittance,
          'bidirectional':Bidirectional}[name]
-    kwargs={'gain_scale':nric_gain_scale,'virtual_substeps':virtual_substeps} if issubclass(cls,Admittance) else {}
+    kwargs={'gain_scale':nric_gain_scale,'gain_vector':nric_gain_vector,'virtual_substeps':virtual_substeps} if issubclass(cls,Admittance) else {}
     if cls is Bidirectional:kwargs.update(energy_port=energy_port,beta_override=beta_override,coupling_update=coupling_update)
     return cls(dynamics,scenario,control_period=control_period,**kwargs)

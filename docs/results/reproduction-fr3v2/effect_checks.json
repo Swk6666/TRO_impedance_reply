@@ -1,0 +1,1761 @@
+{
+  "description": "Claims declared before the matrix finished; a failed claim means that paper effect is not reproduced here.",
+  "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+  "claims": {
+    "A_tracking": "A\uff1a\u5bfc\u7eb3\u4e0e H\u221e \u7684\u4f4d\u7f6e RMS \u90fd\u4f4e\u4e8e\u666e\u901a\u963b\u6297\u7684 20%",
+    "A_impedance_peak_scale": "A\uff1a\u666e\u901a\u963b\u6297\u5cf0\u503c\u8bef\u5dee\u843d\u5728\u8bba\u6587\u7ea6 58 mm \u7684 0.5\u20132 \u500d\u5185",
+    "B_impedance_contacts": "B\uff1a\u666e\u901a\u963b\u6297\u4e5f\u63a5\u89e6\u5230\u5899\uff08\u4e0d\u662f\u9760\u5927\u504f\u5dee\u9519\u8fc7\uff09",
+    "B_chatter_contrast": "B\uff1a\u5bfc\u7eb3\u63a5\u89e6\u529b\u9ad8\u9891\u6ce2\u52a8\u81f3\u5c11\u662f H\u221e \u7684 3 \u500d",
+    "B_saturation_contrast": "B\uff1a\u5bfc\u7eb3\u9650\u5e45\u8d85\u8fc7 1%\uff0cH\u221e \u4f4e\u4e8e 0.5%",
+    "B_equilibrium_order": "B\uff1a\u5e73\u8861\u504f\u5dee\u666e\u901a\u963b\u6297\u6700\u5927\u3001H\u221e \u6700\u5c0f",
+    "B_bidirectional_gap": "B\uff1a\u53cc\u5411\u8c03\u5236\u7684\u963b\u6297\u504f\u5dee\u81f3\u5c11\u662f H\u221e \u7684 3 \u500d",
+    "B_ref_below_smc": "B\uff08Fig. 7\uff09\uff1aH\u221e \u7684 REF \u6bd4 SMC \u81f3\u5c11\u4f4e 10%",
+    "B_admittance_stop": "B\uff1a\u5bfc\u7eb3\u5728\u63a5\u89e6\u540e\u5931\u7a33\u7ec8\u6b62\uff08\u539f\u673a\u6025\u505c\uff09",
+    "C_force_order": "C\uff1a\u6cd5\u5411\u529b RMS \u4e3a H\u221e < \u53cc\u5411 < \u5bfc\u7eb3",
+    "C_reduction": "C\uff1aH\u221e \u6cd5\u5411\u529b RMS \u4e0d\u8d85\u8fc7\u5bfc\u7eb3\u7684\u4e00\u534a",
+    "C_chatter": "C\uff1a\u5e73\u677f\u6bb5\u5bfc\u7eb3\u529b\u6ce2\u52a8\u81f3\u5c11\u662f H\u221e \u7684 2 \u500d",
+    "F_ref_inverse": "F\uff1a\u589e\u76ca\u7ffb\u500d\u65f6 REF \u63a5\u8fd1\u51cf\u534a\uff08\u76f8\u90bb\u6bd4 1.7\u20132.2\uff09",
+    "F_disturbance_constant": "F\uff1a\u589e\u76ca \u00d7 REF \u5728\u4e09\u6863\u589e\u76ca\u4e0b\u57fa\u672c\u4e0d\u53d8\uff08\u6700\u5927/\u6700\u5c0f < 1.3\uff09",
+    "F_eq_mean": "F\uff1a\u5e73\u8861\u504f\u5dee\u5747\u503c\u968f\u589e\u76ca\u5355\u8c03\u4e0b\u964d\uff0cC1\u2192C3 \u81f3\u5c11\u964d 30%",
+    "F_eq_std": "F\uff1a\u5e73\u8861\u504f\u5dee\u65f6\u95f4\u6807\u51c6\u5dee\u968f\u589e\u76ca\u5355\u8c03\u4e0b\u964d\uff0cC1\u2192C3 \u81f3\u5c11\u964d 20%",
+    "D_complete": "D\uff1a\u56db\u79cd\u63a7\u5236\u5668 120 \u6b21\u5168\u90e8\u8dd1\u5b8c",
+    "D_impedance_worst": "D\uff1apitch \u4e0e yaw \u5e73\u8861\u504f\u5dee\u90fd\u662f\u666e\u901a\u963b\u6297\u6700\u5927",
+    "D_pitch_hinf_best": "D\uff08Fig. 12\uff09\uff1aH\u221e \u7684 pitch \u504f\u5dee\u6bd4\u5176\u4ed6\u63a7\u5236\u5668\u90fd\u81f3\u5c11\u4f4e 50%",
+    "D_yaw_hinf_best": "D\uff08Fig. 12\uff09\uff1aH\u221e \u7684 yaw \u504f\u5dee\u6700\u5c0f",
+    "D_roll_free": "D\uff1a\u65e0\u88ab\u52a8\u652f\u6491\u65f6 H\u221e \u7b2c\u4e8c\u9636\u6bb5\u6eda\u8f6c\u4ecd\u5728 90\u00b0\u00b12\u00b0"
+  },
+  "common_task_settings_checked": [
+    "plant",
+    "sensors",
+    "impedance",
+    "initial_q",
+    "actuator",
+    "operator_stiffness_scale",
+    "operator_torque_scale",
+    "operator_roll_hold"
+  ],
+  "main_status": {
+    "completed": 134
+  },
+  "groups": {
+    "main": {
+      "A_tracking": {
+        "passed": true,
+        "values": {
+          "ratios": {
+            "admittance": 0.008063253678385118,
+            "hinf": 0.02152484216620565
+          }
+        }
+      },
+      "A_impedance_peak_scale": {
+        "passed": true,
+        "values": {
+          "peak_mm": 73.34479464799517
+        }
+      },
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.0376
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.656699520944102,
+            "hinf": 5.597123844617889
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.04126666486263275,
+            "hinf": 0.0009333333582617342
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07244502949245686,
+            "admittance": 0.010684063041583794,
+            "bidirectional": 0.013574912000226296,
+            "smc": 0.004107899435657616,
+            "hinf": 0.002966894950691832
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012732892882191824,
+            "hinf": 0.0011791571632443606
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08130059391260147,
+            "hinf": 0.08129353821277618
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.798107912567122,
+            "bidirectional": 4.197832205348998,
+            "hinf": 3.142061914468528
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.798107912567122,
+            "bidirectional": 4.197832205348998,
+            "hinf": 3.142061914468528
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.571210131532824,
+            "hinf": 3.1061813832168936
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.949509701998551,
+            1.9650414433682455
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            21.410452388226986,
+            21.964961104094982,
+            22.35572300851345
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.005667484102681489,
+            0.0038383945166713023,
+            0.002966894950691832
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.00800438050396882,
+            0.007424832335128161,
+            0.007606341576810377
+          ]
+        }
+      },
+      "D_complete": {
+        "passed": true,
+        "values": {
+          "completed": {
+            "impedance": 30,
+            "admittance": 30,
+            "smc": 30,
+            "hinf": 30
+          }
+        }
+      },
+      "D_impedance_worst": {
+        "passed": true,
+        "values": {
+          "pitch_rad": {
+            "admittance": 0.0023997121921657564,
+            "impedance": 0.007502174329609407,
+            "smc": 0.002207871947650665,
+            "hinf": 0.0022619156317627534
+          },
+          "yaw_rad": {
+            "admittance": 0.06528615863543119,
+            "impedance": 0.41659481881514926,
+            "smc": 0.08343562992551125,
+            "hinf": 0.06706244907789705
+          }
+        }
+      },
+      "D_pitch_hinf_best": {
+        "passed": false,
+        "values": {
+          "pitch_rad": {
+            "admittance": 0.0023997121921657564,
+            "impedance": 0.007502174329609407,
+            "smc": 0.002207871947650665,
+            "hinf": 0.0022619156317627534
+          }
+        }
+      },
+      "D_yaw_hinf_best": {
+        "passed": false,
+        "values": {
+          "yaw_rad": {
+            "admittance": 0.06528615863543119,
+            "impedance": 0.41659481881514926,
+            "smc": 0.08343562992551125,
+            "hinf": 0.06706244907789705
+          }
+        }
+      },
+      "D_roll_free": {
+        "passed": true,
+        "values": {
+          "range_deg": [
+            89.95629612397926,
+            90.00827386356305
+          ]
+        }
+      }
+    },
+    "seed102": {
+      "A_tracking": {
+        "passed": true,
+        "values": {
+          "ratios": {
+            "admittance": 0.007990059470957067,
+            "hinf": 0.021464834671114777
+          }
+        }
+      },
+      "A_impedance_peak_scale": {
+        "passed": true,
+        "values": {
+          "peak_mm": 73.36650249780418
+        }
+      },
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.039966666666666664
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.588964042954316,
+            "hinf": 5.782382662179399
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.04129999876022339,
+            "hinf": 0.0010000000474974513
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07244014628157293,
+            "admittance": 0.010682569564823712,
+            "bidirectional": 0.013695778501541855,
+            "smc": 0.004104100401748931,
+            "hinf": 0.0029979426341527316
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012775075318464278,
+            "hinf": 0.0011798711021092098
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08152807503938675,
+            "hinf": 0.08126737922430038
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.853880299843391,
+            "bidirectional": 4.185689640960127,
+            "hinf": 3.1224483586798493
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.853880299843391,
+            "bidirectional": 4.185689640960127,
+            "hinf": 3.1224483586798493
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.533841323837848,
+            "hinf": 3.1290528587805477
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.9496339864136563,
+            1.966134015944775
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            21.416828595101833,
+            21.970101818442345,
+            22.348529286682606
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.005654177377755328,
+            0.0038236584439518832,
+            0.0029979426341527316
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.007929597405306625,
+            0.0073551217994343035,
+            0.0076788031076260675
+          ]
+        }
+      }
+    },
+    "seed101": {
+      "A_tracking": {
+        "passed": true,
+        "values": {
+          "ratios": {
+            "admittance": 0.008097214279508658,
+            "hinf": 0.021451620833256402
+          }
+        }
+      },
+      "A_impedance_peak_scale": {
+        "passed": true,
+        "values": {
+          "peak_mm": 73.3959472260721
+        }
+      },
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.036866666666666666
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.616093622715894,
+            "hinf": 5.360359631825971
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.04143333435058594,
+            "hinf": 0.0009666666737757623
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.0724362815720626,
+            "admittance": 0.010687725643639059,
+            "bidirectional": 0.013791281605885301,
+            "smc": 0.004032512835216471,
+            "hinf": 0.0029038694254893142
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012792997142857138,
+            "hinf": 0.0011803771128090351
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08124341070652008,
+            "hinf": 0.08130783587694168
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.698320146939912,
+            "bidirectional": 4.1737830535613565,
+            "hinf": 3.1186170874793078
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.698320146939912,
+            "bidirectional": 4.1737830535613565,
+            "hinf": 3.1186170874793078
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.5866545660512386,
+            "hinf": 3.123810776747244
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.947311576205002,
+            1.9663077445673962
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            21.403856948018074,
+            21.982981264591217,
+            22.359654866158962
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.005673602840550348,
+            0.0038380088320438184,
+            0.0029038694254893142
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.00801445909641157,
+            0.007392387131532898,
+            0.007440701391290221
+          ]
+        }
+      }
+    },
+    "physics8": {
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.038066666666666665
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.655099862790095,
+            "hinf": 5.64749700763627
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.04143333435058594,
+            "hinf": 0.0009666666737757623
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07243690855751386,
+            "admittance": 0.010687969385104848,
+            "bidirectional": 0.013791127248868154,
+            "smc": 0.004198099887146473,
+            "hinf": 0.003005795235717075
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012811680452722504,
+            "hinf": 0.0011814238037198973
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08164732903242111,
+            "hinf": 0.08129065483808517
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.834389980372787,
+            "bidirectional": 4.175697137379392,
+            "hinf": 3.1694743638719247
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 9.834389980372787,
+            "bidirectional": 4.175697137379392,
+            "hinf": 3.1694743638719247
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.5554558615510166,
+            "hinf": 3.114772009624538
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.9485640106402182,
+            1.9658947814918768
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            21.40860017389059,
+            21.97372019290924,
+            22.354930080473423
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.005686289152684664,
+            0.003808562444290461,
+            0.003005795235717075
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.007999165816810051,
+            0.007396569456336271,
+            0.0077043886840292295
+          ]
+        }
+      }
+    },
+    "rigid_contact": {
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.014033333333333333
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 23.727237567709846,
+            "hinf": 13.087396441985838
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.03893333300948143,
+            "hinf": 0.0006666666595265269
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07245113889655491,
+            "admittance": 0.010647636294535774,
+            "bidirectional": 0.016188265115912724,
+            "smc": 0.00658774986442437,
+            "hinf": 0.0053268277990838695
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.013046214856305435,
+            "hinf": 0.0011911431106464792
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08177090436220169,
+            "hinf": 0.08118593692779541
+          }
+        }
+      }
+    },
+    "filter_off": {},
+    "delay0": {
+      "B_chatter_contrast": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 6.590915990546527,
+            "hinf": 5.7883864983824855
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": false,
+        "values": {
+          "saturation": {
+            "admittance": 0.0009666666737757623,
+            "hinf": 0.0009333333582617342
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.0123280966526591,
+            "hinf": 0.001176196571383545
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08089009672403336,
+            "hinf": 0.08132953941822052
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": false,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 3.2457568307530336,
+            "bidirectional": 3.8649338170007743,
+            "hinf": 3.1139610048766753
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": false,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 3.2457568307530336,
+            "bidirectional": 3.8649338170007743,
+            "hinf": 3.1139610048766753
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.3458598787750597,
+            "hinf": 3.11795039206667
+          }
+        }
+      }
+    },
+    "delay1": {
+      "B_chatter_contrast": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 8.877898511890818,
+            "hinf": 5.674241748312978
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": false,
+        "values": {
+          "saturation": {
+            "admittance": 0.0023333332501351833,
+            "hinf": 0.0009333333582617342
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012348973563002012,
+            "hinf": 0.0011781394718866458
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08068586885929108,
+            "hinf": 0.08134765923023224
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 5.089248320911672,
+            "bidirectional": 3.847086180994168,
+            "hinf": 3.1035781178832527
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": false,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 5.089248320911672,
+            "bidirectional": 3.847086180994168,
+            "hinf": 3.1035781178832527
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.3818334670198698,
+            "hinf": 3.1257335578736516
+          }
+        }
+      }
+    },
+    "delay2": {
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.33999687237112,
+            "hinf": 5.589935679847913
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.040166664868593216,
+            "hinf": 0.0009333333582617342
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012483189630608621,
+            "hinf": 0.0011788684640913817
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08092306554317474,
+            "hinf": 0.08131808042526245
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 6.532490130461338,
+            "bidirectional": 3.955912067183846,
+            "hinf": 3.106923288038811
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 6.532490130461338,
+            "bidirectional": 3.955912067183846,
+            "hinf": 3.106923288038811
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.4202595899174346,
+            "hinf": 3.1111578364935717
+          }
+        }
+      }
+    },
+    "delay5": {
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 18.269207587758196,
+            "hinf": 5.562590065070394
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.04126666486263275,
+            "hinf": 0.0010000000474974513
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.013048308997851667,
+            "hinf": 0.0011831356687605086
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08185944706201553,
+            "hinf": 0.08131282031536102
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 16.6064636653255,
+            "bidirectional": 4.708175575343203,
+            "hinf": 3.184764708117041
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 16.6064636653255,
+            "bidirectional": 4.708175575343203,
+            "hinf": 3.184764708117041
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 6.129653861868126,
+            "hinf": 3.1904319619904458
+          }
+        }
+      }
+    },
+    "friction2": {
+      "A_tracking": {
+        "passed": true,
+        "values": {
+          "ratios": {
+            "admittance": 0.009741517972718224,
+            "hinf": 0.021035177035802835
+          }
+        }
+      },
+      "A_impedance_peak_scale": {
+        "passed": true,
+        "values": {
+          "peak_mm": 57.94680229623145
+        }
+      },
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.0663
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.237787390310938,
+            "hinf": 5.213797517696754
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.04196666553616524,
+            "hinf": 0.000699999975040555
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.053484847357023725,
+            "admittance": 0.010563584349033695,
+            "bidirectional": 0.013682089702585725,
+            "smc": 0.0035852464267715598,
+            "hinf": 0.0025529473548173975
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012661774925155673,
+            "hinf": 0.0008066989273761685
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.039382610470056534,
+            "hinf": 0.055112604051828384
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 8.510957845281734,
+            "bidirectional": 3.8513616482487203,
+            "hinf": 3.0540136716582267
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 8.510957845281734,
+            "bidirectional": 3.8513616482487203,
+            "hinf": 3.0540136716582267
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.496308514809642,
+            "hinf": 3.1431212973963754
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.9580242768822653,
+            1.9634449418849051
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            14.56667510792613,
+            14.878952503204346,
+            15.155966114252806
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.004285110591717004,
+            0.0030947170736824376,
+            0.0025529473548173975
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.0068972571594883856,
+            0.006631609682500173,
+            0.006938174727143399
+          ]
+        }
+      }
+    },
+    "virtual8": {},
+    "friction3.5": {
+      "A_tracking": {
+        "passed": true,
+        "values": {
+          "ratios": {
+            "admittance": 0.0075469345457463075,
+            "hinf": 0.021759740515742507
+          }
+        }
+      },
+      "A_impedance_peak_scale": {
+        "passed": true,
+        "values": {
+          "peak_mm": 80.56263941706315
+        }
+      },
+      "B_impedance_contacts": {
+        "passed": false,
+        "values": {
+          "contact_fraction": 0.0
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 17.865818815168517,
+            "hinf": 5.831284070568161
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.040833331644535065,
+            "hinf": 0.0010999999940395355
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.08124055140041761,
+            "admittance": 0.010754884350119419,
+            "bidirectional": 0.013825286263842274,
+            "smc": 0.004424463879878335,
+            "hinf": 0.0031760253491219135
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012864512340682583,
+            "hinf": 0.0013632813048167862
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": true,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.10556568950414658,
+            "hinf": 0.0943102017045021
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 10.139021970891706,
+            "bidirectional": 4.271816434577535,
+            "hinf": 3.199250585835246
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 10.139021970891706,
+            "bidirectional": 4.271816434577535,
+            "hinf": 3.199250585835246
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.596534982481055,
+            "hinf": 3.170255194624
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.9458429078544948,
+            1.9645295925510469
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            24.785502441227436,
+            25.47533754259348,
+            25.93530546873808
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.006358483375618756,
+            0.0042088949383470116,
+            0.0031760253491219135
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.008414796356835912,
+            0.007759386695284942,
+            0.007946390908450304
+          ]
+        }
+      }
+    },
+    "matched_G": {
+      "A_tracking": {
+        "passed": true,
+        "values": {
+          "ratios": {
+            "admittance": 0.016948110847799517,
+            "hinf": 0.02152484216620565
+          }
+        }
+      },
+      "A_impedance_peak_scale": {
+        "passed": true,
+        "values": {
+          "peak_mm": 73.34479464799517
+        }
+      },
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.0376
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 6.18122518111378,
+            "hinf": 5.597123844617889
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": false,
+        "values": {
+          "saturation": {
+            "admittance": 0.0023666666820645332,
+            "hinf": 0.0009333333582617342
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07244502949245686,
+            "admittance": 0.0034741225035971922,
+            "bidirectional": 0.011929765978500375,
+            "smc": 0.004107899435657616,
+            "hinf": 0.002966894950691832
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.011937978944318388,
+            "hinf": 0.0011791571632443606
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08130059391260147,
+            "hinf": 0.08129353821277618
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": false,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 3.1407357814085937,
+            "bidirectional": 3.8953622406366275,
+            "hinf": 3.142061914468528
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": false,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 3.1407357814085937,
+            "bidirectional": 3.8953622406366275,
+            "hinf": 3.142061914468528
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.1499222329198213,
+            "hinf": 3.1061813832168936
+          }
+        }
+      },
+      "F_ref_inverse": {
+        "passed": true,
+        "values": {
+          "adjacent_ratios": [
+            1.949509701998551,
+            1.9650414433682455
+          ]
+        }
+      },
+      "F_disturbance_constant": {
+        "passed": true,
+        "values": {
+          "gain_times_ref_N": [
+            21.410452388226986,
+            21.964961104094982,
+            22.35572300851345
+          ]
+        }
+      },
+      "F_eq_mean": {
+        "passed": true,
+        "values": {
+          "equilibrium_mean_m": [
+            0.005667484102681489,
+            0.0038383945166713023,
+            0.002966894950691832
+          ]
+        }
+      },
+      "F_eq_std": {
+        "passed": false,
+        "values": {
+          "equilibrium_std_m": [
+            0.00800438050396882,
+            0.007424832335128161,
+            0.007606341576810377
+          ]
+        }
+      }
+    },
+    "contact_zeta1": {
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.0388
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 13.717351888850462,
+            "hinf": 5.160673291473779
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.015166666358709335,
+            "hinf": 0.0006000000284984708
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07243054831108468,
+            "admittance": 0.006656957040425497,
+            "bidirectional": 0.013380133843447533,
+            "smc": 0.003938461381313153,
+            "hinf": 0.002887327244111025
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.01275126658109521,
+            "hinf": 0.0011780874258475408
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08082086592912674,
+            "hinf": 0.08119280636310577
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 6.474956921031647,
+            "bidirectional": 4.035901978543364,
+            "hinf": 3.0477728861797835
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 6.474956921031647,
+            "bidirectional": 4.035901978543364,
+            "hinf": 3.0477728861797835
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 3.2928394433682735,
+            "hinf": 3.0896021710676407
+          }
+        }
+      }
+    },
+    "contact_soft": {
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.0397
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": true,
+        "values": {
+          "ripple_N": {
+            "admittance": 11.54937194927651,
+            "hinf": 3.3864347197544
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": false,
+        "values": {
+          "saturation": {
+            "admittance": 0.0052999998442828655,
+            "hinf": 0.0011333333095535636
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.072350800834521,
+            "admittance": 0.005652848802977481,
+            "bidirectional": 0.013744815400661203,
+            "smc": 0.003831101092714347,
+            "hinf": 0.002718361257500441
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.012734217308053583,
+            "hinf": 0.0011763788787378761
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08176321536302567,
+            "hinf": 0.08198222517967224
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 5.554529663803851,
+            "bidirectional": 3.0958181693392697,
+            "hinf": 1.6502002406152902
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 5.554529663803851,
+            "bidirectional": 3.0958181693392697,
+            "hinf": 1.6502002406152902
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 1.7195171284667652,
+            "hinf": 1.2672698929887276
+          }
+        }
+      }
+    },
+    "contact_stiff": {
+      "B_impedance_contacts": {
+        "passed": true,
+        "values": {
+          "contact_fraction": 0.03383333333333333
+        }
+      },
+      "B_chatter_contrast": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 22.482993012668178,
+            "hinf": 8.75343033849784
+          }
+        }
+      },
+      "B_saturation_contrast": {
+        "passed": true,
+        "values": {
+          "saturation": {
+            "admittance": 0.03723333403468132,
+            "hinf": 0.0008333333535119891
+          }
+        }
+      },
+      "B_admittance_stop": {
+        "passed": false,
+        "values": {
+          "status": "completed"
+        }
+      },
+      "B_equilibrium_order": {
+        "passed": true,
+        "values": {
+          "equilibrium_m": {
+            "impedance": 0.07260959878048641,
+            "admittance": 0.010246870883827707,
+            "bidirectional": 0.014949290229860128,
+            "smc": 0.005132770903413054,
+            "hinf": 0.0038999961972056886
+          }
+        }
+      },
+      "B_bidirectional_gap": {
+        "passed": true,
+        "values": {
+          "gap_m": {
+            "bidirectional": 0.013146412228374241,
+            "hinf": 0.001182931319852121
+          }
+        }
+      },
+      "B_ref_below_smc": {
+        "passed": false,
+        "values": {
+          "ref_m_s": {
+            "smc": 0.08128136396408081,
+            "hinf": 0.08115752041339874
+          }
+        }
+      },
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 15.725872659499206,
+            "bidirectional": 6.320737654515944,
+            "hinf": 5.131871182932051
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 15.725872659499206,
+            "bidirectional": 6.320737654515944,
+            "hinf": 5.131871182932051
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 9.304791230640086,
+            "hinf": 5.360356155322386
+          }
+        }
+      }
+    },
+    "c_solimp8": {
+      "C_force_order": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 4.975883440750912,
+            "bidirectional": 3.085347178604804,
+            "hinf": 1.9125354848440757
+          }
+        }
+      },
+      "C_reduction": {
+        "passed": true,
+        "values": {
+          "measured_rms_N": {
+            "admittance": 4.975883440750912,
+            "bidirectional": 3.085347178604804,
+            "hinf": 1.9125354848440757
+          }
+        }
+      },
+      "C_chatter": {
+        "passed": false,
+        "values": {
+          "ripple_N": {
+            "admittance": 1.7181891502096762,
+            "hinf": 1.56965295362256
+          }
+        }
+      }
+    }
+  }
+}

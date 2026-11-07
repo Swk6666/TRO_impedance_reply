@@ -27,7 +27,7 @@ def main():
     parser.add_argument('--resume',action='store_true')
     parser.add_argument('--control-period',type=float,choices=[.001,.00025],default=.001)
     parser.add_argument('--c-profile',choices=['fr3','legacy'],default='fr3')
-    parser.add_argument('--profile',choices=['fr3','paper','legacy'],default='fr3')
+    parser.add_argument('--profile',choices=['fr3','fr3v2','paper','legacy'],default='fr3')
     parser.add_argument('--inertia-scale',type=float,default=1.)
     parser.add_argument('--operator-stiffness-scale',type=float,default=None)
     parser.add_argument('--grinder-model',choices=['rotor','external'],default=None)
@@ -39,8 +39,8 @@ def main():
         parser.error('inertia scale must be finite and positive')
     if not args.experiments or any(e not in COMPARISONS for e in args.experiments) or len(set(args.experiments))!=len(args.experiments):
         parser.error('experiments must be unique letters drawn from ABCDEF')
-    if args.profile=='fr3' and 'E' in args.experiments:
-        parser.error('E is deferred by AGENTS.md; the fr3 profile covers A/B/C/D/F')
+    if args.profile in ('fr3','fr3v2') and 'E' in args.experiments:
+        parser.error(f'E is deferred by AGENTS.md; the {args.profile} profile covers A/B/C/D/F')
     root=Path(args.output);root.mkdir(parents=True,exist_ok=True)
     jobs=[];completed=[]
     version=source_hash()

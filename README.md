@@ -8,6 +8,12 @@
 
 新增 [A/B/C/D/F 论文原图逐图对照与差距说明](docs/results/paper-comparison/REPORT.md)：A 的定性趋势较接近；B/C 仍有接触行为和幅值差距；D 的 pitch 统计优势、F 的明显静态误差改善尚未复现。该对照用测量 F/T 计算平衡参考，与旧报告的物理真值指标分别保留，并正确区分 C 的关节速度和 REF。
 
+**新增并列配置 `fr3v2`。** 它恢复论文的 Λ/D/K、NRIC G 和 D 虚拟操作者，改为假设关节摩擦 ×3、F/T 延迟 3 ms 和欠阻尼接触；`fr3` 保留作对照，默认配置未变。[134 次主实验 + 148 次敏感性验证](docs/results/reproduction-fr3v2/REPORT.md)和[论文原图对照](docs/results/paper-comparison-fr3v2/REPORT.md)显示：A、F 的 REF 和平衡偏差均值、D 的 yaw 更接近论文；导纳差于 H∞ 的现象依赖论文 G 与 F/T 延迟同时存在；C 的 H∞ 力跟踪和 B 的 H∞/SMC REF 差异比 `fr3` 差；D 的 pitch 优势仍未复现。这些平台假设未经标定，其中延迟和接触参数是在观察控制器差异时选的，存在选择偏差。
+
+**D 另有一个并列的操作者模型 `fig11_replay`。** 它把论文 Fig. 11 数字化的实测力矩（×.6）开环加到四种控制器上，默认操作者和 `fr3v2` 结果都没有改。[171 次运行的报告](docs/results/d-operator/REPORT.md)显示：H∞ 的响应与论文几乎重合，yaw 上普通阻抗为 H∞ 的 3.45 倍（论文 3.47），pitch 上 SMC 从 .98 倍升到 1.90 倍（论文 7.08），普通阻抗从 3.32 倍升到 5.56 倍（论文 16.96）；但导纳仍接近理想响应，pitch 为 .87 倍（论文 9.04），紧握和延迟都没有改变这一点。所以 D 的剩余差距主要不在操作者。SMC 与 H∞ 的差距还依赖摩擦 ×3 这个假设。
+
+**导纳差距的诊断。** [36 次运行的报告](docs/results/d-admittance/REPORT.md)从论文曲线辨识出：H∞ 符合写明的阻抗方程，导纳却相当于多了一项 `ΛMx⁻¹m`，这在 C 中表现为平均力只有 5.9 N（期望 10 N）。软内环、延迟和恒定增益都解释不了这个形式。在 FR3 上只去掉 `-JᵀF` 这一项，pitch 倍数就接近论文（普通阻抗 15.35 / 导纳 14.39 / SMC 4.34，论文 16.96 / 9.04 / 7.08），C 的力偏差也随之出现，H∞ 则基本不变。与公开的 Indy7 辨识参数核对后，这个形式在名义模型不含转子惯量时量级相符；计入转子时 D 和 C 需要的系数互相矛盾。结果还依赖所用参数组。这只说明这个形式足以解释证据，不能证明作者的代码如此；它也不是论文的控制器，因此没有加入任何配置。
+
 这是跨机器人仿真，不是真实 FR3 或原论文 Indy7 的实验记录。用户确认把工具质量、接触材料和命令滤波作为明确的仿真假设保留。原始控制日志、人手施力和驱动标定未公开，运行完成不等于稳定性或无源性证明。
 
 新配置恢复 A/B/F 的 260×260 mm ∞ 轨迹、45° 斜墙和 C 的 100×300 mm 轨迹；为大轨迹配置可达的 FR3 起始姿态。同一实验的控制器使用相同任务阻抗、接触环境、虚拟操作者和 100 Hz 命令接口。B/F 调整任务惯量与阻尼；C 仅调整 x/y；D 调整旋转阻抗和交互力矩，并明确加入第二阶段被动滚转支撑。完整参数见 [实现说明](docs/IMPLEMENTATION.md)；选择过程及 9 次提前终止见 [133 次适配审计](docs/results/fr3-adaptation/REPORT.md)。
@@ -38,7 +44,15 @@ OPENBLAS_NUM_THREADS=1 python scripts/validate_reproduction.py --workers 8 --res
 OPENBLAS_NUM_THREADS=1 python scripts/report_reproduction.py
 ```
 
-输出写入 `outputs/reproduction-fr3`，报告写入 `docs/results/reproduction-fr3`，保留此前各版本。重新生成已保留的适配审计：
+输出写入 `outputs/reproduction-fr3`，报告写入 `docs/results/reproduction-fr3`，保留此前各版本。重跑 `fr3v2`（134 次主矩阵 + 148 次敏感性检查），其报告还会读取 `outputs/reproduction-fr3/main` 作三方对照：
+
+```bash
+OPENBLAS_NUM_THREADS=1 python scripts/validate_reproduction.py --profile fr3v2 --output outputs/reproduction-fr3v2 --workers 8 --resume
+OPENBLAS_NUM_THREADS=1 python scripts/report_reproduction.py --root outputs/reproduction-fr3v2 --output docs/results/reproduction-fr3v2
+OPENBLAS_NUM_THREADS=1 python scripts/compare_paper_figures.py --runs outputs/reproduction-fr3v2/main --output docs/results/paper-comparison-fr3v2
+```
+
+重新生成已保留的适配审计：
 
 ```bash
 OPENBLAS_NUM_THREADS=1 python scripts/report_fr3_adaptation.py
@@ -55,7 +69,7 @@ python -m fr3imp.analyze outputs/quick --output outputs/quick-report
 
 单独检查命令滤波假设：`python -m fr3imp --experiment C --controller hinf --command-cutoff 0 --output outputs/filter-off`。关闭滤波的论文原增益在 1 kHz 下可能持续限幅，应检查 `saturation_fraction` 和实际力矩。
 
-本轮环境记录见 [environment.json](docs/results/reproduction-fr3/environment.json)，测试见 [VALIDATION.txt](docs/results/reproduction-fr3/VALIDATION.txt)。当前 27 项通过、3 项 E 专项跳过。此前 C 审计使用 Python 3.14.6，旧直接依赖版本保存在 [requirements-lock.txt](requirements-lock.txt)。
+`fr3` 的环境记录见 [environment.json](docs/results/reproduction-fr3/environment.json)。`fr3v2` 的环境和测试记录见 [environment.json](docs/results/reproduction-fr3v2/environment.json) 和 [VALIDATION.txt](docs/results/reproduction-fr3v2/VALIDATION.txt)。当前代码的测试记录见 [VALIDATION.txt](docs/results/d-admittance/VALIDATION.txt)：共 46 项，43 项通过、3 项 E 专项跳过。加入 D 操作者后运行时代码哈希已变，所以回放早先的 `fr3`、`fr3v2` 记录要用各自输出目录里的 `source/` 快照，`--resume` 也会重跑它们。此前 C 审计使用 Python 3.14.6，旧直接依赖版本保存在 [requirements-lock.txt](requirements-lock.txt)。
 
 C 组的 1 kHz 调整与验证见 [诊断报告](docs/results/c-1khz/REPORT.md)：
 
@@ -64,7 +78,7 @@ OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python scripts/validate_c.py
 OPENBLAS_NUM_THREADS=1 PYTHONPATH=. python scripts/report_c.py
 ```
 
-三种配置分别保留：`fr3` 为当前适配；`paper` 在 C 使用原 Λ/D/K、α=1、NRIC G 和恢复的论文轨迹；`legacy` 为历史紧凑场景，其中 `--c-profile fr3` 使用 α=.25、G×.1，`--c-profile legacy` 使用旧硬接触和原增益。所有笔尖/接触参数均未经实物标定。原参数完整对照可用 `python scripts/validate_reproduction.py --profile paper --output outputs/paper-comparison`，再向报告脚本传入相同 `--root`。
+四种配置分别保留：`fr3` 为当前默认适配；`fr3v2` 恢复论文任务参数并改用上述平台假设；`paper` 在 C 使用原 Λ/D/K、α=1、NRIC G 和恢复的论文轨迹；`legacy` 为历史紧凑场景，其中 `--c-profile fr3` 使用 α=.25、G×.1，`--c-profile legacy` 使用旧硬接触和原增益。所有笔尖/接触参数均未经实物标定。原参数完整对照可用 `python scripts/validate_reproduction.py --profile paper --output outputs/paper-comparison`，再向报告脚本传入相同 `--root`。
 
 历史 C 机制审计使用单独的固定矩阵，不覆盖旧目录。先安装系统 `poppler-utils` 以读取论文矢量图，再运行：
 

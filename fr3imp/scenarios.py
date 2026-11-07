@@ -29,6 +29,12 @@ COMPARISONS = {
 }
 
 
+# Fig. 11 moments are replayed mirrored about the x-z plane, so the roll stays
+# +90 degrees like the grasp model (the paper rolled the other way).
+REPLAY_MIRROR = np.array([-1.,1.,-1.])
+REPLAY_COLUMNS = ('hinf','admittance','impedance','smc')
+
+
 def smoothstep(t, duration):
     u = np.clip(t/duration,0,1)
     s = 10*u**3-15*u**4+6*u**5
@@ -39,7 +45,8 @@ def smoothstep(t, duration):
 
 class Scenario:
     def __init__(self, name, initial_pose, trial=0,variant="compact",initial_q=None,grinder_model='external',
-                 impedance_overrides=None,operator_stiffness_scale=1.,operator_torque_scale=1.,operator_roll_hold=False):
+                 impedance_overrides=None,operator_stiffness_scale=1.,operator_torque_scale=1.,operator_roll_hold=False,
+                 operator_model='grasp',operator_replay=None):
         if variant not in ("compact","paper_figure","paper_diagonal"):
             raise ValueError("Unknown scenario variant")
         self.variant=variant
@@ -72,6 +79,35 @@ class Scenario:
         profile = np.random.default_rng(1000+trial//3)
         repeat = np.random.default_rng(2000+trial)
         self.operator_scale = profile.uniform(.8,1.2) * repeat.uniform(.95,1.05)
+        if operator_model not in ('grasp','fig11_replay'):
+            raise ValueError('operator_model must be grasp or fig11_replay')
+        self.operator_model=operator_model
+        if operator_model=='fig11_replay':
+            self.load_replay(**(operator_replay or {}))
+            self.duration=30.  # The digitized H-infinity trial ends near 30.6 s.
+
+    def load_replay(self,column='hinf',scale=.6,grip=0.):
+        """Moments the paper's operator applied in Fig. 11, as digitized.
+
+        `scale` keeps them inside FR3's 12 Nm wrist limit (the paper peaks at
+        18 Nm). `grip` adds a firm hand: a spring toward that trial's plotted
+        motion, active only while the operator is pushing.
+        """
+        from scipy.signal import butter,sosfiltfilt
+        from .model import ROOT
+        if column not in REPLAY_COLUMNS or not 0<scale or grip<0:
+            raise ValueError('Invalid Fig. 11 replay settings')
+        with np.load(ROOT/'fr3imp/data/paper_d_curves.npz') as curves:
+            moments=[curves[f'{column}_{axis}_moment'] for axis in ('roll','pitch','yaw')]
+            errors=[curves[f'{column}_{axis}_error'] for axis in ('roll','pitch','yaw')]
+        self.replay_grid=np.arange(0,35,.001)
+        self.replay_moment=np.array([np.interp(self.replay_grid,m[:,0],m[:,1],right=0.) for m in moments]).T*REPLAY_MIRROR
+        # Hand motion is the plotted response without its fast ringing.
+        hand=np.array([np.interp(self.replay_grid,e[:,0],-e[:,1],right=0.) for e in errors])
+        self.replay_hand=sosfiltfilt(butter(2,3.,fs=1000,output='sos'),hand,axis=1).T*REPLAY_MIRROR
+        self.replay_scale=scale*self.operator_scale
+        self.replay_grip=grip
+        self.operator_replay=dict(column=column,scale=scale,grip=grip)
 
     def reference(self,t):
         p = self.p0.copy(); v=np.zeros(6); a=np.zeros(6); force=np.zeros(6)
@@ -154,6 +190,8 @@ class Scenario:
     def applied_wrench(self,t,pose,velocity):
         wrench=np.zeros(6)
         if self.name=='D':
+            if self.operator_model=='fig11_replay':
+                return self.replay_wrench(t,pose,velocity)
             if self.variant=='paper_figure':
                 return self.operator_wrench(t,pose,velocity)
             # Prescribed yaw/pitch moments; a virtual human spring-damper
@@ -172,6 +210,25 @@ class Scenario:
                                 .8*np.sin(2*np.pi*137*t),2*np.sin(2*np.pi*173*t)])
         if self.name=='D':wrench[3:]*=self.operator_torque_scale
         return wrench
+
+    def replay_wrench(self,t,pose,velocity):
+        """Open-loop Fig. 11 moments; identical for every controller given a trial.
+
+        Roll has zero stiffness, so an open-loop moment would not reach 90
+        degrees; the operator guides it closed-loop over the plotted 13-17.5 s.
+        """
+        from .dynamics import euler_rate_map
+        index=min(int(round(t/.001)),len(self.replay_grid)-1)
+        moment=self.replay_scale*self.replay_moment[index]
+        if self.replay_grip:
+            stiffness=self.replay_grip*np.array([0.,3.,1.])
+            pushing=np.abs(moment)>[.5,1.,.5]
+            moment=moment+pushing*(stiffness*(self.replay_scale*self.replay_hand[index]-pose[3:])-self.replay_grip/40*velocity[3:])
+        if 13.<=t<17.5:
+            r,dr,_=smoothstep(t-13.,4.)
+            moment[0]=self.operator_scale*(300*(np.pi/2*r-pose[3])+8*(np.pi/2*dr-velocity[3]))
+        moment=np.clip(moment,[-18,-25,-25],[18,25,25])
+        return np.r_[np.zeros(3),np.linalg.solve(euler_rate_map(pose[3:]).T,moment)]
 
     def operator_wrench(self,t,pose,velocity):
         """Declared virtual grasp, not a replay of unpublished human forces.

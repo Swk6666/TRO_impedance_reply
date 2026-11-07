@@ -1,0 +1,664 @@
+{
+  "source_sha256": "42eddc36272ee80e8e0f3511f699ac42530d3bd1ee8bcbeed2ab9114742522e7",
+  "claims": {
+    "complete": "\u56db\u79cd\u63a7\u5236\u5668 120 \u6b21\u5168\u90e8\u8dd1\u5b8c",
+    "impedance_worst": "pitch \u548c yaw \u7684\u5e73\u8861\u504f\u5dee\u90fd\u662f\u666e\u901a\u963b\u6297\u6700\u5927",
+    "smc_above_hinf": "SMC \u7684 pitch \u504f\u5dee\u81f3\u5c11\u662f H\u221e \u7684 1.5 \u500d",
+    "hinf_pitch_level": "H\u221e \u7684 pitch \u504f\u5dee\u5728\u8bba\u6587\u503c \u00d7 \u8f93\u5165\u6bd4\u4f8b\u7684 \u00b130% \u5185",
+    "hinf_yaw_level": "H\u221e \u7684 yaw \u504f\u5dee\u5728\u8bba\u6587\u503c \u00d7 \u8f93\u5165\u6bd4\u4f8b\u7684 \u00b130% \u5185",
+    "impedance_yaw_level": "\u666e\u901a\u963b\u6297\u7684 yaw \u504f\u5dee\u5728\u8bba\u6587\u503c \u00d7 \u8f93\u5165\u6bd4\u4f8b\u7684 \u00b130% \u5185",
+    "roll_free": "\u65e0\u6eda\u8f6c\u652f\u6491\u65f6\uff0cH\u221e \u7b2c\u4e8c\u9636\u6bb5\u6eda\u8f6c\u90fd\u5728 70\u00b0\u2013110\u00b0",
+    "admittance_above_hinf": "\u5bfc\u7eb3\u7684 pitch \u504f\u5dee\u81f3\u5c11\u662f H\u221e \u7684 2 \u500d\uff08\u8bba\u6587\u7ea6 9 \u500d\uff09",
+    "smc_paper_ratio": "SMC \u7684 pitch \u504f\u5dee\u81f3\u5c11\u662f H\u221e \u7684 4 \u500d\uff08\u8bba\u6587\u7ea6 7 \u500d\uff09",
+    "impedance_paper_ratio": "\u666e\u901a\u963b\u6297\u7684 pitch \u504f\u5dee\u81f3\u5c11\u662f H\u221e \u7684 10 \u500d\uff08\u8bba\u6587\u7ea6 17 \u500d\uff09",
+    "hinf_yaw_best": "H\u221e \u7684 yaw \u504f\u5dee\u6700\u5c0f"
+  },
+  "checks": {
+    "complete": true,
+    "impedance_worst": true,
+    "smc_above_hinf": true,
+    "hinf_pitch_level": true,
+    "hinf_yaw_level": true,
+    "impedance_yaw_level": true,
+    "roll_free": true,
+    "admittance_above_hinf": false,
+    "smc_paper_ratio": false,
+    "impedance_paper_ratio": false,
+    "hinf_yaw_best": false
+  },
+  "paper_fig12": {
+    "pitch": {
+      "admittance": 0.0217,
+      "impedance": 0.0407,
+      "smc": 0.017,
+      "hinf": 0.0024
+    },
+    "yaw": {
+      "admittance": 0.175,
+      "impedance": 0.41,
+      "smc": 0.126,
+      "hinf": 0.118
+    }
+  },
+  "input_scale": 0.6,
+  "replay": {
+    "admittance": {
+      "completed": 30,
+      "total": 30,
+      "pitch": 0.0011609972416620749,
+      "pitch_sd": 0.00011117841638702158,
+      "yaw": 0.06530361591477063,
+      "yaw_sd": 0.006481940040638362,
+      "pitch_gap": 0.00015593934170711197,
+      "yaw_gap": 0.0005744103808517666,
+      "saturation": 0.20066666833978766,
+      "roll": [
+        83.4112332008687,
+        82.17929930103017,
+        83.28285296522913,
+        82.09388778545916,
+        81.91424698009865,
+        83.1119411416279,
+        81.72414915511885,
+        82.19943469870337,
+        81.56534042672689,
+        82.91361293869824,
+        83.81635904129882,
+        83.41404040861757,
+        82.28165651593197,
+        83.12591570866974,
+        81.62950322379,
+        83.8168439847299,
+        81.97269290882645,
+        83.8391650429375,
+        83.26287466190684,
+        83.36967832995833,
+        83.2826753803107,
+        82.62136280449174,
+        82.87442814342988,
+        83.7213169589981,
+        82.63886857933447,
+        83.61572906461886,
+        83.02829864505192,
+        82.81212998801018,
+        83.56995313680144,
+        83.3044500233847
+      ]
+    },
+    "impedance": {
+      "completed": 30,
+      "total": 30,
+      "pitch": 0.007391172794016219,
+      "pitch_sd": 6.028551058489645e-05,
+      "yaw": 0.23702842079405614,
+      "yaw_sd": 0.010152876650043911,
+      "pitch_gap": 0.0075533754856585795,
+      "yaw_gap": 0.22014342841316376,
+      "saturation": 12.700333396593729,
+      "roll": [
+        83.83974560901694,
+        84.54615792392552,
+        84.71743174755275,
+        85.71108083781704,
+        85.73510944331714,
+        84.54761275421873,
+        84.57224924655496,
+        85.72437921613106,
+        84.38530013878254,
+        84.16833234960792,
+        85.54712214679088,
+        85.65429464505755,
+        84.81348469785064,
+        85.56485331787624,
+        83.87567923424038,
+        85.50767097414489,
+        85.01306282539842,
+        85.60364879236191,
+        84.45571255893621,
+        84.95526576464177,
+        84.00911380986575,
+        84.91374504467726,
+        85.20451302783387,
+        85.67477838237842,
+        83.88348614046171,
+        85.19256019678635,
+        84.39097602598282,
+        84.7348009186121,
+        84.23155258056556,
+        84.52648014892671
+      ]
+    },
+    "smc": {
+      "completed": 30,
+      "total": 30,
+      "pitch": 0.00252466121778696,
+      "pitch_sd": 0.00011431270160822727,
+      "yaw": 0.08976903837350568,
+      "yaw_sd": 0.008204233587027283,
+      "pitch_gap": 0.0024790231041035464,
+      "yaw_gap": 0.027335401771105054,
+      "saturation": 0.11588888849170569,
+      "roll": [
+        81.54591536872738,
+        81.62750880855235,
+        81.38734569695636,
+        81.5097153661263,
+        81.32736980585447,
+        81.69862473819052,
+        81.2922899542773,
+        81.75461862900629,
+        81.68486873720211,
+        82.64058295681615,
+        82.46519735930856,
+        82.6186375590129,
+        82.47972517167318,
+        83.24938503829607,
+        82.27168443974377,
+        83.22421579120457,
+        82.77847081578037,
+        82.77773315535,
+        82.38325557983592,
+        82.01402921368337,
+        82.23867413548508,
+        82.02806525242775,
+        83.11394921724388,
+        82.6418670323801,
+        82.99736471830093,
+        82.66605273223112,
+        82.95048229983797,
+        82.1769906970907,
+        82.73243534077447,
+        83.22504224409414
+      ]
+    },
+    "hinf": {
+      "completed": 30,
+      "total": 30,
+      "pitch": 0.0013301289176265818,
+      "pitch_sd": 9.912880555549827e-05,
+      "yaw": 0.06864754340948544,
+      "yaw_sd": 0.0065540010435070906,
+      "pitch_gap": 0.0008994309533552645,
+      "yaw_gap": 0.004402098004362202,
+      "saturation": 0.13744444489323845,
+      "roll": [
+        81.92853573584232,
+        82.10582012593918,
+        81.73837643915999,
+        82.20875790692043,
+        81.98704996646181,
+        81.64381930029033,
+        81.578160691799,
+        83.18623310923013,
+        82.1904734905123,
+        83.20132099710669,
+        82.28886236550635,
+        82.87997425703593,
+        83.6552621995349,
+        83.6344437829447,
+        83.30949753318134,
+        83.20092484613482,
+        83.30979806150482,
+        83.06795472337302,
+        82.6136242001621,
+        83.22039088526937,
+        83.05602921308217,
+        82.84639021688697,
+        82.62861646539028,
+        83.55707823021596,
+        83.47109297875468,
+        82.78979526942425,
+        83.63705291520765,
+        82.98272079272043,
+        83.27412398346985,
+        83.43494761766696
+      ]
+    }
+  },
+  "grasp": {
+    "admittance": {
+      "pitch": 0.0023997121921657564,
+      "yaw": 0.06528615863543119
+    },
+    "impedance": {
+      "pitch": 0.007502174329609408,
+      "yaw": 0.4165948188151494
+    },
+    "smc": {
+      "pitch": 0.002207871947650665,
+      "yaw": 0.08343562992551123
+    },
+    "hinf": {
+      "pitch": 0.0022619156317627534,
+      "yaw": 0.06706244907789705
+    }
+  },
+  "digitized_fig11": {
+    "admittance": {
+      "pitch": 0.0211257983424197,
+      "yaw": 0.19726206886479275
+    },
+    "impedance": {
+      "pitch": 0.03996827540395643,
+      "yaw": 0.43313743096074964
+    },
+    "smc": {
+      "pitch": 0.016390716833655294,
+      "yaw": 0.12462106299324217
+    },
+    "hinf": {
+      "pitch": 0.002429089400621228,
+      "yaw": 0.11873004347276025
+    }
+  },
+  "sensitivity": {
+    "scale1/D_hinf": {
+      "status": "terminated",
+      "simulated_duration_s": 18.68999999999823,
+      "termination_reason": "Joint speed exceeds numerical experiment limit (15 rad/s)",
+      "pitch_rad": 0.008712615998322727,
+      "yaw_rad": 0.1277603599616375,
+      "saturation_fraction": 0.03509710729122162
+    },
+    "scale0.4/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.001073060291917952,
+      "yaw_rad": 0.05228270890652393,
+      "saturation_fraction": 0.0007666666642762721
+    },
+    "scale0.8/D_hinf": {
+      "status": "terminated",
+      "simulated_duration_s": 20.825000000008423,
+      "termination_reason": "Joint limit exceeded by 0.05 rad",
+      "pitch_rad": 0.005901162207883338,
+      "yaw_rad": 0.08763877731958658,
+      "saturation_fraction": 0.03874963894486427
+    },
+    "scale0.3/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0008932840175299919,
+      "yaw_rad": 0.039907731277721875,
+      "saturation_fraction": 0.00033333332976326346
+    },
+    "scale0.5/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0012692982819787531,
+      "yaw_rad": 0.06467755071178474,
+      "saturation_fraction": 0.00139999995008111
+    },
+    "scale0.7/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0016267115286998195,
+      "yaw_rad": 0.08942385702653073,
+      "saturation_fraction": 0.008700000122189522
+    },
+    "grip60/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.00932777939419538,
+      "yaw_rad": 0.3488831328151867,
+      "saturation_fraction": 0.1369333267211914
+    },
+    "grip30/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.009069803833002769,
+      "yaw_rad": 0.34644344609711736,
+      "saturation_fraction": 0.12853333353996277
+    },
+    "grip120/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.009292300873024514,
+      "yaw_rad": 0.34882301740987154,
+      "saturation_fraction": 0.14473333954811096
+    },
+    "grip10/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.007604256759923131,
+      "yaw_rad": 0.32020489925516243,
+      "saturation_fraction": 0.12833333015441895
+    },
+    "grip300/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.008994725136101046,
+      "yaw_rad": 0.3644428941318804,
+      "saturation_fraction": 0.1509000062942505
+    },
+    "delay0/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.007518479273472232,
+      "yaw_rad": 0.2504008619424504,
+      "saturation_fraction": 0.12773333489894867
+    },
+    "friction1/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0042537966765472555,
+      "yaw_rad": 0.17989156889522376,
+      "saturation_fraction": 0.11389999836683273
+    },
+    "own_column/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.007815967507304811,
+      "yaw_rad": 0.19476871990277997,
+      "saturation_fraction": 0.1285666674375534
+    },
+    "physics8/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.00000000009774,
+      "termination_reason": null,
+      "pitch_rad": 0.007325634738153086,
+      "yaw_rad": 0.24966289403548672,
+      "saturation_fraction": 0.12773333489894867
+    },
+    "friction2/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.006948534067070685,
+      "yaw_rad": 0.2456456739391945,
+      "saturation_fraction": 0.1281999945640564
+    },
+    "friction3.5/D_impedance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.008383000050991005,
+      "yaw_rad": 0.2541318028718801,
+      "saturation_fraction": 0.1277666687965393
+    },
+    "grip10/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.002663889017219704,
+      "yaw_rad": 0.10331410895186652,
+      "saturation_fraction": 0.0019333333475515246
+    },
+    "grip30/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0026665779710309066,
+      "yaw_rad": 0.10506469298755866,
+      "saturation_fraction": 0.0019000000320374966
+    },
+    "grip60/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0026581365210529787,
+      "yaw_rad": 0.10585748791811957,
+      "saturation_fraction": 0.0018333332845941186
+    },
+    "grip120/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0025861502290532865,
+      "yaw_rad": 0.1064554860812246,
+      "saturation_fraction": 0.0017000000225380063
+    },
+    "own_column/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.002391753179114297,
+      "yaw_rad": 0.06945374516969945,
+      "saturation_fraction": 0.0
+    },
+    "grip300/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.00253536030852551,
+      "yaw_rad": 0.10785352406447758,
+      "saturation_fraction": 0.0013000000035390258
+    },
+    "delay0/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.002757577944870318,
+      "yaw_rad": 0.10050930405971997,
+      "saturation_fraction": 0.0020000000949949026
+    },
+    "physics8/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.00000000009774,
+      "termination_reason": null,
+      "pitch_rad": 0.0026683090663035046,
+      "yaw_rad": 0.10026928315431102,
+      "saturation_fraction": 0.0019666666630655527
+    },
+    "friction2/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0019596278383729173,
+      "yaw_rad": 0.08867077525950717,
+      "saturation_fraction": 0.002033333294093609
+    },
+    "friction3.5/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.003067346495785478,
+      "yaw_rad": 0.1052585650977345,
+      "saturation_fraction": 0.0020000000949949026
+    },
+    "friction1/D_smc": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0013680766116219909,
+      "yaw_rad": 0.07816004783454174,
+      "saturation_fraction": 0.002099999925121665
+    },
+    "grip30/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0014108687959580209,
+      "yaw_rad": 0.07676324845392497,
+      "saturation_fraction": 0.0017666666535660625
+    },
+    "grip120/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0013075695588870453,
+      "yaw_rad": 0.07694929117657036,
+      "saturation_fraction": 0.002266666619107127
+    },
+    "grip10/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0014398978325235099,
+      "yaw_rad": 0.0767690507851946,
+      "saturation_fraction": 0.0018333332845941186
+    },
+    "grip60/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0013763459382781795,
+      "yaw_rad": 0.07679648018810643,
+      "saturation_fraction": 0.0017000000225380063
+    },
+    "grip300/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.001280111880305689,
+      "yaw_rad": 0.07738058443970519,
+      "saturation_fraction": 0.0011666666250675917
+    },
+    "own_column/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.001457354939039792,
+      "yaw_rad": 0.07706428252035939,
+      "saturation_fraction": 0.0018666667165234685
+    },
+    "delay0/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0014712875796956033,
+      "yaw_rad": 0.07705596608053786,
+      "saturation_fraction": 0.0019666666630655527
+    },
+    "physics8/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.00000000009774,
+      "termination_reason": null,
+      "pitch_rad": 0.0014617881557257553,
+      "yaw_rad": 0.07706323797563237,
+      "saturation_fraction": 0.0018666667165234685
+    },
+    "friction2/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.001360120542149453,
+      "yaw_rad": 0.07587617200393232,
+      "saturation_fraction": 0.0018666667165234685
+    },
+    "friction1/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0012941590490893637,
+      "yaw_rad": 0.07468467944982835,
+      "saturation_fraction": 0.0019000000320374966
+    },
+    "friction3.5/D_hinf": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.001511719123303931,
+      "yaw_rad": 0.07768047493639615,
+      "saturation_fraction": 0.0018333332845941186
+    },
+    "grip120/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0010980741905985492,
+      "yaw_rad": 0.07324659792436919,
+      "saturation_fraction": 0.0024999999441206455
+    },
+    "grip10/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0012732164349075759,
+      "yaw_rad": 0.07324924633239187,
+      "saturation_fraction": 0.002933333395048976
+    },
+    "friction1/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0012919541951910028,
+      "yaw_rad": 0.07358970110733304,
+      "saturation_fraction": 0.0035000001080334187
+    },
+    "grip60/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0011693813078951152,
+      "yaw_rad": 0.07326360988336157,
+      "saturation_fraction": 0.0027666667010635138
+    },
+    "physics8/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.00000000009774,
+      "termination_reason": null,
+      "pitch_rad": 0.0013047369037730498,
+      "yaw_rad": 0.07363184482838571,
+      "saturation_fraction": 0.003000000026077032
+    },
+    "delay0/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0013055262349108898,
+      "yaw_rad": 0.0736245736956444,
+      "saturation_fraction": 0.002899999963119626
+    },
+    "grip30/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0012310296590593414,
+      "yaw_rad": 0.07325726591039985,
+      "saturation_fraction": 0.00279999990016222
+    },
+    "friction3.5/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0013084652811327314,
+      "yaw_rad": 0.0736414899170687,
+      "saturation_fraction": 0.002899999963119626
+    },
+    "own_column/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0007242859407144581,
+      "yaw_rad": 0.022458151810139406,
+      "saturation_fraction": 0.0
+    },
+    "friction2/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0012965838468630886,
+      "yaw_rad": 0.07361138122435727,
+      "saturation_fraction": 0.0032333333510905504
+    },
+    "grip300/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0010463504930140809,
+      "yaw_rad": 0.07324645420582748,
+      "saturation_fraction": 0.0010666666785255075
+    },
+    "matched_G/D_admittance": {
+      "status": "completed",
+      "simulated_duration_s": 30.000000000052232,
+      "termination_reason": null,
+      "pitch_rad": 0.0017138964757616715,
+      "yaw_rad": 0.07416328751287665,
+      "saturation_fraction": 0.003000000026077032
+    }
+  }
+}

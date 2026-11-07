@@ -18,7 +18,7 @@ def main():
     parser.add_argument('--physics-substeps',type=int,default=4)
     parser.add_argument('--control-period',type=float,choices=[.001,.00025],default=.001)
     parser.add_argument('--c-profile',choices=['fr3','legacy'],default='fr3')
-    parser.add_argument('--profile',choices=['fr3','paper','legacy'],default='fr3')
+    parser.add_argument('--profile',choices=['fr3','fr3v2','paper','legacy'],default='fr3')
     parser.add_argument('--grinder-model',choices=['rotor','external'],default=None,
                         help='E: internal eccentric rotor (paper default) or historical applied-force approximation')
     parser.add_argument('--inertia-scale',type=float,default=1.,

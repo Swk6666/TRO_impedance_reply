@@ -2,7 +2,7 @@
 
 **当前范围：A、B、C、D、F。用户已要求暂缓 E 砂轮机；默认批量运行与测试据此排除 E，见 [AGENTS.md](../AGENTS.md) 和 [当前范围报告](results/reproduction-fr3/REPORT.md)。下文 E 的实现说明与结果只作为已完成工作的历史记录保留。**
 
-当前默认配置为 `fr3`：明确适配的 A/B/C/D/F 全部采用 1 kHz 控制/传感器，见 [134+51 次验证](results/reproduction-fr3/REPORT.md)。`paper` 保留原任务矩阵和反馈增益，其[此前对照结果](results/reproduction-active/REPORT.md)不被覆盖。另有 [133 次适配审计](results/fr3-adaptation/REPORT.md)，包含 9 次提前终止。原 137 次运行与 14 次积分步长检查是历史 4 kHz 数据，见 [历史结果](results/RESULTS.md)。工程通过不等于论文全部性能结论复现。
+当前默认配置为 `fr3`：明确适配的 A/B/C/D/F 全部采用 1 kHz 控制/传感器，见 [134+51 次验证](results/reproduction-fr3/REPORT.md)。并列配置 `fr3v2` 见 [134+148 次验证](results/reproduction-fr3v2/REPORT.md)。`paper` 保留原任务矩阵和反馈增益，其[此前对照结果](results/reproduction-active/REPORT.md)不被覆盖。另有 [133 次适配审计](results/fr3-adaptation/REPORT.md)，包含 9 次提前终止。原 137 次运行与 14 次积分步长检查是历史 4 kHz 数据，见 [历史结果](results/RESULTS.md)。工程通过不等于论文全部性能结论复现。
 
 此前 C 审计恢复了论文矢量轨迹，加入转角挡块、命令滤波开关、原增益对照、虚拟积分收敛和能量端口诊断，见 [机制证据审计](C_MECHANISM_AUDIT.md) 与 [C 机制结果](results/c-mechanism/REPORT.md)。这些修正已接入当前活动实验流程，保留 `legacy` 配置用于历史复算。
 
@@ -25,9 +25,36 @@ D 的旋转任务为 Λ=(.5,.1,.1)、D=(5,.5,1)、K=(0,50,2.5)。虚拟手 yaw/p
 
 选择依据及不利结果全部保留：统一降低任务惯量会损害 C/D；统一降低 NRIC G 则消除 B/C 的导纳抖振；只调 H∞ 增益不能解决 D 的大交互力矩。最终配置定位到任务轴和可实现力矩范围，不能据此宣称算法在任意调参下都具有相同排名。B 未复现原机急停，D 的每项静态误差排名也不等于原文；这些边界随结果一起报告。
 
+## fr3v2 配置
+
+`fr3v2` 是与 `fr3` 并列的另一套仿真假设，`fr3` 及其结果保留作对照。它恢复论文的任务阻抗、NRIC 增益和 D 虚拟操作者，把差异从“改任务”移到“改平台”。结果和不利证据见 [fr3v2 报告](results/reproduction-fr3v2/REPORT.md)。
+
+- 任务与控制：A/B/C/D/F 的 Λ/D/K、NRIC G 与 `paper` 相同。H∞ 基准仍为有效 α=.25，F 的有效 α=.0625/.125/.25。D 的虚拟手弹簧和力矩不缩放，第二阶段没有滚转支撑。
+- 关节摩擦：`friction_scale=3`，所有实验相同。依据是 F 的 REF 量级和“普通阻抗在 B 中仍能碰到墙”。这不是 FR3 的摩擦标定；×3.5 起普通阻抗就碰不到墙。
+- F/T 延迟：`delay_samples=3`（3 ms），所有控制器相同。延迟只作用于力/力矩测量，关节反馈不延迟。
+- 接触：B/F 为 `solref=(.02,.4), solimp=(.95,.99,.001)`，C 为 `solref=(.04,.3), solimp=(.9,.95,.001)`。把 MuJoCo 接触默认的临界阻尼改成欠阻尼，减小接触带来的相位超前。未对应任何实测材料。
+
+这三项平台假设的取值在比较中明显影响控制器之间的差距，导纳的不稳定尤其依赖高增益内环和延迟同时存在，影响大小见报告。因此不能把它们当成原机的失稳机理。
+
+`control_overrides` 的 `nric_gain_vector` 可替换七轴 NRIC G，`fr3v2` 的 `matched_G` 敏感性案例用它测试带宽匹配的增益。
+
+`evaluation.py` 新增的 `*_stiff_axes_*` 与 `dynamic_impedance_position_gap_mean_m` 只统计 K>0 的轴。K=0 轴（C 的 z、D 的 roll）没有确定的静止位置，积分参考会漂移，旧键 `dynamic_impedance_position_rmse_m` 因此在 C 中偏大，但为对照旧结果仍保留。`equilibrium_position_error_measured_*`、`force_tracking_measured_rmse_N` 和 D 的 `*_equilibrium_error_measured_mae_rad` 用测量 F/T，与论文图的口径一致。旧的 `fr3` 记录没有这些键，三方对照从保存的轨迹重算。
+
+## D 的操作者模型
+
+`run_experiment` 的 `operator_model` 默认为 `grasp`，即原有的虚拟手弹簧。`fig11_replay` 是并列选项，通过 `operator_replay` 传入 `column`、`scale`、`grip`，目前只由 [`validate_d_operator.py`](../scripts/validate_d_operator.py) 使用，默认运行和 `fr3v2` 结果都不受影响。结果见 [D 操作者报告](results/d-operator/REPORT.md)。
+
+- 数据：[`digitize_paper_d.py`](../scripts/digitize_paper_d.py) 从论文 PDF 第 17 页的矢量线恢复 Fig. 11，写入 `fr3imp/data/paper_d_curves.npz`。力矩按 `-m/K` 的绘图方式还原为外力矩 `m`（roll 为 `-m`）。该文件计入运行时代码哈希。
+- 输入：开环施加，幅值为 `scale × operator_scale`，并关于 x-z 平面镜像（`REPLAY_MIRROR`），滚转仍为 +90°。力矩先按功率对偶经 Euler 速率映射转换。时长 30 s，而不是 `grasp` 的 35 s。
+- 滚转：K=0，开环到不了 90°，所以 13–17.5 s 用闭环引导。其余时间没有支撑。
+- 握持：`grip>0` 时，只在操作者施力期间叠加一个跟随论文运动的弹簧（yaw 为 `grip`，pitch 为 3 倍）。默认 `grip=0`，只用于敏感性检查。
+- `scale=.6` 由 FR3 腕部 12 Nm 决定，只看 H∞ 是否跑完，没有看控制器之间的差距。
+
+`fr3imp` 里的导纳、普通阻抗、SMC 和 H∞ 都按论文公式保留 `-JᵀF`。[`validate_d_admittance.py`](../scripts/validate_d_admittance.py) 里的 `feedthrough` 变体去掉这一项，只用于[导纳差距诊断](results/d-admittance/REPORT.md)，不是论文控制器，也不属于任何配置。变体放在脚本里，因此不改变运行时代码哈希。
+
 ## paper 对照配置与共同场景
 
-下列场景、时序和模型修正由 `paper` 与 `fr3` 共用；`fr3` 的任务/控制参数和 D 虚拟手以上节为准。E 条目只保留此前 `paper` 实现的历史说明。
+下列场景、时序和模型修正由 `paper`、`fr3`、`fr3v2` 共用；`fr3` 和 `fr3v2` 的任务/控制/平台参数以上两节为准。E 条目只保留此前 `paper` 实现的历史说明。
 
 - 共同接口：控制/关节反馈/F/T 均为 1 kHz，物理 4 子步；力信号不低通。命令低通 100 Hz，使用现有 `TorqueInterface`，并非完整 FCI 补偿模型。所有控制器同一接口。`--command-cutoff 0` 可显式关闭。
 - `paper` 控制参数：α=1、NRIC G 使用论文值；F 为 .25/.5/1。两种新 profile 的导纳虚拟模型每周期均为 4 个 RK4 子步，双向补偿在 RK4 阶段更新，真实反馈不额外采样。混合能量端口使用 `physical`。历史 `legacy` 的 C 仍保留 α=.25/G×.1。

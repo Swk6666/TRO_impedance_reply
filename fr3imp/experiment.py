@@ -26,6 +26,7 @@ def source_hash():
         path=ROOT/'fr3imp'/name
         digest.update(path.name.encode());digest.update(path.read_bytes())
     digest.update((ROOT/'franka_fr3/fr3.xml').read_bytes())
+    digest.update((ROOT/'fr3imp/data/paper_d_curves.npz').read_bytes())
     return digest.hexdigest()
 
 
@@ -97,6 +98,16 @@ def metrics_from_log(log,scenario):
 def default_plant_parameters(experiment,profile='fr3',c_profile='fr3',grinder_model=None):
     """Shared, declared physical assumptions; never depend on controller choice."""
     parameters=PlantParameters()
+    if profile=='fr3v2':
+        # Friction sets the task-space disturbance the paper's robot showed;
+        # contact is underdamped so it no longer adds phase lead. Neither is
+        # identified: both were chosen from the probes in the fr3v2 report.
+        parameters=replace(parameters,friction_scale=3.)
+        if experiment in ('B','F'):
+            return replace(parameters,contact_timeconstant=.02,contact_dampratio=.4,contact_impedance=(.95,.99,.001))
+        if experiment=='C':
+            return replace(parameters,contact_timeconstant=.04,contact_dampratio=.3,contact_impedance=(.9,.95,.001))
+        return parameters
     if experiment=='C' and c_profile=='fr3':
         parameters=replace(parameters,contact_timeconstant=.04,contact_impedance=(.5,.5,.001))
     if profile in ('paper','fr3') and experiment in ('B','E','F'):
@@ -108,12 +119,18 @@ def default_plant_parameters(experiment,profile='fr3',c_profile='fr3',grinder_mo
     return parameters
 
 
+def default_sensor_parameters(profile,plant_parameters):
+    """fr3v2 adds a 3 ms F/T transport delay, an assumption shared by all controllers."""
+    return SensorParameters(tool_calibration_mass=plant_parameters.tool_mass,
+                            delay_samples=3 if profile=='fr3v2' else 0)
+
+
 def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
                    duration=None,output='outputs',ideal=False,physics_substeps=4,
                    control_period=DT,plant_parameters=None,sensor_parameters=None,c_profile="fr3",
                    scenario_variant=None,control_overrides=None,actuator_parameters=None,profile="fr3",
                    grinder_model=None,impedance_overrides=None,operator_stiffness_scale=None,operator_torque_scale=None,
-                   operator_roll_hold=None):
+                   operator_roll_hold=None,operator_model='grasp',operator_replay=None):
     configuration=profile_parameters(experiment,profile,c_profile)
     scenario_variant=scenario_variant or ('compact' if profile=='legacy' else 'paper_figure')
     impedance={**configuration['impedance'],**(impedance_overrides or {})}
@@ -137,7 +154,7 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
     # Contact parameters are assumptions, not identified material properties.
     defaults=default_plant_parameters(experiment,profile,c_profile,grinder_model)
     plant_parameters=replace(plant_parameters or defaults,timestep=dt/physics_substeps)
-    sensor_parameters=sensor_parameters or SensorParameters(tool_calibration_mass=plant_parameters.tool_mass)
+    sensor_parameters=sensor_parameters or default_sensor_parameters(profile,plant_parameters)
     actuator_parameters=actuator_parameters or ActuatorParameters(cutoff_hz=0 if profile=='legacy' else 100)
     if ideal:
         plant_parameters=replace(plant_parameters,friction_scale=0,damping_scale=0,mass_error=0,
@@ -145,7 +162,7 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
         sensor_parameters=SensorParameters(q_std=0,v_std=0,force_std=0,moment_std=0,tool_calibration_mass=0)
     nominal=build_model(plant_parameters,nominal=True,visuals=False)
     initial_q=HOME.copy()
-    if profile in ('paper','fr3') and experiment in ('A','B','F'):
+    if profile in ('paper','fr3','fr3v2') and experiment in ('A','B','F'):
         # Translate Fig. 6's 260 mm path into the FR3 workspace instead of
         # shrinking it or continuing through the extended-arm singularity.
         initial_q[[1,3,5]]=[-.5,-2.3,1.8]
@@ -155,7 +172,8 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
     scenario=Scenario(experiment,initial_pose,trial,variant=scenario_variant,initial_q=initial_q,
                       grinder_model=grinder_model,impedance_overrides=impedance,
                       operator_stiffness_scale=operator_stiffness_scale,operator_torque_scale=operator_torque_scale,
-                      operator_roll_hold=operator_roll_hold)
+                      operator_roll_hold=operator_roll_hold,operator_model=operator_model,
+                      operator_replay=operator_replay)
     plant=build_model(plant_parameters,environment=scenario.environment(),visuals=False)
     data=home_data(plant,initial_q)
     grinding=GrindingContact(plant,plant_parameters)
@@ -188,7 +206,8 @@ def run_experiment(experiment='A',controller='hinf',*,trial=0,seed=0,
                   grinder_model=grinder_model if experiment=='E' else None,
                   operator_stiffness_scale=operator_stiffness_scale,
                   operator_torque_scale=scenario.operator_torque_scale.tolist(),
-                  operator_roll_hold=scenario.operator_roll_hold,
+                  operator_roll_hold=scenario.operator_roll_hold,operator_model=operator_model,
+                  operator_replay=getattr(scenario,'operator_replay',None),
                   control_settings=settings,actuator=asdict(actuator_parameters),c_profile=c_profile if experiment=="C" else None,
                   controller_parameters={**({"alpha":ctrl.alpha} if controller.startswith("hinf") else {}),
                                          **({"G":ctrl.G.tolist()} if hasattr(ctrl,"G") else {})},

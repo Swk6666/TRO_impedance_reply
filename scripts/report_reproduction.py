@@ -23,11 +23,15 @@ def extra_metrics(s,a):
     t=a['time'];sat=a['saturated'].astype(bool)
     edges=np.diff(np.r_[False,sat,False].astype(int))
     widths=np.flatnonzero(edges==-1)-np.flatnonzero(edges==1)
-    result=dict(longest_saturation_s=float(widths.max()*.001) if len(widths) else 0.)
+    result=dict(longest_saturation_s=float(widths.max()*.001) if len(widths) else 0.,
+                position_error_peak_m=float(np.linalg.norm(a['pose'][:,:3].astype(float)-a['desired'][:,:3],axis=1).max()))
     if s['experiment'] in ('B','F') and len(t)>100:
         ripple=sosfiltfilt(butter(3,20,fs=1000,output='sos',btype='high'),a['force_true'][:,:3],axis=0)
         mask=(t>=13)&(t<18)
-        if mask.any():result['wall_force_ripple_rms_N']=float(np.sqrt(np.mean(np.sum(ripple[mask]**2,axis=1))))
+        if mask.any():
+            result['wall_force_ripple_rms_N']=float(np.sqrt(np.mean(np.sum(ripple[mask]**2,axis=1))))
+            power=(np.abs(np.fft.rfft(ripple[mask],axis=0))**2).sum(1)
+            result['wall_force_ripple_peak_hz']=float(np.fft.rfftfreq(mask.sum(),.001)[power.argmax()])
     if s['experiment']=='C' and len(t)>100:
         result['measured_force_tracking_rmse_N']=float(np.sqrt(np.mean((a['force_measured'][:,2]-a['force_desired'][:,2])**2)))
         ripple=sosfiltfilt(butter(3,20,fs=1000,output='sos',btype='high'),a['force_true'][:,2])
@@ -133,7 +137,7 @@ def paper_c_figure(selected,paper_file,output):
 
 
 def gain_figure(selected,output):
-    fr3=selected['F','hinf_1'][0].get('profile')=='fr3'
+    fr3=selected['F','hinf_1'][0].get('profile') in ('fr3','fr3v2')
     fig,axes=plt.subplots(1,2,figsize=(10,4.4),layout='constrained')
     for ax,metric,title,unit in zip(axes,
         ['reference_error_position','equilibrium_position_error'],
@@ -217,6 +221,10 @@ def main():
         from report_fr3_profile import overview,write_evidence
         rows=overview(manifest,records,extras,selected)
         write_evidence(records,extras,selected,out)
+    if profile=='fr3v2':
+        from report_fr3v2_profile import overview,write_evidence
+        write_evidence(records,extras,selected,out,args.root)
+        rows=overview(manifest,records,extras,selected,out)
     for e in experiments:
         for c in COMPARISONS[e]:
             ss=[s for s,_ in runs if s['experiment']==e and s['controller']==c and s['status']=='completed']
@@ -239,6 +247,7 @@ def main():
             key='force_tracking_rmse_N' if e=='C' else 'reference_error_position_mean_m_s'
             deltas.append((name,(s['metrics'][key]/metric(e,c,key)-1)*100))
     largest=max(deltas,key=lambda item:abs(item[1]))
+    rerun_output=f' --profile {profile} --output {args.root}' if profile=='fr3v2' else ''
     rows+=['','固定种子 100/101/102，物理子步 4→8、虚拟积分 4→8、旧硬接触、命令滤波关闭均保留。关闭滤波可能产生持续力矩限幅；运行完成不能作为该配置可用的证明。没有按排名选择种子或删去负面配置。',
            f'物理步长减半时，以 C 的力 RMS、B/F 的 REF 均值比较，最大相对变化为 {largest[0]} 的 {largest[1]:+.2f}%。这只是所列指标的变化量，不代表非线性振荡逐样本一致或严格的无源性证明。','',
            '## 图与复核','',
@@ -250,8 +259,8 @@ def main():
            '回放使用保存的真实关节轨迹；绿色为期望路径，橙色为实际路径。显示用半透明墙不改变实验碰撞几何。','',
            '![B 实际场景](scene_B.png)','', '![C 实际场景](scene_C.png)','', '![E 实际场景](scene_E.png)','',
            '## 重跑','',
-           '```bash','OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/validate_reproduction.py --resume',
-           'OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/report_reproduction.py','```','',
+           '```bash',f'OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/validate_reproduction.py --resume'+rerun_output,
+           f'OPENBLAS_NUM_THREADS=1 PYTHONPATH=scripts .venv/bin/python scripts/report_reproduction.py --root {args.root} --output {out}' if profile=='fr3v2' else 'OPENBLAS_NUM_THREADS=1 .venv/bin/python scripts/report_reproduction.py','```','',
            '时序、有限值、矩阵完整性、位置 RMS、峰值力和实际限幅已逐运行核对。单元/集成测试见 `VALIDATION.txt`；E 测试依当前范围默认跳过。D 的误差棒是虚拟操作者重复间样本标准差，不是真人统计置信区间。敏感性运行的提前终止保留，不能把部分时长指标与完整 30 s 直接等同。']
     if not has_grinding:
         rows=[r.replace(' · [E 旋转圆盘](E_hinf.mp4)','') for r in rows if r!='![E 实际场景](scene_E.png)']

@@ -51,7 +51,21 @@ def impedance_metrics(log,scenario):
     equilibrium[:,nonzero]+=(force-command)[:,nonzero]/scenario.stiffness[nonzero]
     ref_norm=np.linalg.norm(log['reference_error'][:,:3],axis=1)
     eq_norm=np.linalg.norm(equilibrium[:,:3],axis=1)
+    # K=0 axes (C's force axis, D's roll) have no defined rest position, so the
+    # integrated reference there drifts; the stiff-axis keys leave them out.
+    position=np.flatnonzero(nonzero[:3]);rotation=3+np.flatnonzero(nonzero[3:])
+    measured=log['force_measured'].astype(float).copy()
+    for i,p in enumerate(pose):
+        measured[i,3:]=euler_rate_map(p[3:]).T@measured[i,3:]
+    equilibrium_measured=error.copy()
+    equilibrium_measured[:,nonzero]+=(measured-command)[:,nonzero]/scenario.stiffness[nonzero]
+    measured_norm=np.linalg.norm(equilibrium_measured[:,position],axis=1)
     result=dict(
+        dynamic_impedance_position_rmse_stiff_axes_m=float(np.sqrt(np.mean(np.sum(gap[:,position]**2,axis=1)))),
+        dynamic_impedance_rotation_rmse_stiff_axes_rad=float(np.sqrt(np.mean(np.sum(gap[:,rotation]**2,axis=1)))),
+        dynamic_impedance_position_gap_mean_m=float(np.linalg.norm(gap[:,position],axis=1).mean()),
+        equilibrium_position_error_measured_mean_m=float(measured_norm.mean()),
+        equilibrium_position_error_measured_std_m=float(measured_norm.std()),
         dynamic_impedance_position_rmse_m=float(np.sqrt(np.mean(np.sum(gap[:,:3]**2,axis=1)))),
         dynamic_impedance_rotation_rmse_rad=float(np.sqrt(np.mean(np.sum(gap[:,3:]**2,axis=1)))),
         reference_error_position_mean_m_s=float(ref_norm.mean()),
@@ -62,7 +76,12 @@ def impedance_metrics(log,scenario):
         contact=np.linalg.norm(log['force_contact'][:,:3],axis=1)>1
         result['first_contact_s']=float(time[contact][0]) if contact.any() else None
         result['last_contact_s']=float(time[contact][-1]) if contact.any() else None
+    if scenario.name=='D':
+        for axis,label in [(4,'pitch'),(5,'yaw')]:
+            result[f'{label}_equilibrium_error_measured_mae_rad']=float(np.abs(equilibrium_measured[:,axis]).mean())
+            result[f'{label}_impedance_gap_mae_rad']=float(np.abs(gap[:,axis]).mean())
     if scenario.name=='C':
+        result['force_tracking_measured_rmse_N']=float(np.sqrt(np.mean((log['force_measured'][:,2].astype(float)-command[:,2])**2)))
         engaged=time>=1
         result['board_contact_fraction_after_1s']=float(np.mean(log['board_contact'][engaged])) if engaged.any() else None
     if scenario.name=='E':

@@ -1,7 +1,7 @@
 """Compare original paper figures with saved FR3 recordings, without simulation.
 
-Requires the supplied PDF, Poppler pdftoppm, and the complete 134-run FR3 main
-matrix (30 D trials per controller). E is excluded by AGENTS.md.
+Requires the supplied PDF, Poppler pdftoppm, and a complete 134-run fr3 or fr3v2
+main matrix (30 D trials per controller). E is excluded by AGENTS.md.
 """
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
@@ -22,8 +22,9 @@ OUT=args.output.resolve();PDF=args.pdf.resolve();RUNS=args.runs.resolve()
 if not PDF.is_file():parser.error(f'Paper PDF not found: {PDF}')
 if not (RUNS/'manifest.json').is_file():parser.error('Generate the FR3 main matrix first; see docs/results/paper-comparison/REPORT.md')
 manifest=json.loads((RUNS/'manifest.json').read_text())
-if manifest.get('profile')!='fr3' or manifest.get('d_trials')!=30 or manifest.get('errors'):
-    parser.error('Comparison requires a complete fr3 profile matrix with 30 D trials and no worker errors')
+PROFILE=manifest.get('profile')
+if PROFILE not in ('fr3','fr3v2') or manifest.get('d_trials')!=30 or manifest.get('errors'):
+    parser.error('Comparison requires a complete fr3 or fr3v2 profile matrix with 30 D trials and no worker errors')
 (OUT/'source').mkdir(parents=True,exist_ok=True)
 
 def source_path(path):
@@ -60,7 +61,7 @@ for e,controllers in GROUPS.items():
         s=json.loads((folder/'summary.json').read_text())
         with np.load(folder/'trajectory.npz') as f:
             a={k:f[k].astype(float) for k in ('time','pose','desired','force_measured','force_true','reference_error','torque_command','torque_applied','beta','force_desired','v_measured')}
-        assert s['profile']=='fr3' and s['status']=='completed'
+        assert s['profile']==PROFILE and s['status']=='completed'
         assert s['source_sha256']==manifest['source_sha256'], 'Mixed runtime versions'
         a['error']=a['desired']-a['pose'];a['error'][:,3:]=(a['error'][:,3:]+np.pi)%(2*np.pi)-np.pi
         p=a['pose'];fm=a['force_measured'];cp,sp,cy,sy=np.cos(p[:,4]),np.sin(p[:,4]),np.cos(p[:,5]),np.sin(p[:,5])
@@ -85,6 +86,13 @@ def axes_time(ax,limit=30):
     ax.grid(alpha=.16);ax.set(xlim=(0,limit),xlabel='Time [s]')
 
 def finish(fig,name):
+    # Expand past the paper's axis range rather than clip a recorded peak.
+    for axis in fig.axes:
+        if axis.name!='rectilinear' or not axis.get_lines():continue
+        data=np.concatenate([np.asarray(line.get_ydata(),dtype=float) for line in axis.get_lines()])
+        low,high=axis.get_ylim();span=float(data.max()-data.min())
+        if data.min()<low or data.max()>high:
+            axis.set_ylim(min(low,float(data.min())-.02*span),max(high,float(data.max())+.02*span))
     fig.savefig(OUT/f'fr3_{name}.png',dpi=180)
     plt.close(fig)
 
@@ -112,7 +120,7 @@ for c in GROUPS['A']:
 for axis,lim,label in zip(ax,[(0,.06),(0,.045)],['Position error norm [m]','Orientation error norm [rad]']):
     axes_time(axis);axis.set(ylim=lim,ylabel=label)
 fig.legend(*ax[0].get_legend_handles_labels(),loc='outside upper center',ncol=3)
-finish(fig,'A');pair('A','FR3 simulation | same axis ranges','Actual saved errors; no amplitude fitting. H-infinity base alpha = 0.25 (paper: 1).')
+finish(fig,'A');pair('A','FR3 simulation | paper ranges, expanded to keep peaks','Actual saved errors; no amplitude fitting. H-infinity base alpha = 0.25 (paper: 1).')
 
 # B: match the panels of Fig. 6. Display-relative TCP positions are labelled.
 fig=plt.figure(figsize=(7.8,13.5),layout='constrained');gs=fig.add_gridspec(4,2)
@@ -197,7 +205,7 @@ for c in order:
     values=[]
     for folder in sorted(RUNS.glob(f'D_{c}_trial*')):
         s=json.loads((folder/'summary.json').read_text());assert s['status']=='completed'
-        assert s['profile']=='fr3' and s['source_sha256']==manifest['source_sha256']
+        assert s['profile']==PROFILE and s['source_sha256']==manifest['source_sha256']
         d_sources[folder.name]=dict(summary=source_path(folder/'summary.json'),trajectory_sha256=sha256(folder/'trajectory.npz'))
         with np.load(folder/'trajectory.npz') as a:
             p=a['pose'].astype(float);f=a['force_measured'].astype(float)
@@ -227,7 +235,7 @@ for j,(axis,mk,sk,label,limits) in enumerate(zip(ax,['ref_mean','measured_equili
 finish(fig,'F');pair('F','FR3 | same scales and F/T metric','Paper alpha = 0.25 / 0.5 / 1; FR3 effective alpha = 0.0625 / 0.125 / 0.25. FR3 bars = temporal mean +/- SD.')
 
 computed['F_paper_printed']={'ref_mean_m_s':[.379,.186,.095],'ref_printed_plusminus_m_s':[.117,.054,.026],'equilibrium_mean_m':[.00799,.00441,.00310],'equilibrium_printed_plusminus_m':[.00783,.00508,.00443]}
-computed['conventions']={'selection':'fr3 profile, representative seed100 and D trial0; D statistics use all30 trials per controller','error':'desired pose minus actual pose','static_reference':'(F_des - measured F/T generalized force)/K on nonzero stiffness axes','no_change':'No controller rerun, curve fitting, amplitude scaling or time warping','differences_from_prior_report':'Prior equilibrium summaries used force_true; this comparison uses force_measured to match the paper. Both F statistics are retained here.','internal_REF':'REF includes integrator states; a large value is not an actual robot velocity.'}
+computed['conventions']={'selection':f'{PROFILE} profile, representative seed100 and D trial0; D statistics use all30 trials per controller','error':'desired pose minus actual pose','static_reference':'(F_des - measured F/T generalized force)/K on nonzero stiffness axes','no_change':'No controller rerun, curve fitting, amplitude scaling or time warping','differences_from_prior_report':'Prior equilibrium summaries used force_true; this comparison uses force_measured to match the paper. Both F statistics are retained here.','internal_REF':'REF includes integrator states; a large value is not an actual robot velocity.'}
 (OUT/'comparison_metrics.json').write_text(json.dumps(computed,indent=2))
 (OUT/'sources.json').write_text(json.dumps(dict(pdf=source_path(PDF),pdf_sha256=sha256(PDF),script=source_path(Path(__file__).resolve()),script_sha256=sha256(Path(__file__).resolve()),runtime_source_sha256=manifest['source_sha256'],crops_pdf_points=CROPS,recordings=provenance,d_statistics_recordings=d_sources),indent=2))
 comparisons=[OUT/f'{name}_compare.png' for name in ('A','B','B_control','C','D','D_motion','F')]

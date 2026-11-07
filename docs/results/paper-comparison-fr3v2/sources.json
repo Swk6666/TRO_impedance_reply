@@ -1,0 +1,1167 @@
+{
+  "pdf": "Nonlinear_mathcal_H_infty__Inverse-Optimal_Impedance_Control_for_Robotic_Systems.pdf",
+  "pdf_sha256": "262b66fd82b3fae080727f250cd79d8316329ff5832508f981d21d7d31ddfaa0",
+  "script": "scripts/compare_paper_figures.py",
+  "script_sha256": "e7432eb1c8c8ccb0deb8bef8c7095e42cf2d40f63f66b4256e2da18ed07f00b5",
+  "runtime_source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+  "crops_pdf_points": {
+    "A": [
+      13,
+      [
+        312,
+        54,
+        566,
+        175
+      ],
+      "5"
+    ],
+    "B": [
+      14,
+      [
+        47,
+        54,
+        301,
+        519
+      ],
+      "6"
+    ],
+    "B_control": [
+      14,
+      [
+        312,
+        54,
+        566,
+        175
+      ],
+      "7"
+    ],
+    "C": [
+      15,
+      [
+        312,
+        54,
+        566,
+        493
+      ],
+      "9"
+    ],
+    "D_full": [
+      17,
+      [
+        47,
+        54,
+        551,
+        450
+      ],
+      "11"
+    ],
+    "D_motion": [
+      17,
+      [
+        47,
+        158,
+        551,
+        343
+      ],
+      "11, pitch/yaw rows"
+    ],
+    "D": [
+      17,
+      [
+        47,
+        486,
+        301,
+        582
+      ],
+      "12"
+    ],
+    "F": [
+      19,
+      [
+        47,
+        378,
+        301,
+        475
+      ],
+      "16"
+    ]
+  },
+  "recordings": {
+    "A_impedance": {
+      "summary": "outputs/reproduction-fr3v2/main/A_impedance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/A_impedance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "8a3acdf5763e2b0cd58c5d3342024e44faa3ea04253738ba8c7bb4e02aa525a0",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          1.0,
+          1.0,
+          1.0,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "damping": [
+          20.0,
+          20.0,
+          20.0,
+          4.0,
+          4.0,
+          4.0
+        ],
+        "stiffness": [
+          100.0,
+          100.0,
+          100.0,
+          40.0,
+          40.0,
+          40.0
+        ]
+      }
+    },
+    "A_admittance": {
+      "summary": "outputs/reproduction-fr3v2/main/A_admittance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/A_admittance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "797c594e18d3b896308525e95cca5eb7b418146a16ee5518a36feff57503d9c8",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          1.0,
+          1.0,
+          1.0,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "damping": [
+          20.0,
+          20.0,
+          20.0,
+          4.0,
+          4.0,
+          4.0
+        ],
+        "stiffness": [
+          100.0,
+          100.0,
+          100.0,
+          40.0,
+          40.0,
+          40.0
+        ]
+      }
+    },
+    "A_hinf": {
+      "summary": "outputs/reproduction-fr3v2/main/A_hinf_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/A_hinf_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "fcfe6f8b75010683417330394bdd903572aae2b2c7a910031baad59ed68d0caa",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.25,
+      "impedance": {
+        "inertia": [
+          1.0,
+          1.0,
+          1.0,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "damping": [
+          20.0,
+          20.0,
+          20.0,
+          4.0,
+          4.0,
+          4.0
+        ],
+        "stiffness": [
+          100.0,
+          100.0,
+          100.0,
+          40.0,
+          40.0,
+          40.0
+        ]
+      }
+    },
+    "B_impedance": {
+      "summary": "outputs/reproduction-fr3v2/main/B_impedance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/B_impedance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "f3d3a5fa44a0e9012e44998ac29f9695bfe4d34847f2f3f2269d40d05b5f413f",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "B_admittance": {
+      "summary": "outputs/reproduction-fr3v2/main/B_admittance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/B_admittance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "4402a13385cb0ac6886414046e06b2645ecc700769451b08ed3aba0d026f5c0b",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "B_smc": {
+      "summary": "outputs/reproduction-fr3v2/main/B_smc_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/B_smc_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "820a38fba5329c92f6e28b0dcb1a5ff5e432a5a9f9ef263245950030970a3a2f",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "B_bidirectional": {
+      "summary": "outputs/reproduction-fr3v2/main/B_bidirectional_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/B_bidirectional_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "aeffec9cde70d12a543bc0120040dc32312c55ae027ef30bbf988503c17ef9e2",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "B_hinf": {
+      "summary": "outputs/reproduction-fr3v2/main/B_hinf_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/B_hinf_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "8830de6da8fd89ca8f35b66cf452335067a95e1af558a6207dd962a758328cb4",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.25,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "C_admittance": {
+      "summary": "outputs/reproduction-fr3v2/main/C_admittance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/C_admittance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "e5776f3f94c107f23a9eeb9022e53c1567193431903b422f9595e983fdd2e6f3",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      }
+    },
+    "C_bidirectional": {
+      "summary": "outputs/reproduction-fr3v2/main/C_bidirectional_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/C_bidirectional_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "df9f086cdc5c839cce16c0c803d20f8257c834dd559eed8213e4fe3851c6488e",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      }
+    },
+    "C_hinf": {
+      "summary": "outputs/reproduction-fr3v2/main/C_hinf_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/C_hinf_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "c680185887b1bc0338eac8bea913ae2d634e4e62ec12e6ea24c094b475d25cac",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.25,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          10.0,
+          0.4,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          200.0,
+          80.0,
+          80.0,
+          80.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          0.0,
+          400.0,
+          400.0,
+          400.0
+        ]
+      }
+    },
+    "D_impedance": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/D_impedance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "2dc78fa695f7870eed3403e9dd27ce31964cdeae41328388ad841c12c427daaa",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          4.0,
+          2.0,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          200.0,
+          200.0,
+          200.0,
+          20.0,
+          2.0,
+          4.0
+        ],
+        "stiffness": [
+          2000.0,
+          2000.0,
+          2000.0,
+          0.0,
+          200.0,
+          10.0
+        ]
+      }
+    },
+    "D_admittance": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/D_admittance_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "671b026fe1cac0243e1f21bb054f2e342438ba580fe6b1470ce1034ae3e1fee4",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          4.0,
+          2.0,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          200.0,
+          200.0,
+          200.0,
+          20.0,
+          2.0,
+          4.0
+        ],
+        "stiffness": [
+          2000.0,
+          2000.0,
+          2000.0,
+          0.0,
+          200.0,
+          10.0
+        ]
+      }
+    },
+    "D_smc": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/D_smc_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "8c92bce6739bfb53b53819ab1c143cdd401cbc47412979a779fda4b5903b7d8a",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": null,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          4.0,
+          2.0,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          200.0,
+          200.0,
+          200.0,
+          20.0,
+          2.0,
+          4.0
+        ],
+        "stiffness": [
+          2000.0,
+          2000.0,
+          2000.0,
+          0.0,
+          200.0,
+          10.0
+        ]
+      }
+    },
+    "D_hinf": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/D_hinf_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "acebfb7a3e5889009569fd9a0f60a656a709ed71b4a330d1923a32240b28800e",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.25,
+      "impedance": {
+        "inertia": [
+          4.0,
+          4.0,
+          4.0,
+          2.0,
+          0.4,
+          0.4
+        ],
+        "damping": [
+          200.0,
+          200.0,
+          200.0,
+          20.0,
+          2.0,
+          4.0
+        ],
+        "stiffness": [
+          2000.0,
+          2000.0,
+          2000.0,
+          0.0,
+          200.0,
+          10.0
+        ]
+      }
+    },
+    "F_hinf_0.25": {
+      "summary": "outputs/reproduction-fr3v2/main/F_hinf_0.25_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/F_hinf_0.25_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "4a26b2874c67a02886c67f720459ef3d47201baa77598dbbabb7ba25456a5682",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.0625,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "F_hinf_0.5": {
+      "summary": "outputs/reproduction-fr3v2/main/F_hinf_0.5_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/F_hinf_0.5_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "0f07f9059a528f9df3bc10db2943383f759cca6ba23db35b1b8e760645d750f1",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.125,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    },
+    "F_hinf_1": {
+      "summary": "outputs/reproduction-fr3v2/main/F_hinf_1_trial00_seed100/summary.json",
+      "trajectory": "outputs/reproduction-fr3v2/main/F_hinf_1_trial00_seed100/trajectory.npz",
+      "trajectory_sha256": "8830de6da8fd89ca8f35b66cf452335067a95e1af558a6207dd962a758328cb4",
+      "source_sha256": "9f48b793ce7b73a3afea9c8ca5db4b88be1b07bc43ef49efe5d8461a0cd3bba3",
+      "effective_alpha": 0.25,
+      "impedance": {
+        "inertia": [
+          10.0,
+          10.0,
+          10.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "damping": [
+          80.0,
+          80.0,
+          80.0,
+          10.0,
+          10.0,
+          10.0
+        ],
+        "stiffness": [
+          400.0,
+          400.0,
+          400.0,
+          50.0,
+          50.0,
+          50.0
+        ]
+      }
+    }
+  },
+  "d_statistics_recordings": {
+    "D_admittance_trial00_seed100": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial00_seed100/summary.json",
+      "trajectory_sha256": "671b026fe1cac0243e1f21bb054f2e342438ba580fe6b1470ce1034ae3e1fee4"
+    },
+    "D_admittance_trial01_seed101": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial01_seed101/summary.json",
+      "trajectory_sha256": "83ceccc6611a3631c616d6a4f4f38597e6f7ff2fe0e8a3023af07cbefb6f6792"
+    },
+    "D_admittance_trial02_seed102": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial02_seed102/summary.json",
+      "trajectory_sha256": "2481e4e0959338c974077d5e12e44413d6ace157a882f787a73b5dbadfdb3964"
+    },
+    "D_admittance_trial03_seed103": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial03_seed103/summary.json",
+      "trajectory_sha256": "d9845166fd36101391bbb4518c0bb20ff2750c3352bdaaa869b5051564b26da1"
+    },
+    "D_admittance_trial04_seed104": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial04_seed104/summary.json",
+      "trajectory_sha256": "44072bc3f9d450ac7e0c150e20a5ebb53aff1cc2e2e1bf1746500fa581f919a5"
+    },
+    "D_admittance_trial05_seed105": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial05_seed105/summary.json",
+      "trajectory_sha256": "f28e3cfa28d2002f011499668519a4003e18114770b6bb8c4300c68024cd6507"
+    },
+    "D_admittance_trial06_seed106": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial06_seed106/summary.json",
+      "trajectory_sha256": "6190462112ad2c792a3112bdca1fb90c869bc46fab3ebc5bbc9d3c22e97c8fb7"
+    },
+    "D_admittance_trial07_seed107": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial07_seed107/summary.json",
+      "trajectory_sha256": "fd1837b29f14c7bf074f67589888bfb2838cea9edde04f92ef2b8d11e53d0bce"
+    },
+    "D_admittance_trial08_seed108": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial08_seed108/summary.json",
+      "trajectory_sha256": "b6295e2c7bd58dd2e59d86e408214f17d532e39b6f809c5b82b66bafb5162848"
+    },
+    "D_admittance_trial09_seed109": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial09_seed109/summary.json",
+      "trajectory_sha256": "25e521f3cafa8d9581ba624239de7eacef790c8e5bc50285e5bf1a1f247fc0e2"
+    },
+    "D_admittance_trial10_seed110": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial10_seed110/summary.json",
+      "trajectory_sha256": "3921593327c6fa7b8ad17aa2127448fe4dafffb7726b46eae09dd2cc8d0560cc"
+    },
+    "D_admittance_trial11_seed111": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial11_seed111/summary.json",
+      "trajectory_sha256": "43349bd40404a44f63534d6ab476c13b912f90f9af03d2217002dd0b118b470e"
+    },
+    "D_admittance_trial12_seed112": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial12_seed112/summary.json",
+      "trajectory_sha256": "91394bc08df1a07614ea02006a22f2eadda41a0e1d4e8f996736a767c3a2d54b"
+    },
+    "D_admittance_trial13_seed113": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial13_seed113/summary.json",
+      "trajectory_sha256": "421fa80ba8a752b111a013d0e1373abf9e4610397b0d70e5587fbd20e8bc877f"
+    },
+    "D_admittance_trial14_seed114": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial14_seed114/summary.json",
+      "trajectory_sha256": "c15a09c6c7d746b609c2347763dc366b44baf625894a31935e4a64abf496954f"
+    },
+    "D_admittance_trial15_seed115": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial15_seed115/summary.json",
+      "trajectory_sha256": "57b58f81d59b02b49869d4251841daf9f16afc273ad15a11224011fdbeea4d44"
+    },
+    "D_admittance_trial16_seed116": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial16_seed116/summary.json",
+      "trajectory_sha256": "1c2937e8aaa3dc885e28e5d9fdc81323f46a1e905f5fceec20dfe67ee13b827d"
+    },
+    "D_admittance_trial17_seed117": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial17_seed117/summary.json",
+      "trajectory_sha256": "42b69fb4bb6930c36ac7fdce4fc26286e4899555e4edb35d8e371689ddd260b4"
+    },
+    "D_admittance_trial18_seed118": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial18_seed118/summary.json",
+      "trajectory_sha256": "9b28920c31d1223f6d81ae47edff01f14d3b0ab08b9fe0f558e6a362a4b37139"
+    },
+    "D_admittance_trial19_seed119": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial19_seed119/summary.json",
+      "trajectory_sha256": "7d2e2be2b59b41a607dc9237fbf1183e52944e0575b8fcb39082b3c0f8924cd0"
+    },
+    "D_admittance_trial20_seed120": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial20_seed120/summary.json",
+      "trajectory_sha256": "f2254082b9c6750bd63480baebac7ed6ade911703a0b2eafbd11d19d9eb8c750"
+    },
+    "D_admittance_trial21_seed121": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial21_seed121/summary.json",
+      "trajectory_sha256": "f846234967a21b2227245b1b0bc8605b1f8b1f702784083e463e9662761c0d99"
+    },
+    "D_admittance_trial22_seed122": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial22_seed122/summary.json",
+      "trajectory_sha256": "c29cc3e659525d89b6cb4ce4d6986cef8cb15c49722b318b6fc1457a7c88565a"
+    },
+    "D_admittance_trial23_seed123": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial23_seed123/summary.json",
+      "trajectory_sha256": "b89af2ae43435e6f7ba804016e14b288654282934897e91c0b5d2c73d11f1e00"
+    },
+    "D_admittance_trial24_seed124": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial24_seed124/summary.json",
+      "trajectory_sha256": "25f2fcb12fe9370cbcefe61920dd5ff29780bac7bf638bf71149941d93bf3b43"
+    },
+    "D_admittance_trial25_seed125": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial25_seed125/summary.json",
+      "trajectory_sha256": "68bc374261396b0d230975c03261b5b1cb66adc979694ef425f8aeea2045ce38"
+    },
+    "D_admittance_trial26_seed126": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial26_seed126/summary.json",
+      "trajectory_sha256": "9bf74f836d6a4ecabf7c4a9cc853b23690ab0f2a54d8394dff2233eb3c640818"
+    },
+    "D_admittance_trial27_seed127": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial27_seed127/summary.json",
+      "trajectory_sha256": "b084ea9b219d4f25f20eb58c8f0cfa11d86d88ce1beeb68b4b6ef80b9d7cb1b3"
+    },
+    "D_admittance_trial28_seed128": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial28_seed128/summary.json",
+      "trajectory_sha256": "7640eb9ee718c4fb1e634b38a39d80039b689a1d9d1c96778d1f0ec8cb7293a7"
+    },
+    "D_admittance_trial29_seed129": {
+      "summary": "outputs/reproduction-fr3v2/main/D_admittance_trial29_seed129/summary.json",
+      "trajectory_sha256": "8b11d1deea8573c2260fe5dc6082c9f68957a1f28bb77dba463da1c9aedab9ff"
+    },
+    "D_impedance_trial00_seed100": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial00_seed100/summary.json",
+      "trajectory_sha256": "2dc78fa695f7870eed3403e9dd27ce31964cdeae41328388ad841c12c427daaa"
+    },
+    "D_impedance_trial01_seed101": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial01_seed101/summary.json",
+      "trajectory_sha256": "a0a75030d2409febbcd082d1bc5f3154b20416c7233e38a38ccdf7e0607452f1"
+    },
+    "D_impedance_trial02_seed102": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial02_seed102/summary.json",
+      "trajectory_sha256": "fcfc543d4dfe13c1dbaf4778c0fc012aa8c2272d48c374d7226c2b7ff89901c3"
+    },
+    "D_impedance_trial03_seed103": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial03_seed103/summary.json",
+      "trajectory_sha256": "8550fd37db7e37131faec56975059e678496b1e7cb3170435c6f808f771c6a0a"
+    },
+    "D_impedance_trial04_seed104": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial04_seed104/summary.json",
+      "trajectory_sha256": "af4527c614d66c65006b6a09114d24a6dcec31ff80e13eedddd1001fd08b5535"
+    },
+    "D_impedance_trial05_seed105": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial05_seed105/summary.json",
+      "trajectory_sha256": "fd8da627e758fd218f202462949e9def4b1e79bb94dc0c14664dd59041a354d7"
+    },
+    "D_impedance_trial06_seed106": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial06_seed106/summary.json",
+      "trajectory_sha256": "804b567c72a6f9df01f46b4805dad25464cf7af3dd38076a777ef323907cec11"
+    },
+    "D_impedance_trial07_seed107": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial07_seed107/summary.json",
+      "trajectory_sha256": "55fac897a17bece9fa231c1a7c7f1d1a034f081508ad39c121219f449eba8fc5"
+    },
+    "D_impedance_trial08_seed108": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial08_seed108/summary.json",
+      "trajectory_sha256": "6787cd11f02edcb42930f01c8515cf331b20f68afb1df426371d3b012b4ea15a"
+    },
+    "D_impedance_trial09_seed109": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial09_seed109/summary.json",
+      "trajectory_sha256": "ea9b939884b69f251333fb09890779a5e5d706c4a5f64a4f4667fc765316303a"
+    },
+    "D_impedance_trial10_seed110": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial10_seed110/summary.json",
+      "trajectory_sha256": "a6fb225029e85f179f2681f0a5215b954ebf93529b5c250c67f9e6f8bb099049"
+    },
+    "D_impedance_trial11_seed111": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial11_seed111/summary.json",
+      "trajectory_sha256": "fc6fcce35487ac7e479e397b3902cd6c5fd61582da60fee08d41ef36c32a97ee"
+    },
+    "D_impedance_trial12_seed112": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial12_seed112/summary.json",
+      "trajectory_sha256": "d2068672a622d974abde977ca435f08139dc41f8e7778d76cfd8ea11c4d22ce6"
+    },
+    "D_impedance_trial13_seed113": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial13_seed113/summary.json",
+      "trajectory_sha256": "22294adfe586f7bb48cb23b32963b90f66423137d025a624de794b2abc5663a8"
+    },
+    "D_impedance_trial14_seed114": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial14_seed114/summary.json",
+      "trajectory_sha256": "ef59f83a0d336830eabada10b291aa225cbb4b84cdbef98317c81def12ca293a"
+    },
+    "D_impedance_trial15_seed115": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial15_seed115/summary.json",
+      "trajectory_sha256": "27da11d7c0bf3eb958482894fd679473d3263a17f681bd9e20f9c0d9e6ab3e6f"
+    },
+    "D_impedance_trial16_seed116": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial16_seed116/summary.json",
+      "trajectory_sha256": "425e80a2fe14e23460aa3aa3b3cda8ab38aec62bd1c94a3ebd0d03b79005c2d3"
+    },
+    "D_impedance_trial17_seed117": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial17_seed117/summary.json",
+      "trajectory_sha256": "b366c0e4d2e2084acc738ef59327c549fc345e0515a521820716db34d3a84efc"
+    },
+    "D_impedance_trial18_seed118": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial18_seed118/summary.json",
+      "trajectory_sha256": "34bb4e1b6045b71697085f6c76defded51e14321c41b0eabcfca0f541598d39e"
+    },
+    "D_impedance_trial19_seed119": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial19_seed119/summary.json",
+      "trajectory_sha256": "456f08a4eeb7bb3638e50dff5669445222e606c17b3fe25a710e934e120384e5"
+    },
+    "D_impedance_trial20_seed120": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial20_seed120/summary.json",
+      "trajectory_sha256": "d04ac1c676c810554ddee4b427ea1943b57fd225b192b006c1e18bc03dcebbf2"
+    },
+    "D_impedance_trial21_seed121": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial21_seed121/summary.json",
+      "trajectory_sha256": "1c3d94fc429685c959e18d3553c899604e879972faed06038870466eb897b1e8"
+    },
+    "D_impedance_trial22_seed122": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial22_seed122/summary.json",
+      "trajectory_sha256": "d33371fa29f2ff9233bec22ea7c9db0b09de4892df796faea6cead6a2bf6c462"
+    },
+    "D_impedance_trial23_seed123": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial23_seed123/summary.json",
+      "trajectory_sha256": "5d2fabd73527b3d41d8b0174f4ad694da1213b479aa8ac6937c6dba7c7d499c0"
+    },
+    "D_impedance_trial24_seed124": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial24_seed124/summary.json",
+      "trajectory_sha256": "4aa099c54b8fe71e1297d33a0c6dce9a1a916911e9fa9b47dcce593caeccf8b2"
+    },
+    "D_impedance_trial25_seed125": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial25_seed125/summary.json",
+      "trajectory_sha256": "25b8b44c10b22f1089b8e5300758e2852a25c25319c0fd5f9221e4e7710ba396"
+    },
+    "D_impedance_trial26_seed126": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial26_seed126/summary.json",
+      "trajectory_sha256": "6b07a4511f815c89867fa81c3e81604ab5c0d65f72ded03645a66bf54bf975d5"
+    },
+    "D_impedance_trial27_seed127": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial27_seed127/summary.json",
+      "trajectory_sha256": "8befd52a31f45400c9389d45df00514332868d4747fa5f970812dbdae1d2dd32"
+    },
+    "D_impedance_trial28_seed128": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial28_seed128/summary.json",
+      "trajectory_sha256": "377810f115e9c0bde506f1dec80ffb8604d807bc23b357882fa924fd00849ae6"
+    },
+    "D_impedance_trial29_seed129": {
+      "summary": "outputs/reproduction-fr3v2/main/D_impedance_trial29_seed129/summary.json",
+      "trajectory_sha256": "a25753bec3084d0765dfee785ed47d7d1687431933a66f90443d12eaae359249"
+    },
+    "D_smc_trial00_seed100": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial00_seed100/summary.json",
+      "trajectory_sha256": "8c92bce6739bfb53b53819ab1c143cdd401cbc47412979a779fda4b5903b7d8a"
+    },
+    "D_smc_trial01_seed101": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial01_seed101/summary.json",
+      "trajectory_sha256": "d131a8cb4bf112112d5ce85257e96bbbacb843bc9f5df02e9c5a54f036073130"
+    },
+    "D_smc_trial02_seed102": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial02_seed102/summary.json",
+      "trajectory_sha256": "0ae2b04214cef86d8f1cc766537b9958c2234e5d531157e3d5b757de53541b2a"
+    },
+    "D_smc_trial03_seed103": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial03_seed103/summary.json",
+      "trajectory_sha256": "089faaeb91f21f61405e563d78b9e2191252f3aca0a4771b301b8e9d5cca71c8"
+    },
+    "D_smc_trial04_seed104": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial04_seed104/summary.json",
+      "trajectory_sha256": "38ecb673a5b1ff14a6276e6698456212dc45bc542bd1e03ba0f588b4a0a784b1"
+    },
+    "D_smc_trial05_seed105": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial05_seed105/summary.json",
+      "trajectory_sha256": "f68f03ec377a095e6f8abc04b2e7232dddcdf5e768978ce2377fb70b90756f1f"
+    },
+    "D_smc_trial06_seed106": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial06_seed106/summary.json",
+      "trajectory_sha256": "5af4ae3e8d0630eaa76db75210aa6c594f7d5bd26ca4ce0ce00cdd59f7ed6eb1"
+    },
+    "D_smc_trial07_seed107": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial07_seed107/summary.json",
+      "trajectory_sha256": "f4df66fef3dc86782f4820cd7dac24401d8fe25150c4f5ddc0ce2faaca6bc476"
+    },
+    "D_smc_trial08_seed108": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial08_seed108/summary.json",
+      "trajectory_sha256": "3cff63253760a554e520c503cfa510a6ab7b08771819c27b3e33486795db312a"
+    },
+    "D_smc_trial09_seed109": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial09_seed109/summary.json",
+      "trajectory_sha256": "df8e51958ce5efcc0a5b2580f246994e27e84ca8b85f49f05473cc37dac7ce3e"
+    },
+    "D_smc_trial10_seed110": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial10_seed110/summary.json",
+      "trajectory_sha256": "507100a6b9a8b9dc21f638216a9dbbb60727cb6c692c6c06218bbd252c2b7f72"
+    },
+    "D_smc_trial11_seed111": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial11_seed111/summary.json",
+      "trajectory_sha256": "f6f71660fcfd4082f47235e6caff8cbaa3e04c933ae2c8dd814f6b9479ba4fa5"
+    },
+    "D_smc_trial12_seed112": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial12_seed112/summary.json",
+      "trajectory_sha256": "e154c19337cb17c027903448088ed0370d4eb0d98cf1588e527d96012fd5cadb"
+    },
+    "D_smc_trial13_seed113": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial13_seed113/summary.json",
+      "trajectory_sha256": "d513b7a833e411fb927e69c0e2853fc41da98435a3274817f3f7a018217742a8"
+    },
+    "D_smc_trial14_seed114": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial14_seed114/summary.json",
+      "trajectory_sha256": "0c498c2dd9ef1cd7e6bbe2cf8f30f00b989e2300dfdef111253a2ffec9b8af4d"
+    },
+    "D_smc_trial15_seed115": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial15_seed115/summary.json",
+      "trajectory_sha256": "e6622989fb58dc6bcd47e16cc11c6d06f06ce880adae1b24a99a5cd6007a74e1"
+    },
+    "D_smc_trial16_seed116": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial16_seed116/summary.json",
+      "trajectory_sha256": "ea5ec06f826dc4f5742739d2faf91a6b1745f22e59c6b3daaf214c2b0f3a03d5"
+    },
+    "D_smc_trial17_seed117": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial17_seed117/summary.json",
+      "trajectory_sha256": "9740259987211bc2becbe7ae3e36b6401598171d63c1b20420e3f3ebf12ea0d8"
+    },
+    "D_smc_trial18_seed118": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial18_seed118/summary.json",
+      "trajectory_sha256": "c3d781204580be841455ad66706024f30eae20c2f4082b96a685d8c7dee46ca2"
+    },
+    "D_smc_trial19_seed119": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial19_seed119/summary.json",
+      "trajectory_sha256": "17b52dc590fc6233ecc259ad94001c69dbf608476e5548cc9268161896e43bd4"
+    },
+    "D_smc_trial20_seed120": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial20_seed120/summary.json",
+      "trajectory_sha256": "8e7cf7f14365531b8ff2424e150a3b0189ba2b4011805c660cab14cd199922f0"
+    },
+    "D_smc_trial21_seed121": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial21_seed121/summary.json",
+      "trajectory_sha256": "104cdd91528924c6d922e1c86637b126be139df91a7ef8b941010b6643957331"
+    },
+    "D_smc_trial22_seed122": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial22_seed122/summary.json",
+      "trajectory_sha256": "bed585817a449ec3d5896d9c91dcb1f79042d2d4b23e79eb25810c90a4d932a4"
+    },
+    "D_smc_trial23_seed123": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial23_seed123/summary.json",
+      "trajectory_sha256": "dce1805866b2439f694d3be4ae034eef67b29d7abd8456ba2c11b7930feedaac"
+    },
+    "D_smc_trial24_seed124": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial24_seed124/summary.json",
+      "trajectory_sha256": "d00a77655660e364c444151b45affe86ea00002bccefec76e0cb04408d6cb5a6"
+    },
+    "D_smc_trial25_seed125": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial25_seed125/summary.json",
+      "trajectory_sha256": "01fe27b64bf252750946b1d17da08909ad654d6c287abc2ba14eb79ea8b82d22"
+    },
+    "D_smc_trial26_seed126": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial26_seed126/summary.json",
+      "trajectory_sha256": "2182702864f206144b972f23c8d7d3189f4b2f5a1e0c4390d4028fe2e53c616b"
+    },
+    "D_smc_trial27_seed127": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial27_seed127/summary.json",
+      "trajectory_sha256": "d826f78b6e527227c510a34defb515d486bcddfc514643a9a17d49c318924542"
+    },
+    "D_smc_trial28_seed128": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial28_seed128/summary.json",
+      "trajectory_sha256": "66378ce2098776550ead28583b848f22dbdeb9b9770548bc789ec7bffea23869"
+    },
+    "D_smc_trial29_seed129": {
+      "summary": "outputs/reproduction-fr3v2/main/D_smc_trial29_seed129/summary.json",
+      "trajectory_sha256": "73add198402662bddd42f29ed6b01ecdcd2621743e0abc94c408a01d3e0ec96d"
+    },
+    "D_hinf_trial00_seed100": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial00_seed100/summary.json",
+      "trajectory_sha256": "acebfb7a3e5889009569fd9a0f60a656a709ed71b4a330d1923a32240b28800e"
+    },
+    "D_hinf_trial01_seed101": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial01_seed101/summary.json",
+      "trajectory_sha256": "ae9f47119eb19224ac6e30efa57913241f8da249a7a00546411f72ffb3a73508"
+    },
+    "D_hinf_trial02_seed102": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial02_seed102/summary.json",
+      "trajectory_sha256": "f8c442b9e7e41ea270644100d0a5c1f3eb19e9ad5c2e2897d153810f8cfee127"
+    },
+    "D_hinf_trial03_seed103": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial03_seed103/summary.json",
+      "trajectory_sha256": "8663bb164c5edb27161f838e5c66ad0f289dba87f26382c3a2cb1cf70f217c42"
+    },
+    "D_hinf_trial04_seed104": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial04_seed104/summary.json",
+      "trajectory_sha256": "9697cfd01c383d33ce1ca5a3161696d4b0d4156a5a9f4bb7c2e21c3eb2ef182e"
+    },
+    "D_hinf_trial05_seed105": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial05_seed105/summary.json",
+      "trajectory_sha256": "3182b3483ce919464a99d6115d4dec0feefb1d26f5aac9ab93d862abcc04e512"
+    },
+    "D_hinf_trial06_seed106": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial06_seed106/summary.json",
+      "trajectory_sha256": "9dc93730dd921ee5aa7a806f8c308f618dddf66e322188e3b639177f1642a3b0"
+    },
+    "D_hinf_trial07_seed107": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial07_seed107/summary.json",
+      "trajectory_sha256": "e793d7287253d05cbbcb426085070aebc0b7f41071969b30907b8c69edfd0e37"
+    },
+    "D_hinf_trial08_seed108": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial08_seed108/summary.json",
+      "trajectory_sha256": "109adaedd13b106b40e0a88efc1ad58d2ea563086bda4c20d7d2e5c4fec36e96"
+    },
+    "D_hinf_trial09_seed109": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial09_seed109/summary.json",
+      "trajectory_sha256": "0a21bc27678fc038f907d5a62c136ea802494c3167ee4f0b3b1800f1d7caf76a"
+    },
+    "D_hinf_trial10_seed110": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial10_seed110/summary.json",
+      "trajectory_sha256": "3f58b9ca41cfd6a1718062503578eb4431fd4d2ee9585c5bba1b1d33712a7007"
+    },
+    "D_hinf_trial11_seed111": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial11_seed111/summary.json",
+      "trajectory_sha256": "47f1e42bb6ad9178d6c82aedbe7acacb1d4fb7d9adeb4fceec0ebceea1ecbe0b"
+    },
+    "D_hinf_trial12_seed112": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial12_seed112/summary.json",
+      "trajectory_sha256": "0c82d48a0d62241eeeb9c385d06615a3fa556ba1dd6fd9e230c962a45cffbce7"
+    },
+    "D_hinf_trial13_seed113": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial13_seed113/summary.json",
+      "trajectory_sha256": "abf30d5766024b0cb4a32559aaf6adcccd4030368e45104946e2c70034ed18b2"
+    },
+    "D_hinf_trial14_seed114": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial14_seed114/summary.json",
+      "trajectory_sha256": "1d119d6f934b5fed21b833f59cbfacf29d78c87cae7dd0d53802df2847bae733"
+    },
+    "D_hinf_trial15_seed115": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial15_seed115/summary.json",
+      "trajectory_sha256": "0b1cb99ae1560ed86c591a94cc3c762a772b953cca0adbe20e16e91dd9c53f69"
+    },
+    "D_hinf_trial16_seed116": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial16_seed116/summary.json",
+      "trajectory_sha256": "f2b0784f7a19c8f0f2a082565e2cf64d9118d4a436043cff2e967909d9f83e6b"
+    },
+    "D_hinf_trial17_seed117": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial17_seed117/summary.json",
+      "trajectory_sha256": "771714b633da03454d911a48afaa946ecfb04a42834a3aaf62238338a63eda65"
+    },
+    "D_hinf_trial18_seed118": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial18_seed118/summary.json",
+      "trajectory_sha256": "3232b9211ab4755669fec7be0c0834d54b06ffe79718c81de11affe3204dcaf7"
+    },
+    "D_hinf_trial19_seed119": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial19_seed119/summary.json",
+      "trajectory_sha256": "dc37ef511ca188c2b989466e23362193339446dc42a68db367c90100584742fb"
+    },
+    "D_hinf_trial20_seed120": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial20_seed120/summary.json",
+      "trajectory_sha256": "453a052b885d789bd5ab0a1393c74730fbe232595491a25b2b90eb8f84acc23a"
+    },
+    "D_hinf_trial21_seed121": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial21_seed121/summary.json",
+      "trajectory_sha256": "e9096bc8c4d0771122ad94dad7dedf8db7861654377970330c63abb5fd70244a"
+    },
+    "D_hinf_trial22_seed122": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial22_seed122/summary.json",
+      "trajectory_sha256": "ddd02a0f27987e4f2d3dba4cfb6e96e1150c3eb987918b765c8ba6ffa85dfdbb"
+    },
+    "D_hinf_trial23_seed123": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial23_seed123/summary.json",
+      "trajectory_sha256": "2001e3b7fa25686bff33a93a9bee0b1bb8fc37c378a6a5121a01784ac1689d8c"
+    },
+    "D_hinf_trial24_seed124": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial24_seed124/summary.json",
+      "trajectory_sha256": "94e9514cb8c0db0a54d14ef02c42cef8c335a60947ff6119a6d2cb7fa4480d8f"
+    },
+    "D_hinf_trial25_seed125": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial25_seed125/summary.json",
+      "trajectory_sha256": "e29983875264659ce0941c19ebd53379de59eda1b3256aeed57732ee81f87603"
+    },
+    "D_hinf_trial26_seed126": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial26_seed126/summary.json",
+      "trajectory_sha256": "d6b820f1d826907149599e9b5ff52f03833b44c53b8f088b331381a67bd3f0cf"
+    },
+    "D_hinf_trial27_seed127": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial27_seed127/summary.json",
+      "trajectory_sha256": "0536a01726bb2f6484d962d3f40a0ace62410f1e06f65074e23c619ba3630504"
+    },
+    "D_hinf_trial28_seed128": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial28_seed128/summary.json",
+      "trajectory_sha256": "70e221021a154c54411d65a5b703306de12ea283f23e5e0c88f8ec2644a86f0c"
+    },
+    "D_hinf_trial29_seed129": {
+      "summary": "outputs/reproduction-fr3v2/main/D_hinf_trial29_seed129/summary.json",
+      "trajectory_sha256": "fba2dae3cd9fb74a8eafbebead0bbeec2d4d47400b7a88eccc920a98a1855b6e"
+    }
+  }
+}

@@ -43,5 +43,35 @@ class ScenarioTests(unittest.TestCase):
         f=scene.applied_wrench(8.5,p,v)
         self.assertLessEqual(abs((euler_rate_map(p[3:]).T@f[3:])[1]),3.)
 
+    def test_fig11_replay_is_scaled_power_dual_and_shared(self):
+        import tempfile
+        from fr3imp.experiment import run_experiment
+        p0=np.r_[.4,0,.3,0,0,0]
+        s=Scenario('D',p0,variant='paper_figure',operator_model='fig11_replay',operator_replay=dict(scale=.6))
+        self.assertEqual(s.duration,30.)
+        pose=np.r_[.4,0,.3,0,.02,-.1];index=3000  # Before the roll guide starts.
+        wrench=s.replay_wrench(3.,pose,np.zeros(6))
+        np.testing.assert_allclose(euler_rate_map(pose[3:]).T@wrench[3:],.6*s.operator_scale*s.replay_moment[index],atol=1e-9)
+        np.testing.assert_allclose(wrench[:3],0)
+        self.assertLessEqual(np.abs(s.replay_moment[:,1:]).max()*.6*1.26,14.)
+        with tempfile.TemporaryDirectory() as root:
+            records=[run_experiment('D',c,duration=.01,seed=100,output=root,profile='fr3v2',operator_model='fig11_replay')
+                     for c in ('impedance','admittance','smc','hinf')]
+        for r in records:
+            self.assertEqual(r['status'],'completed')
+            self.assertEqual(r['operator_replay'],dict(column='hinf',scale=.6,grip=0.))
+
+    def test_fig11_grip_only_acts_while_pushing(self):
+        p0=np.r_[.4,0,.3,0,0,0]
+        s=Scenario('D',p0,variant='paper_figure',operator_model='fig11_replay',operator_replay=dict(grip=60.))
+        free=Scenario('D',p0,variant='paper_figure',operator_model='fig11_replay')
+        pose=np.r_[.4,0,.3,0,.05,.2]
+        quiet=np.flatnonzero(np.abs(free.replay_scale*free.replay_moment[:13000]).max(axis=1)<.4)[0]/1000
+        np.testing.assert_allclose(s.replay_wrench(quiet,pose,np.zeros(6)),free.replay_wrench(quiet,pose,np.zeros(6)))
+        self.assertFalse(np.allclose(s.replay_wrench(3.,pose,np.zeros(6)),free.replay_wrench(3.,pose,np.zeros(6))))
+
+    def test_operator_model_is_validated(self):
+        with self.assertRaises(ValueError):Scenario('D',np.zeros(6),operator_model='unknown')
+
 
 if __name__=='__main__':unittest.main()

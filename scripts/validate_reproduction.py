@@ -2,7 +2,8 @@
 
 E is deferred by AGENTS.md. Main: 134 runs including 30 D trials. Additional
 cases keep failed/saturated configurations, including the historical rigid
-contact and bypassed command filter. --resume requires matching runtime code.
+contact and bypassed command filter. fr3v2 also varies each unidentified platform
+assumption it adds. --resume requires matching runtime code.
 """
 import argparse
 from concurrent.futures import ProcessPoolExecutor,as_completed
@@ -14,10 +15,14 @@ import subprocess
 import sys
 
 from fr3imp.actuation import ActuatorParameters
-from fr3imp.experiment import run_experiment,source_hash,default_plant_parameters
+from fr3imp.experiment import run_experiment,source_hash,default_plant_parameters,default_sensor_parameters
 from fr3imp.model import ROOT,PlantParameters
 from fr3imp.scenarios import COMPARISONS
 from source_snapshot import capture_source
+
+# Joint PID gains giving the paper's -3 dB inner-loop bandwidth on FR3, per the
+# bandwidth estimate in the fr3v2 report; a sensitivity case, not a default.
+BANDWIDTH_MATCHED_G=[80.,90.,140.,380.,40.,43.,30.]
 
 
 def cases(experiments='ABCDF',profile='fr3'):
@@ -37,10 +42,30 @@ def cases(experiments='ABCDF',profile='fr3'):
     for e in 'BCE':add('virtual8',e,'bidirectional',control_overrides=dict(virtual_substeps=8))
     add('virtual8','C','admittance',control_overrides=dict(virtual_substeps=8))
     for e in 'BE':
-        p=replace(default_plant_parameters(e,profile),contact_timeconstant=.004,contact_impedance=(.95,.99,.001))
+        p=replace(default_plant_parameters(e,profile),contact_timeconstant=.004,contact_dampratio=1.,contact_impedance=(.95,.99,.001))
         for c in COMPARISONS[e]:add('rigid_contact',e,c,plant_parameters=p)
     for e,c in [('A','admittance'),('B','hinf'),('C','hinf'),('D','hinf'),('E','hinf')]:
         add('filter_off',e,c,actuator_parameters=ActuatorParameters())
+    if profile=='fr3v2':
+        for delay in (0,1,2,5):
+            for e,c in [(e,c) for e in 'BC' for c in COMPARISONS[e] if c!='impedance']:
+                s=replace(default_sensor_parameters(profile,default_plant_parameters(e,profile)),delay_samples=delay)
+                add(f'delay{delay}',e,c,sensor_parameters=s)
+        for e,c in [('A','admittance'),('B','admittance'),('B','bidirectional'),('C','admittance'),('C','bidirectional'),('D','admittance')]:
+            add('matched_G',e,c,control_overrides=dict(nric_gain_vector=BANDWIDTH_MATCHED_G))
+        for friction in (2.,3.5):
+            for e in 'ABCDF':
+                p=replace(default_plant_parameters(e,profile),friction_scale=friction)
+                for c in COMPARISONS[e]:add(f'friction{friction:g}',e,c,plant_parameters=p)
+        for e in 'BC':
+            p=default_plant_parameters(e,profile)
+            variants=dict(contact_zeta1=replace(p,contact_dampratio=1.),
+                          contact_soft=replace(p,contact_timeconstant=p.contact_timeconstant*2),
+                          contact_stiff=replace(p,contact_timeconstant=p.contact_timeconstant/2))
+            for label,variant in variants.items():
+                for c in COMPARISONS[e]:add(label,e,c,plant_parameters=variant)
+        p=replace(default_plant_parameters('C',profile),contact_impedance=(.8,.9,.001))
+        for c in COMPARISONS['C']:add('c_solimp8','C',c,plant_parameters=p)
     return result
 
 
@@ -56,6 +81,8 @@ def run_case(name,job,root,resume):
         matches=all(old.get(k)==v for k,v in required.items())
         if 'actuator_parameters' in job:matches &= old['actuator']==asdict(job['actuator_parameters'])
         for k,v in job.get('control_overrides',{}).items():matches &= old['control_settings'].get(k)==v
+        if 'sensor_parameters' in job:
+            matches &= json.dumps(old['sensors'],sort_keys=True)==json.dumps(asdict(job['sensor_parameters']),sort_keys=True)
         if 'plant_parameters' in job:
             expected=asdict(job['plant_parameters']);expected['timestep']=.001/required['physics_substeps']
             matches &= json.dumps(old['plant'],sort_keys=True)==json.dumps(expected,sort_keys=True)
@@ -66,7 +93,7 @@ def run_case(name,job,root,resume):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=Path('outputs/reproduction-fr3'))
-    parser.add_argument('--profile',choices=['fr3','paper'],default='fr3')
+    parser.add_argument('--profile',choices=['fr3','fr3v2','paper'],default='fr3')
     parser.add_argument('--experiments',default='ABCDF',help='E is deferred by AGENTS.md')
     parser.add_argument('--workers',type=int,default=8)
     parser.add_argument('--d-trials',type=int,default=30)

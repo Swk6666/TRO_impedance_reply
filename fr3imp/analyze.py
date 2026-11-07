@@ -147,7 +147,7 @@ def make_figure(experiment,runs,output):
         axis.grid(alpha=.18)
         if experiment not in 'ABCF' or i:axis.set(xlabel='Time [s]',xlim=(0,35 if experiment=='D' else 30))
     handles,labels=ax[0].get_legend_handles_labels()
-    if experiment=='F' and selected[0][0].get('profile')=='fr3':
+    if experiment=='F' and selected[0][0].get('profile') in ('fr3','fr3v2'):
         gain_labels={LABELS[s['controller']]:f"r={s['controller'].split('_')[1]} (effective alpha={s['controller_parameters']['alpha']:g})" for s,_ in selected}
         labels=[gain_labels.get(label,label) for label in labels]
     fig.legend(handles,labels,fontsize=9,loc='outside lower center',ncol=min(6,len(labels)))
