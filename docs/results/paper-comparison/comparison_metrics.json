@@ -1,0 +1,327 @@
+{
+  "A_impedance": {
+    "position_rmse_m": 0.021669697016477585,
+    "orientation_rmse_rad": 0.019804691895842552,
+    "reference_error_position_rms_m_s": 14.429023742675781,
+    "reference_error_rotation_rms_rad_s": 50.3748779296875,
+    "force_peak_N": 0.0,
+    "moment_peak_Nm": 0.0,
+    "torque_peak_Nm": 26.528459548950195,
+    "torque_rms_Nm": 26.52420997619629,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.18343397974967957,
+    "contact_fraction": 0.0,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": 0.0,
+    "dynamic_impedance_position_rmse_m": 0.02165740640398119,
+    "dynamic_impedance_rotation_rmse_rad": 0.019804691290835213,
+    "reference_error_position_mean_m_s": 13.279842376708984,
+    "reference_error_position_std_m_s": 5.642914295196533,
+    "equilibrium_position_error_mean_m": 0.02023135669743434,
+    "equilibrium_position_error_std_m": 0.007763245206339762
+  },
+  "A_admittance": {
+    "position_rmse_m": 0.0003512439434416592,
+    "orientation_rmse_rad": 0.00011012120376108214,
+    "reference_error_position_rms_m_s": 0.033669907599687576,
+    "reference_error_rotation_rms_rad_s": 0.28802555799484253,
+    "force_peak_N": 0.0,
+    "moment_peak_Nm": 0.0,
+    "torque_peak_Nm": 28.386634826660156,
+    "torque_rms_Nm": 26.903038024902344,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.1791316419839859,
+    "contact_fraction": 0.0,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": 0.0,
+    "dynamic_impedance_position_rmse_m": 0.00018512116294729282,
+    "dynamic_impedance_rotation_rmse_rad": 0.00011012059684093522,
+    "reference_error_position_mean_m_s": 0.0317997932434082,
+    "reference_error_position_std_m_s": 0.011065060272812843,
+    "equilibrium_position_error_mean_m": 0.00017769740015049633,
+    "equilibrium_position_error_std_m": 0.0003029784619526151
+  },
+  "A_hinf": {
+    "position_rmse_m": 0.0005409828154370189,
+    "orientation_rmse_rad": 0.00019034085562452674,
+    "reference_error_position_rms_m_s": 0.030999207869172096,
+    "reference_error_rotation_rms_rad_s": 0.051225535571575165,
+    "force_peak_N": 0.0,
+    "moment_peak_Nm": 0.0,
+    "torque_peak_Nm": 27.436498641967773,
+    "torque_rms_Nm": 26.850811004638672,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.17900608479976654,
+    "contact_fraction": 0.0,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": 0.0,
+    "dynamic_impedance_position_rmse_m": 0.00042114293685321523,
+    "dynamic_impedance_rotation_rmse_rad": 0.00019034099045866167,
+    "reference_error_position_mean_m_s": 0.030734529718756676,
+    "reference_error_position_std_m_s": 0.004042205400764942,
+    "equilibrium_position_error_mean_m": 0.0002857509127346083,
+    "equilibrium_position_error_std_m": 0.00045935693801720364
+  },
+  "B_impedance": {
+    "position_rmse_m": 0.022316643968224525,
+    "orientation_rmse_rad": 0.020222702994942665,
+    "reference_error_position_rms_m_s": 15.762351036071777,
+    "reference_error_rotation_rms_rad_s": 61.131935119628906,
+    "force_peak_N": 28.468969345092773,
+    "moment_peak_Nm": 0.06575734168291092,
+    "torque_peak_Nm": 45.816062927246094,
+    "torque_rms_Nm": 27.146717071533203,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.18024896085262299,
+    "contact_fraction": 0.14026666666666668,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": -0.4349971115589142,
+    "dynamic_impedance_position_rmse_m": 0.006809202614552416,
+    "dynamic_impedance_rotation_rmse_rad": 0.020247956762666226,
+    "reference_error_position_mean_m_s": 14.35074520111084,
+    "reference_error_position_std_m_s": 6.519804000854492,
+    "equilibrium_position_error_mean_m": 0.006466899485700293,
+    "equilibrium_position_error_std_m": 0.0030380074958040694,
+    "first_contact_s": 13.449,
+    "last_contact_s": 17.934
+  },
+  "B_admittance": {
+    "position_rmse_m": 0.021039461717009544,
+    "orientation_rmse_rad": 0.00038543532718904316,
+    "reference_error_position_rms_m_s": 0.15271322429180145,
+    "reference_error_rotation_rms_rad_s": 0.5806211829185486,
+    "force_peak_N": 74.64370727539062,
+    "moment_peak_Nm": 0.16501092910766602,
+    "torque_peak_Nm": 87.0,
+    "torque_rms_Nm": 32.910850524902344,
+    "saturation_fraction": 0.07213333249092102,
+    "minimum_jacobian_singular_value": 0.17917639017105103,
+    "contact_fraction": 0.10933333333333334,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": -0.6052417159080505,
+    "dynamic_impedance_position_rmse_m": 0.00013290344594786048,
+    "dynamic_impedance_rotation_rmse_rad": 0.00030345433552730644,
+    "reference_error_position_mean_m_s": 0.1381784975528717,
+    "reference_error_position_std_m_s": 0.06502331793308258,
+    "equilibrium_position_error_mean_m": 0.006221638574311027,
+    "equilibrium_position_error_std_m": 0.01738598251966113,
+    "first_contact_s": 13.298,
+    "last_contact_s": 17.971
+  },
+  "B_smc": {
+    "position_rmse_m": 0.02119092270731926,
+    "orientation_rmse_rad": 0.0014480036916211247,
+    "reference_error_position_rms_m_s": 0.10298243910074234,
+    "reference_error_rotation_rms_rad_s": 0.41167348623275757,
+    "force_peak_N": 29.994924545288086,
+    "moment_peak_Nm": 0.06952524185180664,
+    "torque_peak_Nm": 48.04500198364258,
+    "torque_rms_Nm": 27.237102508544922,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.17895235121250153,
+    "contact_fraction": 0.14753333333333332,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": -0.49298715591430664,
+    "dynamic_impedance_position_rmse_m": 0.00044747746760221606,
+    "dynamic_impedance_rotation_rmse_rad": 0.0014219320028454397,
+    "reference_error_position_mean_m_s": 0.09428903460502625,
+    "reference_error_position_std_m_s": 0.041412074118852615,
+    "equilibrium_position_error_mean_m": 0.000781364289858202,
+    "equilibrium_position_error_std_m": 0.0021577546128525864,
+    "first_contact_s": 13.295,
+    "last_contact_s": 17.989
+  },
+  "B_bidirectional": {
+    "position_rmse_m": 0.02254568599164486,
+    "orientation_rmse_rad": 0.006000438705086708,
+    "reference_error_position_rms_m_s": 6.840498924255371,
+    "reference_error_rotation_rms_rad_s": 10.477781295776367,
+    "force_peak_N": 33.54725646972656,
+    "moment_peak_Nm": 0.07971232384443283,
+    "torque_peak_Nm": 27.970144271850586,
+    "torque_rms_Nm": 27.375953674316406,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.17861565947532654,
+    "contact_fraction": 0.14866666666666667,
+    "mean_beta": 0.07198658585548401,
+    "min_tank_energy_J": 0.994206428527832,
+    "interaction_work_J": -0.5116201043128967,
+    "dynamic_impedance_position_rmse_m": 0.006455779870674129,
+    "dynamic_impedance_rotation_rmse_rad": 0.006012037916924207,
+    "reference_error_position_mean_m_s": 5.880341529846191,
+    "reference_error_position_std_m_s": 3.494854211807251,
+    "equilibrium_position_error_mean_m": 0.005558226657418281,
+    "equilibrium_position_error_std_m": 0.003991574509908318,
+    "first_contact_s": 13.368,
+    "last_contact_s": 18.057
+  },
+  "B_beta": {
+    "window_s": [
+      13,
+      18
+    ],
+    "mean": 0.35393052407108483,
+    "fraction_above_0_9": 0.288,
+    "max": 1.0
+  },
+  "B_hinf": {
+    "position_rmse_m": 0.02118452824652195,
+    "orientation_rmse_rad": 0.0003731388133019209,
+    "reference_error_position_rms_m_s": 0.030223477631807327,
+    "reference_error_rotation_rms_rad_s": 0.0482507050037384,
+    "force_peak_N": 29.970142364501953,
+    "moment_peak_Nm": 0.06932028383016586,
+    "torque_peak_Nm": 46.38670349121094,
+    "torque_rms_Nm": 27.199161529541016,
+    "saturation_fraction": 0.0,
+    "minimum_jacobian_singular_value": 0.17907889187335968,
+    "contact_fraction": 0.14703333333333332,
+    "mean_beta": 0.0,
+    "min_tank_energy_J": 0.0,
+    "interaction_work_J": -0.4925835132598877,
+    "dynamic_impedance_position_rmse_m": 0.00017489462204387372,
+    "dynamic_impedance_rotation_rmse_rad": 0.00020828499239106878,
+    "reference_error_position_mean_m_s": 0.029911674559116364,
+    "reference_error_position_std_m_s": 0.004330174531787634,
+    "equilibrium_position_error_mean_m": 0.0006229882262173045,
+    "equilibrium_position_error_std_m": 0.002262550619214772,
+    "first_contact_s": 13.297,
+    "last_contact_s": 17.985
+  },
+  "C_admittance": {
+    "measured_force_rmse_N": 9.072749978777058,
+    "measured_force_min_N": -12.242990493774414,
+    "measured_force_max_N": 69.00479888916016,
+    "joint_speed_norm_mean_rad_s": 0.15334731005937316,
+    "joint_speed_norm_max_rad_s": 0.7069949676835855
+  },
+  "C_beta": {
+    "window_s": [
+      13,
+      19
+    ],
+    "mean": 0.3633635404460268,
+    "fraction_above_0_9": 0.30183333333333334,
+    "max": 1.0
+  },
+  "C_bidirectional": {
+    "measured_force_rmse_N": 1.749010980003764,
+    "measured_force_min_N": 0.012320974841713905,
+    "measured_force_max_N": 16.908092498779297,
+    "joint_speed_norm_mean_rad_s": 0.09301204315026451,
+    "joint_speed_norm_max_rad_s": 0.18284765336917083
+  },
+  "C_hinf": {
+    "measured_force_rmse_N": 0.6306521923373277,
+    "measured_force_min_N": -0.3707367777824402,
+    "measured_force_max_N": 18.815731048583984,
+    "joint_speed_norm_mean_rad_s": 0.10531631330071065,
+    "joint_speed_norm_max_rad_s": 0.3807143925844722
+  },
+  "F_hinf_0.25": {
+    "ref_mean": 0.1150301456535142,
+    "ref_sd": 0.02081636369611425,
+    "measured_equilibrium_mean_m": 0.0009195713225405408,
+    "measured_equilibrium_sd_m": 0.001911082800770282,
+    "physical_equilibrium_mean_m": 0.0007124361589609951,
+    "physical_equilibrium_sd_m": 0.002164074390248103
+  },
+  "F_hinf_0.5": {
+    "ref_mean": 0.05911393044039346,
+    "ref_sd": 0.00920330122708065,
+    "measured_equilibrium_mean_m": 0.0008838001200566822,
+    "measured_equilibrium_sd_m": 0.0019124985832063427,
+    "physical_equilibrium_mean_m": 0.0006439390445118192,
+    "physical_equilibrium_sd_m": 0.0021694020052798134
+  },
+  "F_hinf_1": {
+    "ref_mean": 0.02991167415430046,
+    "ref_sd": 0.004330174203755863,
+    "measured_equilibrium_mean_m": 0.0008797228899865685,
+    "measured_equilibrium_sd_m": 0.001989603571729488,
+    "physical_equilibrium_mean_m": 0.0006229882262173045,
+    "physical_equilibrium_sd_m": 0.002262550619214772
+  },
+  "D_FT_statistics": {
+    "admittance": {
+      "trials": 30,
+      "mean_rad": [
+        0.0034844650039159296,
+        0.08618317208444042
+      ],
+      "sample_sd_rad": [
+        2.2643809832027694e-05,
+        0.001074094148575211
+      ]
+    },
+    "impedance": {
+      "trials": 30,
+      "mean_rad": [
+        0.007594772548589187,
+        0.2288701272085235
+      ],
+      "sample_sd_rad": [
+        2.037428255552492e-05,
+        0.0004540681272205173
+      ]
+    },
+    "smc": {
+      "trials": 30,
+      "mean_rad": [
+        0.0028660228848618333,
+        0.0953792759611242
+      ],
+      "sample_sd_rad": [
+        9.688930353780986e-06,
+        0.0007176751514508471
+      ]
+    },
+    "hinf": {
+      "trials": 30,
+      "mean_rad": [
+        0.003282866014125244,
+        0.08720793266916492
+      ],
+      "sample_sd_rad": [
+        4.208536658944825e-06,
+        0.000892496704564845
+      ]
+    }
+  },
+  "F_paper_printed": {
+    "ref_mean_m_s": [
+      0.379,
+      0.186,
+      0.095
+    ],
+    "ref_printed_plusminus_m_s": [
+      0.117,
+      0.054,
+      0.026
+    ],
+    "equilibrium_mean_m": [
+      0.00799,
+      0.00441,
+      0.0031
+    ],
+    "equilibrium_printed_plusminus_m": [
+      0.00783,
+      0.00508,
+      0.00443
+    ]
+  },
+  "conventions": {
+    "selection": "fr3 profile, representative seed100 and D trial0; D statistics use all30 trials per controller",
+    "error": "desired pose minus actual pose",
+    "static_reference": "(F_des - measured F/T generalized force)/K on nonzero stiffness axes",
+    "no_change": "No controller rerun, curve fitting, amplitude scaling or time warping",
+    "differences_from_prior_report": "Prior equilibrium summaries used force_true; this comparison uses force_measured to match the paper. Both F statistics are retained here.",
+    "internal_REF": "REF includes integrator states; a large value is not an actual robot velocity."
+  }
+}
