@@ -1,0 +1,2184 @@
+{
+  "format_version": 1,
+  "archive_date": "2026-11-15",
+  "repository": "https://github.com/Swk6666/TRO_impedance_reply",
+  "source_base_commit": "a365866fa5dbe294ecd2b8a5344b43e227b0b445",
+  "archive_file": "sources.tar.gz",
+  "archive_sha256": "220b5ec1ca00e0b8a4e8aee5641fa95c354c17811d88c8f9761dfd1079c995d4",
+  "source_file_count": 241,
+  "source_bytes": 1605482,
+  "previously_unpushed_file_count": 75,
+  "previously_unpushed_unique_blob_count": 27,
+  "scope": "Historical source snapshots and scripts under ignored outputs/, preserving original repository-relative paths. Experiment result arrays, videos, environments, and build caches are excluded.",
+  "files": [
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/__main__.py",
+      "size_bytes": 2382,
+      "sha256": "ad80359a494018be1cee3949978aa42efc2fa6424753da9530f43f52db7d7dd7",
+      "git_blob_sha1": "d14e9c2c231e2187ac45102dc55ea7c8891573a5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970757500483328
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/experiment.py",
+      "size_bytes": 17035,
+      "sha256": "80d79aa2aa8f2b2ef72ff9a51624bd8f9490f4d12f0588ae3309e0963efe63e2",
+      "git_blob_sha1": "ddd7ded80c60257baa9996ee1b80d31148823378",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223236173113
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/scenarios.py",
+      "size_bytes": 10444,
+      "sha256": "b09487e395befbc938d385d0b80af869380757b24bfb4f8659680a4b2bcf050a",
+      "git_blob_sha1": "e858e21119da92adae53270b3fa0320311a49a5a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223235173126
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/axis-adaptation/source/fr3imp/suite.py",
+      "size_bytes": 5573,
+      "sha256": "c438d495201c8a07b94565d9ad4e44ee692e1ca7d422c5b218b7a8f275968bb6",
+      "git_blob_sha1": "188a9fb23be7fe0be2e37271de6f49e4b78f8b30",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793971347497381763
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/__main__.py",
+      "size_bytes": 2500,
+      "sha256": "21d10a8d69f3d4257132508b216cec6998c19db6e97112ab3023bce85884493c",
+      "git_blob_sha1": "bc440dc6c2acb66e70b972d5a2aae9850fb03d14",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984237377
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/analyze.py",
+      "size_bytes": 19694,
+      "sha256": "76feabfa4f125ced1d5757a8009a3bc70cd8f1cd6e28cc3a34334fb0d5567cac",
+      "git_blob_sha1": "9c17e15e1b338d179ca1c8add22944983bc39454",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984355058
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/controllers.py",
+      "size_bytes": 12528,
+      "sha256": "7c97274ea9773c85a415ac49f8fdea40f0dad1f7cbd8ff3ee1e9d0b8168d3943",
+      "git_blob_sha1": "ccdd290ac767c2378bac5335981f93bf9a843593",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984211546
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/evaluation.py",
+      "size_bytes": 5335,
+      "sha256": "366d0c5f840cb5b156c1b74e17672a6070d391406fb05b797f5c81eded536f01",
+      "git_blob_sha1": "2cffeef63f38a381ac87233198863256867b3930",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984409339
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/experiment.py",
+      "size_bytes": 18591,
+      "sha256": "c798863abf93890361d5c656b093ab4a63e99e8a576a2361483912a78a1ece7c",
+      "git_blob_sha1": "7bce5857b573ff40f8ad666e8e3f808febc75afd",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794033247958788547
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/profiles.py",
+      "size_bytes": 2509,
+      "sha256": "25394b0f5202da656eebcdef3c9be019c9cc5e335d0f579cc332852f03dc4e9a",
+      "git_blob_sha1": "3ab83359192808b7ad720853c2d2b6307d9a401c",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763983880893
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/scenarios.py",
+      "size_bytes": 14283,
+      "sha256": "bdc71777c231dca3de63c83d7b4ff1cb14d36ed5b86f3aac2424a8d82a6ce258",
+      "git_blob_sha1": "2cb1090b1b964efb647fdfa3cbbd84ec67caf3f3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794033279691392326
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-admittance/source/fr3imp/suite.py",
+      "size_bytes": 6330,
+      "sha256": "8957747c44bc4f38fbceb163098eb0265a7f71f9eb59dbde70b9d3e940298a88",
+      "git_blob_sha1": "3b4537010aaf6eab2c33910b75f255578c17c322",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984291007
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/__main__.py",
+      "size_bytes": 2500,
+      "sha256": "21d10a8d69f3d4257132508b216cec6998c19db6e97112ab3023bce85884493c",
+      "git_blob_sha1": "bc440dc6c2acb66e70b972d5a2aae9850fb03d14",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984237377
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/analyze.py",
+      "size_bytes": 19694,
+      "sha256": "76feabfa4f125ced1d5757a8009a3bc70cd8f1cd6e28cc3a34334fb0d5567cac",
+      "git_blob_sha1": "9c17e15e1b338d179ca1c8add22944983bc39454",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984355058
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/controllers.py",
+      "size_bytes": 12528,
+      "sha256": "7c97274ea9773c85a415ac49f8fdea40f0dad1f7cbd8ff3ee1e9d0b8168d3943",
+      "git_blob_sha1": "ccdd290ac767c2378bac5335981f93bf9a843593",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984211546
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/evaluation.py",
+      "size_bytes": 5335,
+      "sha256": "366d0c5f840cb5b156c1b74e17672a6070d391406fb05b797f5c81eded536f01",
+      "git_blob_sha1": "2cffeef63f38a381ac87233198863256867b3930",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984409339
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/experiment.py",
+      "size_bytes": 18591,
+      "sha256": "c798863abf93890361d5c656b093ab4a63e99e8a576a2361483912a78a1ece7c",
+      "git_blob_sha1": "7bce5857b573ff40f8ad666e8e3f808febc75afd",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794033247958788547
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/profiles.py",
+      "size_bytes": 2509,
+      "sha256": "25394b0f5202da656eebcdef3c9be019c9cc5e335d0f579cc332852f03dc4e9a",
+      "git_blob_sha1": "3ab83359192808b7ad720853c2d2b6307d9a401c",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763983880893
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/scenarios.py",
+      "size_bytes": 14283,
+      "sha256": "bdc71777c231dca3de63c83d7b4ff1cb14d36ed5b86f3aac2424a8d82a6ce258",
+      "git_blob_sha1": "2cb1090b1b964efb647fdfa3cbbd84ec67caf3f3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794033279691392326
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/d-operator/source/fr3imp/suite.py",
+      "size_bytes": 6330,
+      "sha256": "8957747c44bc4f38fbceb163098eb0265a7f71f9eb59dbde70b9d3e940298a88",
+      "git_blob_sha1": "3b4537010aaf6eab2c33910b75f255578c17c322",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984291007
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813750125
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/__main__.py",
+      "size_bytes": 1428,
+      "sha256": "bd71e3bcd7591add625c98fb54ac1750d05d3aeb9fc9dbfaa6bf08b256609a8a",
+      "git_blob_sha1": "1a971025ad22aa4bfedd27bca6d1364ae6e4468a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813779084
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813787604
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/analyze.py",
+      "size_bytes": 18001,
+      "sha256": "92d331d5118d56a835a7eaa654441c43b28514bc88bcc13d1b38be263c236602",
+      "git_blob_sha1": "5276441fcebb38f2aae91b2c331555951fae3680",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813795894
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813809264
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/controllers.py",
+      "size_bytes": 12270,
+      "sha256": "e063d04c772fba232f40ea6d3ade1b50433a544725db10849cd69b9fba7e7bda",
+      "git_blob_sha1": "c11d3cc6f8a4b330bfcc42dc4bc13d69270af725",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813817914
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813831233
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/experiment.py",
+      "size_bytes": 14224,
+      "sha256": "715607816014fbde81ea13510fde935a8768827dedd4951e86713ddb06ad2d96",
+      "git_blob_sha1": "439e7b89d8aebdcb5d45a1ee65e9f19bf4ec8b06",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813841233
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/model.py",
+      "size_bytes": 6445,
+      "sha256": "8ea78404f714ea683198c15cce6e3c79b6603aa1f8a74434c32944db90f9ca3f",
+      "git_blob_sha1": "af1fa29d87b3e781585235165333a9f61ba430a6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813852943
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/replay.py",
+      "size_bytes": 3570,
+      "sha256": "ecf47e3222c66981676107aa37486ef83c7b9625f6b679715eea7fe924b1b9d4",
+      "git_blob_sha1": "91f6aa1d75d1e00f5475a38bdb803504bdfd4a00",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813861643
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/scenarios.py",
+      "size_bytes": 9201,
+      "sha256": "a2a6765293b81113ece531bc155c90972d90c8a2be173b0ebfd878996e7f9ab3",
+      "git_blob_sha1": "e7ec133b223cc606309e810dd0192442413126fa",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813869963
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813886043
+    },
+    {
+      "original_path": "outputs/exploratory-v1-source/fr3imp/suite.py",
+      "size_bytes": 4002,
+      "sha256": "06fecd1e14d4a841628d225b23135d21083843abc7df2765ad33eab06cc30cd4",
+      "git_blob_sha1": "8056be5b1061a4ec560ca0fafe230e1a23bddd8a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966844813894612
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/__main__.py",
+      "size_bytes": 2382,
+      "sha256": "ad80359a494018be1cee3949978aa42efc2fa6424753da9530f43f52db7d7dd7",
+      "git_blob_sha1": "d14e9c2c231e2187ac45102dc55ea7c8891573a5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970757500483328
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/experiment.py",
+      "size_bytes": 17357,
+      "sha256": "bb4d56e366981e877f3308a18e47e551187feb5a8b985e8b7cb4d95f7283bf06",
+      "git_blob_sha1": "83b919e65932398adb04f0191f8ada98f3093c0d",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793972615010366737
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/scenarios.py",
+      "size_bytes": 11060,
+      "sha256": "64ef93f246b42f3b2078d858c67f9fdf16fb6e3a757f53048ae84e94c50cd07f",
+      "git_blob_sha1": "4970d3b4ee11c100f033e0a6aa7a0c8e931f9be9",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793972615010366737
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/fr3-candidate/source/fr3imp/suite.py",
+      "size_bytes": 5573,
+      "sha256": "c438d495201c8a07b94565d9ad4e44ee692e1ca7d422c5b218b7a8f275968bb6",
+      "git_blob_sha1": "188a9fb23be7fe0be2e37271de6f49e4b78f8b30",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793971347497381763
+    },
+    {
+      "original_path": "outputs/grinding/source/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/grinding/source/__main__.py",
+      "size_bytes": 1631,
+      "sha256": "a55b1780387257ccad0a73bfd7c89e930801dff5915ff95cd3274b253dfa99f1",
+      "git_blob_sha1": "686876a83fe1343f12595d5ef1594e00adebe7a4",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/grinding/source/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/grinding/source/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/grinding/source/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/grinding/source/experiment.py",
+      "size_bytes": 16800,
+      "sha256": "6a42f55541f41c1cda3f0a0dd8785623b47d026ffaddaaac6e7e1631a91b762a",
+      "git_blob_sha1": "b3aed740bb5c538c330135fd42260a3cc9e6302d",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/__main__.py",
+      "size_bytes": 1631,
+      "sha256": "a55b1780387257ccad0a73bfd7c89e930801dff5915ff95cd3274b253dfa99f1",
+      "git_blob_sha1": "686876a83fe1343f12595d5ef1594e00adebe7a4",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/experiment.py",
+      "size_bytes": 16800,
+      "sha256": "6a42f55541f41c1cda3f0a0dd8785623b47d026ffaddaaac6e7e1631a91b762a",
+      "git_blob_sha1": "b3aed740bb5c538c330135fd42260a3cc9e6302d",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/scenarios.py",
+      "size_bytes": 9594,
+      "sha256": "3e7c2de9a11ef8d05bdbb1337bed9a3747e9e7758a3b7f3121fb4ff680832f00",
+      "git_blob_sha1": "5b1ea07e05fc63de25ca0e060902bc9556edaa99",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/fr3imp/suite.py",
+      "size_bytes": 4476,
+      "sha256": "d9a98175c29afe1559f0ce2a53b4cb67a4cc6f54f2d2ea25ee0d1dcfec4a1614",
+      "git_blob_sha1": "6c2a10ba2f9e648bfc8b0c496dd55f5101867477",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/grinding/source/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/grinding/source/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/grinding/source/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/grinding/source/scenarios.py",
+      "size_bytes": 9594,
+      "sha256": "3e7c2de9a11ef8d05bdbb1337bed9a3747e9e7758a3b7f3121fb4ff680832f00",
+      "git_blob_sha1": "5b1ea07e05fc63de25ca0e060902bc9556edaa99",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/grinding/source/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/grinding/source/suite.py",
+      "size_bytes": 4476,
+      "sha256": "d9a98175c29afe1559f0ce2a53b4cb67a4cc6f54f2d2ea25ee0d1dcfec4a1614",
+      "git_blob_sha1": "6c2a10ba2f9e648bfc8b0c496dd55f5101867477",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/paper-comparison/build_comparisons.py",
+      "size_bytes": 16295,
+      "sha256": "d1099857a5ed7c1fa7563e6280949fa7c1b207d4638ef8a2db441cc4ab711c45",
+      "git_blob_sha1": "9faaccbd2b9f9ac4138e134101de4833167e9b1c",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1794024595605063525
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/__main__.py",
+      "size_bytes": 1631,
+      "sha256": "a55b1780387257ccad0a73bfd7c89e930801dff5915ff95cd3274b253dfa99f1",
+      "git_blob_sha1": "686876a83fe1343f12595d5ef1594e00adebe7a4",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/experiment.py",
+      "size_bytes": 17035,
+      "sha256": "80d79aa2aa8f2b2ef72ff9a51624bd8f9490f4d12f0588ae3309e0963efe63e2",
+      "git_blob_sha1": "ddd7ded80c60257baa9996ee1b80d31148823378",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223236173113
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/scenarios.py",
+      "size_bytes": 10444,
+      "sha256": "b09487e395befbc938d385d0b80af869380757b24bfb4f8659680a4b2bcf050a",
+      "git_blob_sha1": "e858e21119da92adae53270b3fa0320311a49a5a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223235173126
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/portability/source/fr3imp/suite.py",
+      "size_bytes": 4476,
+      "sha256": "d9a98175c29afe1559f0ce2a53b4cb67a4cc6f54f2d2ea25ee0d1dcfec4a1614",
+      "git_blob_sha1": "6c2a10ba2f9e648bfc8b0c496dd55f5101867477",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/__main__.py",
+      "size_bytes": 2382,
+      "sha256": "ad80359a494018be1cee3949978aa42efc2fa6424753da9530f43f52db7d7dd7",
+      "git_blob_sha1": "d14e9c2c231e2187ac45102dc55ea7c8891573a5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970757500483328
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/experiment.py",
+      "size_bytes": 17035,
+      "sha256": "80d79aa2aa8f2b2ef72ff9a51624bd8f9490f4d12f0588ae3309e0963efe63e2",
+      "git_blob_sha1": "ddd7ded80c60257baa9996ee1b80d31148823378",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223236173113
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/scenarios.py",
+      "size_bytes": 10444,
+      "sha256": "b09487e395befbc938d385d0b80af869380757b24bfb4f8659680a4b2bcf050a",
+      "git_blob_sha1": "e858e21119da92adae53270b3fa0320311a49a5a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223235173126
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-active/source/fr3imp/suite.py",
+      "size_bytes": 5573,
+      "sha256": "c438d495201c8a07b94565d9ad4e44ee692e1ca7d422c5b218b7a8f275968bb6",
+      "git_blob_sha1": "188a9fb23be7fe0be2e37271de6f49e4b78f8b30",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793971347497381763
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/__main__.py",
+      "size_bytes": 2492,
+      "sha256": "1dff8572ddd9a75c3fdb6024998a106cc32707ba9ca3ed8f1ed1589b7d20b015",
+      "git_blob_sha1": "6412b7195cea65b6280fd8fe620ad601a133a364",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793973257024726075
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/analyze.py",
+      "size_bytes": 19682,
+      "sha256": "af2c34be490d248cafa134bb392f266e9920c289f2644b641a4a4fd7cda82393",
+      "git_blob_sha1": "92bd37992a02a1c4e1a00ce279c4598645e53ecd",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793973440023594259
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/controllers.py",
+      "size_bytes": 12406,
+      "sha256": "0c94c65d933ae9633c148f4034c715afe6b76fa959142952127c2112e4dcb7b1",
+      "git_blob_sha1": "2127ca745759a6cd4a0d694a5bfa79a7bc8c872a",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793973217190240929
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/experiment.py",
+      "size_bytes": 17355,
+      "sha256": "3a1ef70414d8bb214e54d54af313d9b94abaefaf4a2300670acdc188130ebc08",
+      "git_blob_sha1": "cadc60aadffb0416895e127156512b89aebb6e01",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793973217191240917
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/profiles.py",
+      "size_bytes": 2173,
+      "sha256": "e8c748410f5157c8ed7176a8d4b8cbfe71cdef3df2810723fe056868134de9bb",
+      "git_blob_sha1": "2786d726d65df010eb0812cd327fb42eff5e1a85",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793973217190240929
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/scenarios.py",
+      "size_bytes": 11060,
+      "sha256": "64ef93f246b42f3b2078d858c67f9fdf16fb6e3a757f53048ae84e94c50cd07f",
+      "git_blob_sha1": "4970d3b4ee11c100f033e0a6aa7a0c8e931f9be9",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793972615010366737
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3/source/fr3imp/suite.py",
+      "size_bytes": 6298,
+      "sha256": "ca49bdefcb462a9167d72acc58ce9f86f3deb5002d594ab968f6edde0525dfd9",
+      "git_blob_sha1": "d7ef2fffe7c8c9f551bd150e94b00a46f5c233da",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793973257024726075
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/__main__.py",
+      "size_bytes": 2500,
+      "sha256": "21d10a8d69f3d4257132508b216cec6998c19db6e97112ab3023bce85884493c",
+      "git_blob_sha1": "bc440dc6c2acb66e70b972d5a2aae9850fb03d14",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984237377
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/analyze.py",
+      "size_bytes": 19694,
+      "sha256": "76feabfa4f125ced1d5757a8009a3bc70cd8f1cd6e28cc3a34334fb0d5567cac",
+      "git_blob_sha1": "9c17e15e1b338d179ca1c8add22944983bc39454",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984355058
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/controllers.py",
+      "size_bytes": 12528,
+      "sha256": "7c97274ea9773c85a415ac49f8fdea40f0dad1f7cbd8ff3ee1e9d0b8168d3943",
+      "git_blob_sha1": "ccdd290ac767c2378bac5335981f93bf9a843593",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984211546
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/evaluation.py",
+      "size_bytes": 5335,
+      "sha256": "366d0c5f840cb5b156c1b74e17672a6070d391406fb05b797f5c81eded536f01",
+      "git_blob_sha1": "2cffeef63f38a381ac87233198863256867b3930",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984409339
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/experiment.py",
+      "size_bytes": 18284,
+      "sha256": "1e1ebb87af87d77da77751c6088ae7cd89487263ac11a914d234e3dc451907af",
+      "git_blob_sha1": "b513e0d4c2a45f88c1194697d1c47ca4d1242194",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984085405
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/profiles.py",
+      "size_bytes": 2509,
+      "sha256": "25394b0f5202da656eebcdef3c9be019c9cc5e335d0f579cc332852f03dc4e9a",
+      "git_blob_sha1": "3ab83359192808b7ad720853c2d2b6307d9a401c",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763983880893
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/scenarios.py",
+      "size_bytes": 11060,
+      "sha256": "64ef93f246b42f3b2078d858c67f9fdf16fb6e3a757f53048ae84e94c50cd07f",
+      "git_blob_sha1": "4970d3b4ee11c100f033e0a6aa7a0c8e931f9be9",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793972615010366737
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-fr3v2/source/fr3imp/suite.py",
+      "size_bytes": 6330,
+      "sha256": "8957747c44bc4f38fbceb163098eb0265a7f71f9eb59dbde70b9d3e940298a88",
+      "git_blob_sha1": "3b4537010aaf6eab2c33910b75f255578c17c322",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1794029763984291007
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/__main__.py",
+      "size_bytes": 1631,
+      "sha256": "a55b1780387257ccad0a73bfd7c89e930801dff5915ff95cd3274b253dfa99f1",
+      "git_blob_sha1": "686876a83fe1343f12595d5ef1594e00adebe7a4",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/experiment.py",
+      "size_bytes": 17035,
+      "sha256": "80d79aa2aa8f2b2ef72ff9a51624bd8f9490f4d12f0588ae3309e0963efe63e2",
+      "git_blob_sha1": "ddd7ded80c60257baa9996ee1b80d31148823378",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223236173113
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/scenarios.py",
+      "size_bytes": 10444,
+      "sha256": "b09487e395befbc938d385d0b80af869380757b24bfb4f8659680a4b2bcf050a",
+      "git_blob_sha1": "e858e21119da92adae53270b3fa0320311a49a5a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970223235173126
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction-v2/source/fr3imp/suite.py",
+      "size_bytes": 4476,
+      "sha256": "d9a98175c29afe1559f0ce2a53b4cb67a4cc6f54f2d2ea25ee0d1dcfec4a1614",
+      "git_blob_sha1": "6c2a10ba2f9e648bfc8b0c496dd55f5101867477",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/reproduction/source/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/reproduction/source/__main__.py",
+      "size_bytes": 1428,
+      "sha256": "bd71e3bcd7591add625c98fb54ac1750d05d3aeb9fc9dbfaa6bf08b256609a8a",
+      "git_blob_sha1": "1a971025ad22aa4bfedd27bca6d1364ae6e4468a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966824330935690
+    },
+    {
+      "original_path": "outputs/reproduction/source/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/analyze.py",
+      "size_bytes": 18866,
+      "sha256": "775c5cbb6f5398dc6e1f845e24ff75c4d9c93fd018184a2bef8e5466e9043445",
+      "git_blob_sha1": "09b04c628833648d0c7a5aa13839855ff7c6728e",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968240926304582
+    },
+    {
+      "original_path": "outputs/reproduction/source/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction/source/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction/source/experiment.py",
+      "size_bytes": 15141,
+      "sha256": "9495dcb8a8f4e8dde09431fad7cfc24a0e112de18aa3a804843c5643bb4fe3e0",
+      "git_blob_sha1": "f907feb6e321036f636408ba948bf50dfd067ed5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/__main__.py",
+      "size_bytes": 1428,
+      "sha256": "bd71e3bcd7591add625c98fb54ac1750d05d3aeb9fc9dbfaa6bf08b256609a8a",
+      "git_blob_sha1": "1a971025ad22aa4bfedd27bca6d1364ae6e4468a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966824330935690
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/analyze.py",
+      "size_bytes": 18866,
+      "sha256": "775c5cbb6f5398dc6e1f845e24ff75c4d9c93fd018184a2bef8e5466e9043445",
+      "git_blob_sha1": "09b04c628833648d0c7a5aa13839855ff7c6728e",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968240926304582
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/experiment.py",
+      "size_bytes": 15141,
+      "sha256": "9495dcb8a8f4e8dde09431fad7cfc24a0e112de18aa3a804843c5643bb4fe3e0",
+      "git_blob_sha1": "f907feb6e321036f636408ba948bf50dfd067ed5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/model.py",
+      "size_bytes": 6506,
+      "sha256": "aaef6a48d15b7079c1f4a21bbb5a37c4807cbc21f31c35bea833a7e94f1293de",
+      "git_blob_sha1": "a9b8abfdf18f10ca73221e228557967028c2f23a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/replay.py",
+      "size_bytes": 4811,
+      "sha256": "7588973cbe6be5def6a17314f8e0004a60d59b1cc9d65b801c077bfa45277b4f",
+      "git_blob_sha1": "7b19553477482ee6c639e716b533e00cef53bc99",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968240927304572
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/scenarios.py",
+      "size_bytes": 9332,
+      "sha256": "7e8144b072963267bb40f20a2bf13dc62086b6430c234ef060b25e6f20741baa",
+      "git_blob_sha1": "f3ee708ac0f233e90cc9969477e6592b3eb49592",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/fr3imp/suite.py",
+      "size_bytes": 4413,
+      "sha256": "a51d4e2868de3f2d27027e49f0298e4517ed265f09d108fdfda286284baab133",
+      "git_blob_sha1": "94f2af6849dece289c2644e8836adc90455c19ec",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793967458654373884
+    },
+    {
+      "original_path": "outputs/reproduction/source/model.py",
+      "size_bytes": 6506,
+      "sha256": "aaef6a48d15b7079c1f4a21bbb5a37c4807cbc21f31c35bea833a7e94f1293de",
+      "git_blob_sha1": "a9b8abfdf18f10ca73221e228557967028c2f23a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction/source/replay.py",
+      "size_bytes": 4811,
+      "sha256": "7588973cbe6be5def6a17314f8e0004a60d59b1cc9d65b801c077bfa45277b4f",
+      "git_blob_sha1": "7b19553477482ee6c639e716b533e00cef53bc99",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968240927304572
+    },
+    {
+      "original_path": "outputs/reproduction/source/scenarios.py",
+      "size_bytes": 9332,
+      "sha256": "7e8144b072963267bb40f20a2bf13dc62086b6430c234ef060b25e6f20741baa",
+      "git_blob_sha1": "f3ee708ac0f233e90cc9969477e6592b3eb49592",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/reproduction/source/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/reproduction/source/suite.py",
+      "size_bytes": 4413,
+      "sha256": "a51d4e2868de3f2d27027e49f0298e4517ed265f09d108fdfda286284baab133",
+      "git_blob_sha1": "94f2af6849dece289c2644e8836adc90455c19ec",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793967458654373884
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/__main__.py",
+      "size_bytes": 2382,
+      "sha256": "ad80359a494018be1cee3949978aa42efc2fa6424753da9530f43f52db7d7dd7",
+      "git_blob_sha1": "d14e9c2c231e2187ac45102dc55ea7c8891573a5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970757500483328
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/experiment.py",
+      "size_bytes": 17185,
+      "sha256": "9f3ac181e782a233ffb359a04103c4a8a77c386077abf2c62c9ea5a1d016b55e",
+      "git_blob_sha1": "f8ca4f176fa4b482a550151d505fc81b384cf2a0",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793972354271452775
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/scenarios.py",
+      "size_bytes": 10943,
+      "sha256": "d1671d0d5d9fa95e963ce8860c7c567f8ea5424bde532be776742fde98c515f3",
+      "git_blob_sha1": "7823be19f8f0b14bf38702a48c10ef10f7928e5e",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793972354270452787
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling-roll/source/fr3imp/suite.py",
+      "size_bytes": 5573,
+      "sha256": "c438d495201c8a07b94565d9ad4e44ee692e1ca7d422c5b218b7a8f275968bb6",
+      "git_blob_sha1": "188a9fb23be7fe0be2e37271de6f49e4b78f8b30",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793971347497381763
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/__init__.py",
+      "size_bytes": 58,
+      "sha256": "df0b648c32fc40eeaec316321c8ef2e5e711b0ef8ebd369b2fb7c95620cf7916",
+      "git_blob_sha1": "c3aa2dd58b6e0432f75eb59735975687966212f6",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192100693627
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/__main__.py",
+      "size_bytes": 2382,
+      "sha256": "ad80359a494018be1cee3949978aa42efc2fa6424753da9530f43f52db7d7dd7",
+      "git_blob_sha1": "d14e9c2c231e2187ac45102dc55ea7c8891573a5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793970757500483328
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/actuation.py",
+      "size_bytes": 1681,
+      "sha256": "4e1cfd460a86846b89d3df45e3fcbc78cbb6007b2a94bd8cf0026c9538b18048",
+      "git_blob_sha1": "7ee6c20393be05a3b81df81422feab1cb514d6d5",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/analyze.py",
+      "size_bytes": 18982,
+      "sha256": "d7cf15cf2baedbec8859e948462998f8bfab2cedd1a72ff8d33fa5414a68e881",
+      "git_blob_sha1": "697de6cf7e327e2d4a96906103a136f5950c4346",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793968508191548223
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/compare_steps.py",
+      "size_bytes": 3450,
+      "sha256": "df3d7c2e95a909ea9ae4f0e9eb76c53b2941467bf6b96b9dfdb0d9aa3ffc4efb",
+      "git_blob_sha1": "9c6dbcfa720121c426acc05369858274129ad403",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/controllers.py",
+      "size_bytes": 12373,
+      "sha256": "fc9a560d9b197fc2e56d5b8e2f16491ac896c6c2ca38bb64e43f95e8365b9614",
+      "git_blob_sha1": "0e0ee97739c7cb262fb061b9cfa2ea9973d1304b",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793966921698924608
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/dynamics.py",
+      "size_bytes": 4640,
+      "sha256": "91800a023763baeb34d700fc3ade26b0e4b894d9396fc285e5610bf614d0c124",
+      "git_blob_sha1": "f884cb4c65135baaf725ae3041ab4b233fd935c3",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/evaluation.py",
+      "size_bytes": 3840,
+      "sha256": "79c48ae042af8e40ca1750b6ded6c7751eb6050d54aac0d93a285accab640a37",
+      "git_blob_sha1": "f35857ad810504b94779a62a535d5c89e0d5fa36",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793967458653373895
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/experiment.py",
+      "size_bytes": 17167,
+      "sha256": "4b664fca582458a5c25cb5a9c1799ce984349dcd2fe1ded3580ea69c4f58bbfc",
+      "git_blob_sha1": "9e2054674a1b7e6d55cffc66097a0f5c769afd0a",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793972070583811296
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/grinding.py",
+      "size_bytes": 2117,
+      "sha256": "14dfa973e7aa89cbda7e2793192725532abe262131f5161980d9196778ea99e7",
+      "git_blob_sha1": "0d906c6a54fdce2c0586b4ac712f6a58b9f1c55e",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/model.py",
+      "size_bytes": 10003,
+      "sha256": "1745c4986b01a6a71ad5c6de93aab0fecdae89c4aef954a767e7fb63438135d6",
+      "git_blob_sha1": "9769e36dc07cb00b83766cfec7e6491f66a69498",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969765375418586
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/replay.py",
+      "size_bytes": 4942,
+      "sha256": "70765c7c433aafe5cf59d9ac6d0ab16f1f1bb846ecb2e60927e1ff3886af1540",
+      "git_blob_sha1": "2ca1b827b8375b176963ce88f2b889d033f5d581",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793969325810530345
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/scenarios.py",
+      "size_bytes": 10760,
+      "sha256": "345b894477d63be357e0292c05af35683a876e300c8ce491a7b4e999f6535714",
+      "git_blob_sha1": "c8e8cf73da37c6a8324fe9b7251a7f39e38142d5",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793972070583811296
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/sensors.py",
+      "size_bytes": 2646,
+      "sha256": "56179787dbfe1888c1290e2e3ca0c97708f8f8c3d99b2d294be6bf13bfbc42e6",
+      "git_blob_sha1": "a692e2ab6005dcd032b5ba7a4081eb52de94f940",
+      "already_in_base_commit_history": true,
+      "mode": "0o664",
+      "mtime_ns": 1793966192101750465
+    },
+    {
+      "original_path": "outputs/torque-scaling/source/fr3imp/suite.py",
+      "size_bytes": 5573,
+      "sha256": "c438d495201c8a07b94565d9ad4e44ee692e1ca7d422c5b218b7a8f275968bb6",
+      "git_blob_sha1": "188a9fb23be7fe0be2e37271de6f49e4b78f8b30",
+      "already_in_base_commit_history": false,
+      "mode": "0o664",
+      "mtime_ns": 1793971347497381763
+    }
+  ]
+}
